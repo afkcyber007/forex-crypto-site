@@ -7,8 +7,10 @@ A fast, SEO-ready website that compares forex brokers and crypto exchanges for *
 **What's inside (about 870 pages):**
 - Home page with a country search box and boxed broker and exchange cards with "Open Account" buttons
 - `/forex-brokers/` and `/crypto-exchanges/` comparison pages with ranking tables
-- **Forex brokers (9):** Exness, IC Markets, HFM, Vantage, AvaTrade, Octa, PU Prime, RoboForex, InstaForex
-- **Crypto exchanges (8):** Bitunix (ranked #1), Bybit, Binance, BingX, MEXC, BloFin, KuCoin, BitBase
+- **Forex brokers (10):** Exness, Vantage, IC Markets, HFM, Eightcap, AvaTrade, Octa, PU Prime, RoboForex, InstaForex (top picks: Exness, Vantage)
+- **Crypto exchanges (8):** Bitunix, Bybit, BloFin, Binance, BingX, MEXC, KuCoin, BitBase (top picks: Bitunix, Bybit, BloFin)
+- **Live market prices:** a scrolling price bar on every page and 12 live price blocks (Gold, Bitcoin, US30, NAS100 and more), powered by TradingView
+- **Automatic year:** the year in every title updates by itself — the site rebuilds on the 1st of every month
 - **Main SEO pages:** `/best-forex-broker/` and `/best-crypto-exchange/` — long ranking pages built around "best forex broker" and "best crypto exchange" (including a crypto exchange wallet section), each linking to a "best … in [country]" page for all 243 countries
 - **3 brand-search pages for every company**, so people searching the company name can find your site:
   - Review: `/exchanges/bitunix/` ("bitunix review", "is bitunix safe")
@@ -66,16 +68,19 @@ On GitHub, open `config.json`, click the ✏️ pencil, change the values, then 
 |---|---|
 | `site_name` | Your brand name |
 | `contact_email` | Your public contact email |
-| `telegram_url` | Your main Telegram channel link |
-| `telegram_signals_url` | Your free-signals Telegram channel link |
+| `telegram_url` | Your main Telegram channel link (footer button) |
+| `telegram_forex_signals_url` | Free forex signals channel, e.g. `https://t.me/AforexKingOfficial` |
+| `telegram_crypto_signals_url` | Free crypto signals channel, e.g. `https://t.me/AlicecryptoPro_Official` |
+| `telegram_forex_admin` | Forex admin username (no @). Partner clients message this account with a pre-written note |
+| `telegram_crypto_admin` | Crypto admin username (no @) |
 | `google_analytics_id` | Your GA4 ID, e.g. `G-XXXXXXX` (optional) |
 | `google_site_verification` | The code from Google Search Console's "HTML tag" method (optional) |
-| `last_reviewed` | The month you last checked broker details |
 
 ## Change brokers, links or rankings
 
 - **Forex brokers** are in `data/brokers.json`. **Crypto exchanges** are in `data/exchanges.json`.
 - The **order in the file is the ranking order** (Bitunix is first among exchanges).
+- Set `"top_pick": true` on a provider to show the ★ Top pick label.
 - To change a referral link, edit the `"url"` inside `"links"`. The `"label"` is the button text ("Visit Site").
 - `"licences"` is the licence table. Each entry has a country code, regulator, entity, licence number and tier.
 - `"domain"` is the company's official website, which is used to show its icon.

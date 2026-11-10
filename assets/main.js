@@ -30,3 +30,23 @@
     });
   }
 })();
+
+// Telegram "message admin" boxes: build the pre-written message from the chosen broker / exchange
+(function () {
+  document.querySelectorAll('.tg-box').forEach(function (box) {
+    var sel = box.querySelector('.tg-broker'), id = box.querySelector('.tg-id'),
+        go = box.querySelector('.tg-go'), pv = box.querySelector('.tg-preview'),
+        fx = box.dataset.kind === 'forex', admin = box.dataset.admin;
+    function update() {
+      var msg = 'Hey 👋 I am using your partner ' + (fx ? 'broker' : 'exchange') + ' Name:- ' + sel.value;
+      var v = (id.value || '').trim();
+      if (v) msg += '\n' + (fx ? 'Account ID' : 'UID') + ':- ' + v;
+      go.href = 'https://t.me/' + admin + '?text=' + encodeURIComponent(msg);
+      pv.textContent = '“' + msg.replace('\n', ' · ') + '”';
+    }
+    sel.addEventListener('change', update); id.addEventListener('input', update);
+  });
+  // keep the © year current
+  var y = new Date().getFullYear();
+  document.querySelectorAll('.yr').forEach(function (e) { if (+e.textContent < y) e.textContent = y; });
+})();

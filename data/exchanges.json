@@ -1,166 +1,673 @@
 [
-  {
-    "slug": "bitunix", "name": "Bitunix", "type": "crypto", "domain": "bitunix.com", "color": "#B9F227",
-    "tagline": "Top pick — high-leverage futures with low fees", "score": 9.6, "founded": "2021", "ref_code": "c2ss",
-    "min_deposit": "≈ $10 in crypto", "min_deposit_note": "No fixed minimum; futures can be traded from about $10 in USDT.",
-    "max_leverage": "Up to 200x on perpetual futures", "fees": "Spot 0.08% / 0.10% · Futures 0.02% maker / 0.06% taker",
-    "coins": "700+ trading pairs", "copy_trading": "Yes",
-    "features": "Spot, USDT-M perpetual futures, copy trading, Earn, TradingView charts",
-    "regulation": "Registered as a Money Services Business with FinCEN (US) and FINTRAC (Canada), registered with AUSTRAC (Australia), and licensed as a Bitcoin Service Provider in El Salvador.",
-    "licences": [
-      {"country": "US", "regulator": "FinCEN – Money Services Business", "entity": "Bitunix group entity", "number": "—", "tier": "AML registration"},
-      {"country": "CA", "regulator": "FINTRAC – Money Services Business", "entity": "Bitunix group entity", "number": "—", "tier": "AML registration"},
-      {"country": "AU", "regulator": "AUSTRAC – Digital Currency Exchange", "entity": "Bitunix group entity", "number": "—", "tier": "AML registration"},
-      {"country": "SV", "regulator": "Bitcoin Service Provider licence (El Salvador)", "entity": "Bitunix group entity", "number": "—", "tier": "Licence"}
-    ],
-    "kyc": "Sign up and deposit instantly; complete ID verification (KYC Level 1) before withdrawing.",
-    "best_for": "Crypto futures traders, copy trading, low fees",
-    "links": [{"label": "Visit Site", "url": "https://www.bitunix.com/register?vipCode=c2ss"}],
-    "pros": ["Up to 200x leverage on perpetual futures", "Low futures fees (0.02% / 0.06%)", "Copy trading and TradingView charts built in", "Fast sign-up — start trading in minutes"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "CN", "HK", "SG", "KP", "AF", "AE", "IR", "IQ", "LB", "SY", "YE", "SD", "SS", "LY", "CF", "CD", "GW", "SO", "FR", "CU", "HT"], "unclear": [],
-    "summary": "Bitunix is a fast-growing derivatives exchange launched in 2021. It focuses on USDT-margined perpetual futures with up to 200x leverage, low trading fees, copy trading and professional TradingView charts — our number-one pick for crypto futures traders."
-  },
-  {
-    "slug": "bybit", "name": "Bybit", "type": "crypto", "domain": "bybit.com", "color": "#F7A600",
-    "tagline": "World's #2 exchange — licensed in Dubai & the EU", "score": 9.5, "founded": "2018", "ref_code": "116150",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "Deposit any supported crypto, or buy with card or P2P.",
-    "max_leverage": "Up to 100x on perpetual futures", "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.055% taker",
-    "coins": "1,800+ assets", "copy_trading": "Yes",
-    "features": "Spot, perpetual & options trading, copy trading, trading bots, Earn, Bybit Card, Web3 wallet",
-    "regulation": "Licensed by VARA in Dubai and the SCA in the UAE, MiCA-authorised in the EU through Bybit EU (Austria), licensed by the AFSA in Kazakhstan and the National Bank of Georgia, and registered with FIU-IND in India.",
-    "licences": [
-      {"country": "AE", "regulator": "Virtual Assets Regulatory Authority (VARA), Dubai", "entity": "Bybit Fintech Limited", "number": "—", "tier": "Top-tier"},
-      {"country": "AT", "regulator": "Austrian FMA – MiCA CASP authorisation", "entity": "Bybit EU GmbH", "number": "—", "tier": "Top-tier"},
-      {"country": "KZ", "regulator": "AFSA (Astana International Financial Centre)", "entity": "Bybit Kazakhstan", "number": "—", "tier": "Top-tier"},
-      {"country": "GE", "regulator": "National Bank of Georgia (NBG) – VASP", "entity": "Bybit Georgia", "number": "—", "tier": "Licence"},
-      {"country": "IN", "regulator": "Financial Intelligence Unit – India (FIU-IND)", "entity": "Bybit India", "number": "—", "tier": "AML registration"}
-    ],
-    "kyc": "ID verification required; the Bybit app guides you through it in minutes.",
-    "best_for": "All-round traders, derivatives, copy trading and bots",
-    "links": [{"label": "Visit Site", "url": "https://partner.bybit.com/b/116150"}],
-    "pros": ["Licensed in Dubai (VARA) and MiCA-authorised in the EU", "1,800+ assets with deep futures liquidity", "Copy trading, trading bots and Earn", "Bybit Card and built-in Web3 wallet"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "CN", "HK", "SG", "UZ", "IR", "SY", "SD", "CU", "KP"], "unclear": ["AE"],
-    "summary": "Bybit, founded in 2018 and headquartered in Dubai, is one of the world's largest crypto exchanges. It holds a VARA licence in Dubai, MiCA authorisation for the EU, and licences in Kazakhstan and Georgia, and offers 1,800+ assets, deep perpetual-futures liquidity, copy trading, bots and a built-in Web3 wallet."
-  },
-  {
-    "slug": "binance", "name": "Binance", "type": "crypto", "domain": "binance.com", "color": "#F0B90B",
-    "tagline": "World's largest exchange by volume", "score": 9.4, "founded": "2017", "ref_code": "35451277",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "Deposit any amount of supported crypto; P2P and card purchases from small amounts.",
-    "max_leverage": "Up to 125x on futures", "fees": "Spot 0.10% / 0.10% (25% off with BNB) · Futures 0.02% maker / 0.05% taker",
-    "coins": "500+ coins, 1,500+ pairs", "copy_trading": "Yes",
-    "features": "Spot, futures, options, P2P, Earn, copy trading, Binance Pay, Web3 wallet",
-    "regulation": "Licensed or registered in many markets, including Dubai (VARA), Abu Dhabi (FSRA), France (AMF), Italy, Spain, Poland, Sweden, Bahrain (CBB), Kazakhstan (AFSA) and India (FIU-IND).",
-    "licences": [
-      {"country": "AE", "regulator": "Virtual Assets Regulatory Authority (VARA), Dubai", "entity": "Binance FZE", "number": "—", "tier": "Top-tier"},
-      {"country": "AE", "regulator": "FSRA, Abu Dhabi Global Market (ADGM)", "entity": "Nest Exchange / Nest Clearing & Custody / Nest Trading Ltd", "number": "—", "tier": "Top-tier"},
-      {"country": "FR", "regulator": "Autorité des marchés financiers (AMF) – DASP registration", "entity": "Binance France SAS", "number": "—", "tier": "Registration"},
-      {"country": "IT", "regulator": "OAM – VASP register", "entity": "Binance Italy S.R.L.", "number": "—", "tier": "Registration"},
-      {"country": "ES", "regulator": "Bank of Spain – VASP register", "entity": "Moon Tech Spain S.L.", "number": "—", "tier": "Registration"},
-      {"country": "PL", "regulator": "Poland – VASP register", "entity": "Binance Poland Sp. z o.o.", "number": "—", "tier": "Registration"},
-      {"country": "SE", "regulator": "Finansinspektionen (FI) – VASP registration", "entity": "Binance Nordics AB", "number": "—", "tier": "Registration"},
-      {"country": "BH", "regulator": "Central Bank of Bahrain (CBB)", "entity": "Binance Bahrain BSC(c)", "number": "—", "tier": "Top-tier"},
-      {"country": "KZ", "regulator": "AFSA (Astana International Financial Centre)", "entity": "Binance Kazakhstan", "number": "—", "tier": "Top-tier"},
-      {"country": "IN", "regulator": "Financial Intelligence Unit – India (FIU-IND)", "entity": "Binance group entity", "number": "—", "tier": "AML registration"}
-    ],
-    "kyc": "Quick ID + selfie verification unlocks deposits and trading.",
-    "best_for": "Beginners and all-round traders who want maximum liquidity",
-    "links": [{"label": "Visit Site", "url": "https://www.binance.com/register?ref=35451277"}],
-    "pros": ["Deepest liquidity and largest trading volume", "Spot, futures, options, Earn and P2P in one app", "Licences in Dubai, Abu Dhabi, Bahrain, Kazakhstan and the EU", "Low fees with BNB discount"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "NL", "SG", "IR", "KP", "SY", "CU"], "unclear": ["GB", "JP", "MY", "PH", "TH", "BE"],
-    "summary": "Binance is the world's largest crypto exchange by trading volume, offering spot, futures, options, P2P trading, Earn products and a Web3 wallet in one app. It holds licences and registrations in more jurisdictions than almost any rival."
-  },
-  {
-    "slug": "bingx", "name": "BingX", "type": "crypto", "domain": "bingx.com", "color": "#2A54FF",
-    "tagline": "Copy-trading leader with 125x futures", "score": 9.1, "founded": "2018", "ref_code": "BIALC3",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "Deposit any supported crypto, or buy through P2P / card partners.",
-    "max_leverage": "Up to 125x on perpetual futures", "fees": "Spot from 0.10% · Futures 0.02% maker / 0.05% taker",
-    "coins": "1,000+ spot assets, 170+ perpetual markets", "copy_trading": "Yes – one of the largest copy-trading platforms",
-    "features": "Spot, perpetual futures, copy trading, grid bots, forex & stock perpetuals",
-    "regulation": "MiCA-authorised in the EU through BingX EU (Austria), registered with AUSTRAC in Australia and with the FCIS in Lithuania.",
-    "licences": [
-      {"country": "AT", "regulator": "Austrian FMA – MiCA CASP authorisation", "entity": "MEGE zweite GmbH (BingX EU)", "number": "—", "tier": "Top-tier"},
-      {"country": "AU", "regulator": "AUSTRAC – Digital Currency Exchange", "entity": "BINGX GLOBAL PTY LTD", "number": "—", "tier": "AML registration"},
-      {"country": "LT", "regulator": "Financial Crime Investigation Service (FCIS)", "entity": "BingX group entity", "number": "—", "tier": "AML registration"}
-    ],
-    "kyc": "Start trading straight away; verify to unlock higher limits and fiat.",
-    "best_for": "Copy traders and beginners who want to follow experienced traders",
-    "links": [{"label": "Visit Site", "url": "https://bingxdao.com/invite/BIALC3/"}],
-    "pros": ["Market-leading copy trading", "Competitive 0.02% / 0.05% futures fees", "MiCA authorisation for its EU entity", "Grid bots and forex/stock perpetuals"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "GB", "NL", "SG", "HK", "MO", "CN", "KH", "LA", "MM", "KP", "PA", "CU", "BI", "CF", "CD", "SO", "AF", "IR"], "unclear": [],
-    "summary": "BingX is a global exchange founded in 2018 and best known for copy trading — millions of users follow professional traders automatically. It offers spot, perpetual futures up to 125x and grid bots, and its EU entity is MiCA-authorised in Austria."
-  },
-  {
-    "slug": "mexc", "name": "MEXC", "type": "crypto", "domain": "mexc.com", "color": "#1972F5",
-    "tagline": "Biggest altcoin selection, 0% maker fees", "score": 9.0, "founded": "2018", "ref_code": "mexc-12TsTD",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "Deposit any amount of supported crypto; card purchases available.",
-    "max_leverage": "Up to 200x on futures", "fees": "Spot 0% maker / 0.05% taker · Futures 0% maker / 0.01–0.02% taker",
-    "coins": "2,700+ coins, 800+ futures pairs", "copy_trading": "Yes",
-    "features": "Spot, futures, copy trading, launchpad, DEX+",
-    "regulation": "Registered company headquartered in Seychelles, serving users in 170+ countries.",
-    "licences": [
-      {"country": "SC", "regulator": "Company registration (Seychelles)", "entity": "MEXC Global", "number": "—", "tier": "Company registration"}
-    ],
-    "kyc": "Trade without KYC up to daily limits; verify for higher limits.",
-    "best_for": "Altcoin hunters, low-fee spot and futures trading",
-    "links": [{"label": "Visit Site", "url": "https://www.mexc.com/register?inviteCode=mexc-12TsTD"}],
-    "pros": ["2,700+ coins — new tokens list first", "0% maker fees on spot and futures", "Ultra-low futures taker fees", "Up to 200x leverage with copy trading"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "GB", "CN", "HK", "SG", "KP", "IR", "CU", "SD"], "unclear": ["KZ"],
-    "summary": "MEXC is famous for listing new altcoins first and for some of the lowest trading fees in the industry — 0% maker fees on spot and futures. With 2,700+ coins and up to 200x leverage, it is a favourite of altcoin and futures traders."
-  },
-  {
-    "slug": "blofin", "name": "BloFin", "type": "crypto", "domain": "blofin.com", "color": "#FF6A00",
-    "tagline": "Pro futures platform with 150x and copy trading", "score": 8.9, "founded": "2019", "ref_code": "AliceCrypto",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "Deposit any supported crypto; P2P and fiat after verification.",
-    "max_leverage": "Up to 150x on BTC & ETH perpetuals", "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
-    "coins": "500+ assets, 460+ USDT perpetuals", "copy_trading": "Yes",
-    "features": "Spot, USDT perpetual futures, copy trading, grid bots, unified trading account",
-    "regulation": "Registered company, ISO 27001 certified for information security.",
-    "licences": [
-      {"country": "KY", "regulator": "Company registration (Cayman Islands)", "entity": "BloFin", "number": "—", "tier": "Company registration"}
-    ],
-    "kyc": "Start with email only (Level 0, up to 20,000 USDT/day withdrawals); ID verification raises limits to 1M USDT/day.",
-    "best_for": "Futures traders who want a fast, professional platform",
-    "links": [{"label": "Visit Site", "url": "https://partner.blofin.com/d/AliceCrypto"}],
-    "pros": ["Up to 150x leverage on BTC and ETH", "460+ USDT perpetual futures", "Copy trading and grid bots", "Trade with email-only sign-up (Level 0)"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "CN", "IN", "SG", "AE", "RU", "AF", "IR", "KP", "SY", "CU"], "unclear": [],
-    "summary": "BloFin began in 2019 and launched its exchange in 2023, focusing on professional futures trading: 460+ USDT perpetuals, up to 150x leverage on BTC and ETH, copy trading, grid bots and a unified trading account. It is ISO 27001 certified and lets you start trading with just an email."
-  },
-  {
-    "slug": "kucoin", "name": "KuCoin", "type": "crypto", "domain": "kucoin.com", "color": "#23AF91",
-    "tagline": "1,000+ coins and trading bots", "score": 8.8, "founded": "2017", "ref_code": "rMCZH8J",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "No initial deposit required; crypto deposits are free.",
-    "max_leverage": "Up to 125x on futures", "fees": "Spot 0.10% / 0.10% (KCS discount) · Futures 0.02% maker / 0.06% taker",
-    "coins": "1,000+ coins, 1,300+ pairs", "copy_trading": "Yes",
-    "features": "Spot, margin, futures, trading bots, copy trading, Earn",
-    "regulation": "MiCA-authorised in the EU through KuCoin EU (Austria), registered with FIU-IND in India and AUSTRAC in Australia; SOC 2 Type II and ISO 27001 certified.",
-    "licences": [
-      {"country": "AT", "regulator": "Austrian FMA – MiCA CASP authorisation", "entity": "KuCoin EU Exchange GmbH", "number": "—", "tier": "Top-tier"},
-      {"country": "IN", "regulator": "Financial Intelligence Unit – India (FIU-IND)", "entity": "KuCoin group entity", "number": "—", "tier": "AML registration"},
-      {"country": "AU", "regulator": "AUSTRAC – Digital Currency Exchange", "entity": "KuCoin group entity", "number": "—", "tier": "AML registration"}
-    ],
-    "kyc": "Quick ID verification to trade and withdraw.",
-    "best_for": "Altcoin traders and users of automated trading bots",
-    "links": [{"label": "Visit Site", "url": "https://www.kucoin.com/r/af/rMCZH8J"}],
-    "pros": ["1,000+ coins including many small caps", "Built-in trading bots (grid, DCA)", "SOC 2 Type II & ISO 27001 security certifications", "Proof of reserves audited by Hacken"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CN", "HK", "SG", "MY", "FR", "NL", "IR", "KP", "SY", "CU"], "unclear": ["CA", "TH"],
-    "summary": "KuCoin is a large global exchange launched in 2017 with more than 1,000 coins, built-in trading bots and copy trading. Its EU entity is MiCA-authorised in Austria and it is registered in India and Australia, with audited proof of reserves."
-  },
-  {
-    "slug": "bitbase", "name": "BitBase", "type": "crypto", "domain": "bitbase.com", "color": "#7A5CFF",
-    "tagline": "New exchange with 150x perpetual futures", "score": 8.2, "founded": "2026", "ref_code": "BNOHL2",
-    "min_deposit": "No minimum (crypto)", "min_deposit_note": "Deposit supported crypto by address/QR code or buy USDT/BTC through payment partners.",
-    "max_leverage": "Up to 150x on perpetual futures", "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
-    "coins": "50+ coins, 120+ pairs", "copy_trading": "—",
-    "features": "Spot, USDT/USDC-margined perpetual futures, protection fund",
-    "regulation": "Registered company headquartered in Panama, with a user protection fund.",
-    "licences": [
-      {"country": "PA", "regulator": "Company registration (Panama)", "entity": "BitBase", "number": "—", "tier": "Company registration"}
-    ],
-    "kyc": "Simple tiered verification at sign-up.",
-    "best_for": "Traders wanting a new futures venue with USDC margin",
-    "links": [{"label": "Visit Site", "url": "https://www.bitbase.com/accounts/register?ref=BNOHL2"}],
-    "pros": ["USDT and USDC-margined perpetual futures up to 150x", "Competitive futures fees", "Advanced order types (Post-Only, Trigger)", "iOS app available"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CN", "IR", "KP", "SY", "CU"], "unclear": [],
-    "summary": "BitBase is a new Panama-based exchange that opened to the public in April 2026, offering spot trading and both USDT- and USDC-margined perpetual futures with up to 150x leverage, advanced order types and a protection fund."
-  }
+ {
+  "slug": "bitunix",
+  "name": "Bitunix",
+  "type": "crypto",
+  "domain": "bitunix.com",
+  "color": "#B9F227",
+  "tagline": "Top pick — high-leverage futures with low fees",
+  "score": 9.6,
+  "founded": "2021",
+  "ref_code": "c2ss",
+  "min_deposit": "≈ $10 in crypto",
+  "min_deposit_note": "No fixed minimum; futures can be traded from about $10 in USDT.",
+  "max_leverage": "Up to 200x on perpetual futures",
+  "fees": "Spot 0.08% / 0.10% · Futures 0.02% maker / 0.06% taker",
+  "coins": "700+ trading pairs",
+  "copy_trading": "Yes",
+  "features": "Spot, USDT-M perpetual futures, copy trading, Earn, TradingView charts",
+  "regulation": "Registered as a Money Services Business with FinCEN (US) and FINTRAC (Canada), registered with AUSTRAC (Australia), and licensed as a Bitcoin Service Provider in El Salvador.",
+  "licences": [
+   {
+    "country": "US",
+    "regulator": "FinCEN – Money Services Business",
+    "entity": "Bitunix group entity",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "CA",
+    "regulator": "FINTRAC – Money Services Business",
+    "entity": "Bitunix group entity",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "AU",
+    "regulator": "AUSTRAC – Digital Currency Exchange",
+    "entity": "Bitunix group entity",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "SV",
+    "regulator": "Bitcoin Service Provider licence (El Salvador)",
+    "entity": "Bitunix group entity",
+    "number": "—",
+    "tier": "Licence"
+   }
+  ],
+  "kyc": "Sign up and deposit instantly; complete ID verification (KYC Level 1) before withdrawing.",
+  "best_for": "Crypto futures traders, copy trading, low fees",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.bitunix.com/register?vipCode=c2ss"
+   }
+  ],
+  "pros": [
+   "Up to 200x leverage on perpetual futures",
+   "Low futures fees (0.02% / 0.06%)",
+   "Copy trading and TradingView charts built in",
+   "Fast sign-up — start trading in minutes"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "CN",
+   "HK",
+   "SG",
+   "KP",
+   "AF",
+   "AE",
+   "IR",
+   "IQ",
+   "LB",
+   "SY",
+   "YE",
+   "SD",
+   "SS",
+   "LY",
+   "CF",
+   "CD",
+   "GW",
+   "SO",
+   "FR",
+   "CU",
+   "HT"
+  ],
+  "unclear": [],
+  "summary": "Bitunix is a fast-growing derivatives exchange launched in 2021. It focuses on USDT-margined perpetual futures with up to 200x leverage, low trading fees, copy trading and professional TradingView charts — our number-one pick for crypto futures traders.",
+  "top_pick": true
+ },
+ {
+  "slug": "bybit",
+  "name": "Bybit",
+  "type": "crypto",
+  "domain": "bybit.com",
+  "color": "#F7A600",
+  "tagline": "World's #2 exchange — licensed in Dubai & the EU",
+  "score": 9.5,
+  "founded": "2018",
+  "ref_code": "116150",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit any supported crypto, or buy with card or P2P.",
+  "max_leverage": "Up to 100x on perpetual futures",
+  "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.055% taker",
+  "coins": "1,800+ assets",
+  "copy_trading": "Yes",
+  "features": "Spot, perpetual & options trading, copy trading, trading bots, Earn, Bybit Card, Web3 wallet",
+  "regulation": "Licensed by VARA in Dubai and the SCA in the UAE, MiCA-authorised in the EU through Bybit EU (Austria), licensed by the AFSA in Kazakhstan and the National Bank of Georgia, and registered with FIU-IND in India.",
+  "licences": [
+   {
+    "country": "AE",
+    "regulator": "Virtual Assets Regulatory Authority (VARA), Dubai",
+    "entity": "Bybit Fintech Limited",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AT",
+    "regulator": "Austrian FMA – MiCA CASP authorisation",
+    "entity": "Bybit EU GmbH",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "KZ",
+    "regulator": "AFSA (Astana International Financial Centre)",
+    "entity": "Bybit Kazakhstan",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "GE",
+    "regulator": "National Bank of Georgia (NBG) – VASP",
+    "entity": "Bybit Georgia",
+    "number": "—",
+    "tier": "Licence"
+   },
+   {
+    "country": "IN",
+    "regulator": "Financial Intelligence Unit – India (FIU-IND)",
+    "entity": "Bybit India",
+    "number": "—",
+    "tier": "AML registration"
+   }
+  ],
+  "kyc": "ID verification required; the Bybit app guides you through it in minutes.",
+  "best_for": "All-round traders, derivatives, copy trading and bots",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://partner.bybit.com/b/116150"
+   }
+  ],
+  "pros": [
+   "Licensed in Dubai (VARA) and MiCA-authorised in the EU",
+   "1,800+ assets with deep futures liquidity",
+   "Copy trading, trading bots and Earn",
+   "Bybit Card and built-in Web3 wallet"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "CN",
+   "HK",
+   "SG",
+   "UZ",
+   "IR",
+   "SY",
+   "SD",
+   "CU",
+   "KP"
+  ],
+  "unclear": [
+   "AE"
+  ],
+  "summary": "Bybit, founded in 2018 and headquartered in Dubai, is one of the world's largest crypto exchanges. It holds a VARA licence in Dubai, MiCA authorisation for the EU, and licences in Kazakhstan and Georgia, and offers 1,800+ assets, deep perpetual-futures liquidity, copy trading, bots and a built-in Web3 wallet.",
+  "top_pick": true
+ },
+ {
+  "slug": "blofin",
+  "name": "BloFin",
+  "type": "crypto",
+  "domain": "blofin.com",
+  "color": "#FF6A00",
+  "tagline": "Pro futures platform with 150x and copy trading",
+  "score": 9.4,
+  "founded": "2019",
+  "ref_code": "AliceCrypto",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit any supported crypto; P2P and fiat after verification.",
+  "max_leverage": "Up to 150x on BTC & ETH perpetuals",
+  "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
+  "coins": "500+ assets, 460+ USDT perpetuals",
+  "copy_trading": "Yes",
+  "features": "Spot, USDT perpetual futures, copy trading, grid bots, unified trading account",
+  "regulation": "Registered company, ISO 27001 certified for information security.",
+  "licences": [
+   {
+    "country": "KY",
+    "regulator": "Company registration (Cayman Islands)",
+    "entity": "BloFin",
+    "number": "—",
+    "tier": "Company registration"
+   }
+  ],
+  "kyc": "Start with email only (Level 0, up to 20,000 USDT/day withdrawals); ID verification raises limits to 1M USDT/day.",
+  "best_for": "Futures traders who want a fast, professional platform",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://partner.blofin.com/d/AliceCrypto"
+   }
+  ],
+  "pros": [
+   "Up to 150x leverage on BTC and ETH",
+   "460+ USDT perpetual futures",
+   "Copy trading and grid bots",
+   "Trade with email-only sign-up (Level 0)"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "CN",
+   "IN",
+   "SG",
+   "AE",
+   "RU",
+   "AF",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [],
+  "summary": "BloFin began in 2019 and launched its exchange in 2023, focusing on professional futures trading: 460+ USDT perpetuals, up to 150x leverage on BTC and ETH, copy trading, grid bots and a unified trading account. It is ISO 27001 certified and lets you start trading with just an email.",
+  "top_pick": true
+ },
+ {
+  "slug": "binance",
+  "name": "Binance",
+  "type": "crypto",
+  "domain": "binance.com",
+  "color": "#F0B90B",
+  "tagline": "World's largest exchange by volume",
+  "score": 9.3,
+  "founded": "2017",
+  "ref_code": "35451277",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit any amount of supported crypto; P2P and card purchases from small amounts.",
+  "max_leverage": "Up to 125x on futures",
+  "fees": "Spot 0.10% / 0.10% (25% off with BNB) · Futures 0.02% maker / 0.05% taker",
+  "coins": "500+ coins, 1,500+ pairs",
+  "copy_trading": "Yes",
+  "features": "Spot, futures, options, P2P, Earn, copy trading, Binance Pay, Web3 wallet",
+  "regulation": "Licensed or registered in many markets, including Dubai (VARA), Abu Dhabi (FSRA), France (AMF), Italy, Spain, Poland, Sweden, Bahrain (CBB), Kazakhstan (AFSA) and India (FIU-IND).",
+  "licences": [
+   {
+    "country": "AE",
+    "regulator": "Virtual Assets Regulatory Authority (VARA), Dubai",
+    "entity": "Binance FZE",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AE",
+    "regulator": "FSRA, Abu Dhabi Global Market (ADGM)",
+    "entity": "Nest Exchange / Nest Clearing & Custody / Nest Trading Ltd",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "FR",
+    "regulator": "Autorité des marchés financiers (AMF) – DASP registration",
+    "entity": "Binance France SAS",
+    "number": "—",
+    "tier": "Registration"
+   },
+   {
+    "country": "IT",
+    "regulator": "OAM – VASP register",
+    "entity": "Binance Italy S.R.L.",
+    "number": "—",
+    "tier": "Registration"
+   },
+   {
+    "country": "ES",
+    "regulator": "Bank of Spain – VASP register",
+    "entity": "Moon Tech Spain S.L.",
+    "number": "—",
+    "tier": "Registration"
+   },
+   {
+    "country": "PL",
+    "regulator": "Poland – VASP register",
+    "entity": "Binance Poland Sp. z o.o.",
+    "number": "—",
+    "tier": "Registration"
+   },
+   {
+    "country": "SE",
+    "regulator": "Finansinspektionen (FI) – VASP registration",
+    "entity": "Binance Nordics AB",
+    "number": "—",
+    "tier": "Registration"
+   },
+   {
+    "country": "BH",
+    "regulator": "Central Bank of Bahrain (CBB)",
+    "entity": "Binance Bahrain BSC(c)",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "KZ",
+    "regulator": "AFSA (Astana International Financial Centre)",
+    "entity": "Binance Kazakhstan",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "IN",
+    "regulator": "Financial Intelligence Unit – India (FIU-IND)",
+    "entity": "Binance group entity",
+    "number": "—",
+    "tier": "AML registration"
+   }
+  ],
+  "kyc": "Quick ID + selfie verification unlocks deposits and trading.",
+  "best_for": "Beginners and all-round traders who want maximum liquidity",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.binance.com/register?ref=35451277"
+   }
+  ],
+  "pros": [
+   "Deepest liquidity and largest trading volume",
+   "Spot, futures, options, Earn and P2P in one app",
+   "Licences in Dubai, Abu Dhabi, Bahrain, Kazakhstan and the EU",
+   "Low fees with BNB discount"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "NL",
+   "SG",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [
+   "GB",
+   "JP",
+   "MY",
+   "PH",
+   "TH",
+   "BE"
+  ],
+  "summary": "Binance is the world's largest crypto exchange by trading volume, offering spot, futures, options, P2P trading, Earn products and a Web3 wallet in one app. It holds licences and registrations in more jurisdictions than almost any rival.",
+  "top_pick": false
+ },
+ {
+  "slug": "bingx",
+  "name": "BingX",
+  "type": "crypto",
+  "domain": "bingx.com",
+  "color": "#2A54FF",
+  "tagline": "Copy-trading leader with 125x futures",
+  "score": 9.1,
+  "founded": "2018",
+  "ref_code": "BIALC3",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit any supported crypto, or buy through P2P / card partners.",
+  "max_leverage": "Up to 125x on perpetual futures",
+  "fees": "Spot from 0.10% · Futures 0.02% maker / 0.05% taker",
+  "coins": "1,000+ spot assets, 170+ perpetual markets",
+  "copy_trading": "Yes – one of the largest copy-trading platforms",
+  "features": "Spot, perpetual futures, copy trading, grid bots, forex & stock perpetuals",
+  "regulation": "MiCA-authorised in the EU through BingX EU (Austria), registered with AUSTRAC in Australia and with the FCIS in Lithuania.",
+  "licences": [
+   {
+    "country": "AT",
+    "regulator": "Austrian FMA – MiCA CASP authorisation",
+    "entity": "MEGE zweite GmbH (BingX EU)",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AU",
+    "regulator": "AUSTRAC – Digital Currency Exchange",
+    "entity": "BINGX GLOBAL PTY LTD",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "LT",
+    "regulator": "Financial Crime Investigation Service (FCIS)",
+    "entity": "BingX group entity",
+    "number": "—",
+    "tier": "AML registration"
+   }
+  ],
+  "kyc": "Start trading straight away; verify to unlock higher limits and fiat.",
+  "best_for": "Copy traders and beginners who want to follow experienced traders",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://bingxdao.com/invite/BIALC3/"
+   }
+  ],
+  "pros": [
+   "Market-leading copy trading",
+   "Competitive 0.02% / 0.05% futures fees",
+   "MiCA authorisation for its EU entity",
+   "Grid bots and forex/stock perpetuals"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "GB",
+   "NL",
+   "SG",
+   "HK",
+   "MO",
+   "CN",
+   "KH",
+   "LA",
+   "MM",
+   "KP",
+   "PA",
+   "CU",
+   "BI",
+   "CF",
+   "CD",
+   "SO",
+   "AF",
+   "IR"
+  ],
+  "unclear": [],
+  "summary": "BingX is a global exchange founded in 2018 and best known for copy trading — millions of users follow professional traders automatically. It offers spot, perpetual futures up to 125x and grid bots, and its EU entity is MiCA-authorised in Austria.",
+  "top_pick": false
+ },
+ {
+  "slug": "mexc",
+  "name": "MEXC",
+  "type": "crypto",
+  "domain": "mexc.com",
+  "color": "#1972F5",
+  "tagline": "Biggest altcoin selection, 0% maker fees",
+  "score": 9.0,
+  "founded": "2018",
+  "ref_code": "mexc-12TsTD",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit any amount of supported crypto; card purchases available.",
+  "max_leverage": "Up to 200x on futures",
+  "fees": "Spot 0% maker / 0.05% taker · Futures 0% maker / 0.01–0.02% taker",
+  "coins": "2,700+ coins, 800+ futures pairs",
+  "copy_trading": "Yes",
+  "features": "Spot, futures, copy trading, launchpad, DEX+",
+  "regulation": "Registered company headquartered in Seychelles, serving users in 170+ countries.",
+  "licences": [
+   {
+    "country": "SC",
+    "regulator": "Company registration (Seychelles)",
+    "entity": "MEXC Global",
+    "number": "—",
+    "tier": "Company registration"
+   }
+  ],
+  "kyc": "Trade without KYC up to daily limits; verify for higher limits.",
+  "best_for": "Altcoin hunters, low-fee spot and futures trading",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.mexc.com/register?inviteCode=mexc-12TsTD"
+   }
+  ],
+  "pros": [
+   "2,700+ coins — new tokens list first",
+   "0% maker fees on spot and futures",
+   "Ultra-low futures taker fees",
+   "Up to 200x leverage with copy trading"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "GB",
+   "CN",
+   "HK",
+   "SG",
+   "KP",
+   "IR",
+   "CU",
+   "SD"
+  ],
+  "unclear": [
+   "KZ"
+  ],
+  "summary": "MEXC is famous for listing new altcoins first and for some of the lowest trading fees in the industry — 0% maker fees on spot and futures. With 2,700+ coins and up to 200x leverage, it is a favourite of altcoin and futures traders.",
+  "top_pick": false
+ },
+ {
+  "slug": "kucoin",
+  "name": "KuCoin",
+  "type": "crypto",
+  "domain": "kucoin.com",
+  "color": "#23AF91",
+  "tagline": "1,000+ coins and trading bots",
+  "score": 8.8,
+  "founded": "2017",
+  "ref_code": "rMCZH8J",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "No initial deposit required; crypto deposits are free.",
+  "max_leverage": "Up to 125x on futures",
+  "fees": "Spot 0.10% / 0.10% (KCS discount) · Futures 0.02% maker / 0.06% taker",
+  "coins": "1,000+ coins, 1,300+ pairs",
+  "copy_trading": "Yes",
+  "features": "Spot, margin, futures, trading bots, copy trading, Earn",
+  "regulation": "MiCA-authorised in the EU through KuCoin EU (Austria), registered with FIU-IND in India and AUSTRAC in Australia; SOC 2 Type II and ISO 27001 certified.",
+  "licences": [
+   {
+    "country": "AT",
+    "regulator": "Austrian FMA – MiCA CASP authorisation",
+    "entity": "KuCoin EU Exchange GmbH",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "IN",
+    "regulator": "Financial Intelligence Unit – India (FIU-IND)",
+    "entity": "KuCoin group entity",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "AU",
+    "regulator": "AUSTRAC – Digital Currency Exchange",
+    "entity": "KuCoin group entity",
+    "number": "—",
+    "tier": "AML registration"
+   }
+  ],
+  "kyc": "Quick ID verification to trade and withdraw.",
+  "best_for": "Altcoin traders and users of automated trading bots",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.kucoin.com/r/af/rMCZH8J"
+   }
+  ],
+  "pros": [
+   "1,000+ coins including many small caps",
+   "Built-in trading bots (grid, DCA)",
+   "SOC 2 Type II & ISO 27001 security certifications",
+   "Proof of reserves audited by Hacken"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CN",
+   "HK",
+   "SG",
+   "MY",
+   "FR",
+   "NL",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [
+   "CA",
+   "TH"
+  ],
+  "summary": "KuCoin is a large global exchange launched in 2017 with more than 1,000 coins, built-in trading bots and copy trading. Its EU entity is MiCA-authorised in Austria and it is registered in India and Australia, with audited proof of reserves.",
+  "top_pick": false
+ },
+ {
+  "slug": "bitbase",
+  "name": "BitBase",
+  "type": "crypto",
+  "domain": "bitbase.com",
+  "color": "#7A5CFF",
+  "tagline": "New exchange with 150x perpetual futures",
+  "score": 8.2,
+  "founded": "2026",
+  "ref_code": "BNOHL2",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit supported crypto by address/QR code or buy USDT/BTC through payment partners.",
+  "max_leverage": "Up to 150x on perpetual futures",
+  "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
+  "coins": "50+ coins, 120+ pairs",
+  "copy_trading": "—",
+  "features": "Spot, USDT/USDC-margined perpetual futures, protection fund",
+  "regulation": "Registered company headquartered in Panama, with a user protection fund.",
+  "licences": [
+   {
+    "country": "PA",
+    "regulator": "Company registration (Panama)",
+    "entity": "BitBase",
+    "number": "—",
+    "tier": "Company registration"
+   }
+  ],
+  "kyc": "Simple tiered verification at sign-up.",
+  "best_for": "Traders wanting a new futures venue with USDC margin",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.bitbase.com/accounts/register?ref=BNOHL2"
+   }
+  ],
+  "pros": [
+   "USDT and USDC-margined perpetual futures up to 150x",
+   "Competitive futures fees",
+   "Advanced order types (Post-Only, Trigger)",
+   "iOS app available"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CN",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [],
+  "summary": "BitBase is a new Panama-based exchange that opened to the public in April 2026, offering spot trading and both USDT- and USDC-margined perpetual futures with up to 150x leverage, advanced order types and a protection fund.",
+  "top_pick": false
+ }
 ]

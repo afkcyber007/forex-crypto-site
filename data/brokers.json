@@ -1,186 +1,948 @@
 [
-  {
-    "slug": "exness", "name": "Exness", "type": "forex", "domain": "exness.com", "color": "#F5C400",
-    "tagline": "Lowest entry deposit and instant withdrawals", "score": 9.4, "founded": "2008",
-    "min_deposit": "$10", "min_deposit_note": "Standard and Standard Cent accounts start from $10; Pro, Raw Spread and Zero accounts from $200.",
-    "max_leverage": "Up to 1:Unlimited (conditions apply)", "spreads": "From 0.0 pips (Raw/Zero) · from ~1.0 pips (Standard)",
-    "platforms": "MT4, MT5, Exness Terminal, Exness Trade app", "copy_trading": "Yes – Exness Social Trading",
-    "regulation": "Regulated by the FCA (UK), CySEC (Cyprus), FSCA (South Africa), CMA (Kenya), FSA (Seychelles), FSC (Mauritius & BVI) and CBCS (Curaçao).",
-    "licences": [
-      {"country": "GB", "regulator": "Financial Conduct Authority (FCA)", "entity": "Exness (UK) Ltd", "number": "FRN 730729", "tier": "Top-tier"},
-      {"country": "CY", "regulator": "Cyprus Securities and Exchange Commission (CySEC)", "entity": "Exness (Cy) Ltd", "number": "178/12", "tier": "Top-tier"},
-      {"country": "ZA", "regulator": "Financial Sector Conduct Authority (FSCA)", "entity": "Exness ZA (Pty) Ltd", "number": "FSP 51024", "tier": "Mid-tier"},
-      {"country": "KE", "regulator": "Capital Markets Authority (CMA)", "entity": "Exness (KE) Limited", "number": "162", "tier": "Mid-tier"},
-      {"country": "SC", "regulator": "Financial Services Authority (FSA)", "entity": "Exness (SC) Ltd", "number": "SD025", "tier": "Offshore"},
-      {"country": "MU", "regulator": "Financial Services Commission (FSC)", "entity": "Exness (MU) Ltd", "number": "GB20025294", "tier": "Offshore"},
-      {"country": "VG", "regulator": "Financial Services Commission (FSC BVI)", "entity": "Exness (VG) Ltd", "number": "SIBA/L/20/1133", "tier": "Offshore"},
-      {"country": "CW", "regulator": "Central Bank of Curaçao and Sint Maarten (CBCS)", "entity": "Exness B.V.", "number": "0003LSI", "tier": "Offshore"},
-      {"country": "BZ", "regulator": "Financial Services Commission (FSC Belize)", "entity": "Forexite Ltd", "number": "9110312", "tier": "Offshore"}
-    ],
-    "best_for": "Beginners, small accounts, gold (XAUUSD) traders",
-    "links": [{"label": "Visit Site", "url": "https://one.exnesstrack.org/a/o6h1j4gy9b"}],
-    "pros": ["$10 minimum deposit on Standard accounts", "Instant automatic withdrawals on most methods", "9 licences incl. FCA and CySEC", "Huge range of local payment methods"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "IR", "KP", "SY", "CU", "SD"], "unclear": [],
-    "summary": "Exness is one of the largest retail forex brokers in the world by trading volume. Traders choose it for its very low minimum deposit, tight spreads on gold and major pairs, flexible leverage and fast automated withdrawals, all backed by nine licences including the UK FCA and CySEC."
-  },
-  {
-    "slug": "ic-markets", "name": "IC Markets", "type": "forex", "domain": "icmarkets.com", "color": "#1E73BE",
-    "tagline": "Raw spreads for scalpers and algo traders", "score": 9.2, "founded": "2007",
-    "min_deposit": "$200", "min_deposit_note": "Recommended starting deposit of $200 (or equivalent) on Standard and Raw Spread accounts.",
-    "max_leverage": "Up to 1:1000", "spreads": "From 0.0 pips + $7 round-turn (Raw) · from 0.8 pips (Standard)",
-    "platforms": "MT4, MT5, cTrader, TradingView", "copy_trading": "Yes – IC Social, ZuluTrade, Myfxbook",
-    "regulation": "Regulated by ASIC (Australia), CySEC (Cyprus), SCB (Bahamas) and FSA (Seychelles).",
-    "licences": [
-      {"country": "AU", "regulator": "Australian Securities & Investments Commission (ASIC)", "entity": "International Capital Markets Pty Ltd", "number": "AFSL 335692", "tier": "Top-tier"},
-      {"country": "CY", "regulator": "Cyprus Securities and Exchange Commission (CySEC)", "entity": "IC Markets (EU) Ltd", "number": "362/18", "tier": "Top-tier"},
-      {"country": "BS", "regulator": "Securities Commission of The Bahamas (SCB)", "entity": "Raw Trading Ltd", "number": "SIA-F214", "tier": "Mid-tier"},
-      {"country": "SC", "regulator": "Financial Services Authority (FSA)", "entity": "Raw Trading Ltd", "number": "SD018", "tier": "Offshore"}
-    ],
-    "best_for": "Scalpers, EA / robot traders, cTrader users",
-    "links": [{"label": "Visit Site", "url": "https://icmarkets.com/?camp=82974"}],
-    "pros": ["Raw spreads from 0.0 pips with deep liquidity", "MT4, MT5, cTrader and TradingView", "Tier-1 regulation from ASIC and CySEC", "Built for EA and scalping strategies"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "NZ", "IL", "IR", "KP", "SY", "CU", "SD"], "unclear": [],
-    "summary": "IC Markets is an Australian-founded true-ECN broker known for raw spreads from 0.0 pips, lightning-fast execution and the widest platform choice in the industry — MT4, MT5, cTrader and TradingView. It is a favourite of scalpers and automated (EA) traders worldwide."
-  },
-  {
-    "slug": "hfm", "name": "HFM", "type": "forex", "domain": "hfm.com", "color": "#C8102E",
-    "tagline": "HotForex — $0 minimum and 7 licences incl. FCA & DFSA", "score": 9.1, "founded": "2010",
-    "min_deposit": "$0", "min_deposit_note": "No minimum on Cent, Premium and Zero accounts. Formerly known as HotForex.",
-    "max_leverage": "Up to 1:2000", "spreads": "From 0.0 pips + $3/side (Zero) · from 1.2 pips (Premium, no commission)",
-    "platforms": "MT4, MT5, HFM app, WebTrader", "copy_trading": "Yes – HFCOPY",
-    "regulation": "Regulated by the FCA (UK), CySEC (Cyprus), DFSA (Dubai), FSCA (South Africa), CMA (Kenya), FSC (Mauritius) and FSA (Seychelles).",
-    "licences": [
-      {"country": "GB", "regulator": "Financial Conduct Authority (FCA)", "entity": "HF Markets (UK) Ltd", "number": "FRN 801701", "tier": "Top-tier"},
-      {"country": "CY", "regulator": "Cyprus Securities and Exchange Commission (CySEC)", "entity": "HF Markets (Europe) Ltd", "number": "183/12", "tier": "Top-tier"},
-      {"country": "AE", "regulator": "Dubai Financial Services Authority (DFSA)", "entity": "HF Markets (DIFC) Ltd", "number": "F004885", "tier": "Top-tier"},
-      {"country": "ZA", "regulator": "Financial Sector Conduct Authority (FSCA)", "entity": "HF Markets SA (Pty) Ltd", "number": "FSP 46632", "tier": "Mid-tier"},
-      {"country": "KE", "regulator": "Capital Markets Authority (CMA)", "entity": "HFM Kenya entity", "number": "155", "tier": "Mid-tier"},
-      {"country": "MU", "regulator": "Financial Services Commission (FSC)", "entity": "HFM Mauritius entity", "number": "C110008214", "tier": "Offshore"},
-      {"country": "SC", "regulator": "Financial Services Authority (FSA)", "entity": "HF Markets (Seychelles) Ltd", "number": "SD015", "tier": "Offshore"}
-    ],
-    "best_for": "All-round traders, copy trading, very high leverage",
-    "links": [{"label": "Visit Site", "url": "https://register.grouphf.com/sv/en/new-live-account/?refid=359861"}],
-    "pros": ["$0 minimum deposit on popular accounts", "7 licences incl. FCA, CySEC and Dubai DFSA", "HFCOPY copy-trading platform", "Leverage up to 1:2000"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "IR", "KP", "SY", "CU", "SD"], "unclear": [],
-    "summary": "HFM (formerly HotForex) is a multi-award-winning broker operating since 2010, regulated by seven authorities including the UK FCA, CySEC and the Dubai DFSA. It combines a $0 minimum deposit, raw-spread Zero accounts, MT4/MT5 and the HFCOPY copy-trading platform."
-  },
-  {
-    "slug": "vantage", "name": "Vantage", "type": "forex", "domain": "vantagemarkets.com", "color": "#0B5CFF",
-    "tagline": "Low-cost Raw ECN with copy trading", "score": 9.0, "founded": "2009",
-    "min_deposit": "$50", "min_deposit_note": "$50 on Standard STP and Raw ECN accounts; Pro ECN from $10,000.",
-    "max_leverage": "Up to 1:1000", "spreads": "From 0.0 pips + $6 round-turn (Raw ECN) · from 1.0 pips (Standard STP)",
-    "platforms": "MT4, MT5, TradingView, Vantage app", "copy_trading": "Yes – Vantage copy trading app",
-    "regulation": "Regulated by ASIC (Australia), FCA (UK), FSCA (South Africa), CIMA (Cayman Islands) and VFSC (Vanuatu).",
-    "licences": [
-      {"country": "AU", "regulator": "Australian Securities & Investments Commission (ASIC)", "entity": "Vantage Global Prime Pty Ltd", "number": "AFSL 428901", "tier": "Top-tier"},
-      {"country": "GB", "regulator": "Financial Conduct Authority (FCA)", "entity": "Vantage Global Prime LLP", "number": "OC376560", "tier": "Top-tier"},
-      {"country": "ZA", "regulator": "Financial Sector Conduct Authority (FSCA)", "entity": "Vantage Markets (Pty) Ltd", "number": "FSP 51268", "tier": "Mid-tier"},
-      {"country": "KY", "regulator": "Cayman Islands Monetary Authority (CIMA)", "entity": "Vantage International Group Ltd", "number": "SIBL 1383491", "tier": "Mid-tier"},
-      {"country": "VU", "regulator": "Vanuatu Financial Services Commission (VFSC)", "entity": "Vantage Global Limited", "number": "700271", "tier": "Offshore"}
-    ],
-    "best_for": "Copy traders, low-cost ECN trading, TradingView users",
-    "links": [
-      {"label": "Visit Site · Asia", "url": "https://vigco.co/la-com-inv/XkcMR6wv"},
-      {"label": "Visit Site · Worldwide", "url": "https://vigco.co/la-com-inv/DTGZ6dQx"}
-    ],
-    "pros": ["$50 minimum on Raw ECN — cheap access to tight spreads", "Built-in copy trading in the Vantage app", "TradingView integration", "Regulated by ASIC and the FCA"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "JP", "SG", "CN", "IR", "KP", "SY", "CU", "SD"], "unclear": ["IN"],
-    "summary": "Vantage is a multi-asset CFD broker combining a low $50 entry point with Raw ECN pricing, TradingView support and an in-app copy-trading feature, regulated by ASIC and the FCA. Traders in Asia can use the Asia server link; everyone else uses the Worldwide link."
-  },
-  {
-    "slug": "avatrade", "name": "AvaTrade", "type": "forex", "domain": "avatrade.com", "color": "#0A3D91",
-    "tagline": "Most regulated — 9 licences on 6 continents", "score": 8.9, "founded": "2006",
-    "min_deposit": "$100", "min_deposit_note": "Minimum deposit of $100 (or equivalent) by card or e-wallet.",
-    "max_leverage": "Up to 1:400 (1:30 for EU/AU retail)", "spreads": "Fixed-style spreads from 0.9 pips (EURUSD avg ~0.8–0.9), no commission",
-    "platforms": "MT4, MT5, AvaTradeGO, AvaOptions, WebTrader", "copy_trading": "Yes – AvaSocial, DupliTrade, ZuluTrade",
-    "regulation": "Regulated by the Central Bank of Ireland, ASIC (Australia), CySEC, FSCA (South Africa), FSRA (Abu Dhabi), JFSA (Japan), ISA (Israel) and BVI FSC.",
-    "licences": [
-      {"country": "IE", "regulator": "Central Bank of Ireland (CBI)", "entity": "AVA Trade EU Ltd", "number": "C53877", "tier": "Top-tier"},
-      {"country": "AU", "regulator": "Australian Securities & Investments Commission (ASIC)", "entity": "AVA Capital Markets Australia Pty Ltd", "number": "AFSL 406684", "tier": "Top-tier"},
-      {"country": "CY", "regulator": "Cyprus Securities and Exchange Commission (CySEC)", "entity": "AvaTrade EU entity", "number": "347/17", "tier": "Top-tier"},
-      {"country": "JP", "regulator": "Financial Services Agency (JFSA)", "entity": "Ava Trade Japan K.K.", "number": "1662", "tier": "Top-tier"},
-      {"country": "AE", "regulator": "Financial Services Regulatory Authority (FSRA), ADGM", "entity": "AVA Trade Middle East Ltd", "number": "190018", "tier": "Top-tier"},
-      {"country": "IL", "regulator": "Israel Securities Authority (ISA)", "entity": "AvaTrade Israel entity", "number": "514666577", "tier": "Top-tier"},
-      {"country": "ZA", "regulator": "Financial Sector Conduct Authority (FSCA)", "entity": "AVA Capital Markets Pty Ltd", "number": "FSP 45984", "tier": "Mid-tier"},
-      {"country": "VG", "regulator": "Financial Services Commission (FSC BVI)", "entity": "AVA Trade Markets Ltd", "number": "SIBA/L/13/1049", "tier": "Offshore"}
-    ],
-    "best_for": "Safety-first traders, beginners, options and social trading",
-    "links": [{"label": "Visit Site", "url": "https://www.avatrade.com/trading-account?tag=rf19459580"}],
-    "pros": ["One of the most regulated brokers in the world", "No commission on standard trading", "AvaOptions and AvaTradeGO apps", "Copy trading via AvaSocial, DupliTrade and ZuluTrade"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "IR", "KP", "SY", "CU", "SD"], "unclear": [],
-    "summary": "AvaTrade, founded in 2006, is one of the most heavily regulated forex brokers in the world, with licences from the Central Bank of Ireland, ASIC, CySEC, Japan's FSA, Abu Dhabi's FSRA and more. It offers commission-free trading, MT4/MT5, the AvaTradeGO app, options trading and several copy-trading services."
-  },
-  {
-    "slug": "octa", "name": "Octa", "type": "forex", "domain": "octafx.com", "color": "#2E5BFF",
-    "tagline": "OctaFX — zero-commission trading from $25", "score": 8.8, "founded": "2011",
-    "min_deposit": "$25", "min_deposit_note": "Start from $25 on MT4, MT5 and OctaTrader accounts. Formerly known as OctaFX.",
-    "max_leverage": "Up to 1:1000", "spreads": "From 0.6 pips, no commission on all accounts",
-    "platforms": "OctaTrader, MT4, MT5", "copy_trading": "Yes – Octa Copytrading",
-    "regulation": "Regulated by CySEC (Cyprus), FSCA (South Africa), FSC (Mauritius) and MISA (Comoros).",
-    "licences": [
-      {"country": "CY", "regulator": "Cyprus Securities and Exchange Commission (CySEC)", "entity": "Octa Markets Cyprus Ltd", "number": "372/18", "tier": "Top-tier"},
-      {"country": "ZA", "regulator": "Financial Sector Conduct Authority (FSCA)", "entity": "Orinoco Capital (Pty) Ltd", "number": "FSP 51913", "tier": "Mid-tier"},
-      {"country": "MU", "regulator": "Financial Services Commission (FSC)", "entity": "Uni Fin Invest", "number": "GB21027161", "tier": "Offshore"},
-      {"country": "KM", "regulator": "Mwali International Services Authority (MISA)", "entity": "Octa Markets Ltd", "number": "HY00623410", "tier": "Offshore"}
-    ],
-    "best_for": "Commission-free trading, copy trading, Islamic accounts",
-    "links": [{"label": "Visit Site", "url": "https://clickto.trade/bWlYywAuEzO?ib=505744"}],
-    "pros": ["No commission and no swap (Islamic-friendly) trading", "$25 minimum deposit", "Octa Copytrading built in", "Own OctaTrader platform plus MT4 and MT5"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "GB", "JP", "IL", "NZ", "SG", "UA", "MM", "IR", "KP", "SY", "CU", "SD"],
-    "unclear": ["IN", "PK", "PH", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
-    "summary": "Octa (formerly OctaFX) has served traders since 2011 and is known for commission-free, swap-free trading, a low $25 minimum deposit and its own OctaTrader platform alongside MT4 and MT5. It is regulated by CySEC, the FSCA, the FSC Mauritius and MISA, and offers built-in copy trading."
-  },
-  {
-    "slug": "pu-prime", "name": "PU Prime", "type": "forex", "domain": "puprime.com", "color": "#E4002B",
-    "tagline": "Cent accounts from $20 and frequent promotions", "score": 8.7, "founded": "2015",
-    "min_deposit": "$20", "min_deposit_note": "$20 Cent account, $50 Standard, $1,000 Prime, $10,000 ECN.",
-    "max_leverage": "Up to 1:1000", "spreads": "From 0.0 pips (Prime/ECN) · from 1.3 pips (Standard, no commission)",
-    "platforms": "MT4, MT5, PU Prime App, WebTrader", "copy_trading": "Yes – PU Social & copy trading",
-    "regulation": "Regulated by the FSCA (South Africa), FSA (Seychelles) and FSC (Mauritius), with a UAE CMA licence for introduction and promotion.",
-    "licences": [
-      {"country": "ZA", "regulator": "Financial Sector Conduct Authority (FSCA)", "entity": "PU Prime (Pty) Ltd", "number": "FSP 52218", "tier": "Mid-tier"},
-      {"country": "AE", "regulator": "Capital Market Authority (CMA), UAE – introduction & promotion", "entity": "PU Prime Financial Services LLC", "number": "20200000388", "tier": "Mid-tier"},
-      {"country": "SC", "regulator": "Financial Services Authority (FSA)", "entity": "PU Prime Ltd", "number": "SD050", "tier": "Offshore"},
-      {"country": "MU", "regulator": "Financial Services Commission (FSC)", "entity": "PU Prime Ltd", "number": "GB23202672", "tier": "Offshore"}
-    ],
-    "best_for": "Learning with cent accounts, bonus hunters",
-    "links": [{"label": "Visit Site", "url": "https://puvip.co/la-partners/Vh8X6AHJ"}],
-    "pros": ["$20 Cent account to practise with real money", "Copy trading and social trading apps", "Negative balance protection", "Regular deposit promotions"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "GB", "SG", "AU", "CN", "RU", "PH", "IR", "KP", "SY", "CU", "SD"], "unclear": [],
-    "summary": "PU Prime (Pacific Union) offers a low-cost $20 Cent account, MT4/MT5, copy trading and regular promotions, regulated by the FSCA in South Africa along with international licences. It is a great choice for new traders who want to start small."
-  },
-  {
-    "slug": "roboforex", "name": "RoboForex", "type": "forex", "domain": "roboforex.com", "color": "#00A651",
-    "tagline": "$10 start, 1:2000 leverage and stock trading", "score": 8.6, "founded": "2009",
-    "min_deposit": "$10", "min_deposit_note": "$10 on Pro, ProCent, Prime and ECN accounts; $100 for R StocksTrader.",
-    "max_leverage": "Up to 1:2000", "spreads": "From 0.0 pips + $4 round-turn (ECN) · from 1.3 pips (Pro, no commission)",
-    "platforms": "MT4, MT5, R StocksTrader, RoboForex app", "copy_trading": "Yes – CopyFX",
-    "regulation": "Regulated by the Financial Services Commission (FSC) of Belize.",
-    "licences": [
-      {"country": "BZ", "regulator": "Financial Services Commission (FSC Belize)", "entity": "RoboForex Ltd", "number": "—", "tier": "Offshore"}
-    ],
-    "best_for": "Small accounts, high leverage, stocks and ETFs",
-    "links": [{"label": "Visit Site", "url": "https://my.roboforex.com/en/?a=jmvkd"}],
-    "pros": ["$10 minimum deposit", "Leverage up to 1:2000", "12,000+ stocks and ETFs on R StocksTrader", "CopyFX copy-trading platform"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "JP", "AU", "BZ", "IR", "KP", "SY", "CU"],
-    "unclear": ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
-    "summary": "RoboForex has operated since 2009 and is popular for its $10 minimum deposit, leverage up to 1:2000, raw-spread ECN accounts and the R StocksTrader platform with thousands of stocks and ETFs. Its CopyFX service lets you copy experienced traders automatically."
-  },
-  {
-    "slug": "instaforex", "name": "InstaForex", "type": "forex", "domain": "instaforex.com", "color": "#D71920",
-    "tagline": "Start with just $1 — ForexCopy included", "score": 8.4, "founded": "2007",
-    "min_deposit": "$1", "min_deposit_note": "Open an account with as little as $1.",
-    "max_leverage": "Up to 1:1000", "spreads": "From 0 pips (Eurica accounts, commission) · Standard accounts with no commission",
-    "platforms": "MT4, MT5, MultiTerminal, WebTrader, mobile apps", "copy_trading": "Yes – ForexCopy",
-    "regulation": "Regulated by the British Virgin Islands Financial Services Commission (BVI FSC).",
-    "licences": [
-      {"country": "VG", "regulator": "Financial Services Commission (FSC BVI)", "entity": "InstaFinance Ltd", "number": "SIBA/L/14/1082", "tier": "Offshore"}
-    ],
-    "best_for": "Absolute beginners, micro deposits, copy trading",
-    "links": [{"label": "Visit Site", "url": "https://www.instaforex.com/?x=URSMP"}],
-    "pros": ["$1 minimum deposit — the lowest anywhere", "Leverage up to 1:1000", "ForexCopy copy-trading system", "MT4, MT5 and MultiTerminal"],
-    "restricted": ["US", "PR", "GU", "VI", "AS", "MP", "CA", "JP", "IR", "KP", "SY", "CU"],
-    "unclear": ["GB", "AU", "NZ", "AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE"],
-    "summary": "InstaForex, founded in 2007, is famous for its $1 minimum deposit, leverage up to 1:1000 and its ForexCopy system that lets beginners follow experienced traders. It supports MT4, MT5 and MultiTerminal and is regulated by the BVI Financial Services Commission."
-  }
+ {
+  "slug": "exness",
+  "name": "Exness",
+  "type": "forex",
+  "domain": "exness.com",
+  "color": "#F5C400",
+  "tagline": "Lowest entry deposit and instant withdrawals",
+  "score": 9.4,
+  "founded": "2008",
+  "min_deposit": "$10",
+  "min_deposit_note": "Standard and Standard Cent accounts start from $10; Pro, Raw Spread and Zero accounts from $200.",
+  "max_leverage": "Up to 1:Unlimited (conditions apply)",
+  "spreads": "From 0.0 pips (Raw/Zero) · from ~1.0 pips (Standard)",
+  "platforms": "MT4, MT5, Exness Terminal, Exness Trade app",
+  "copy_trading": "Yes – Exness Social Trading",
+  "regulation": "Regulated by the FCA (UK), CySEC (Cyprus), FSCA (South Africa), CMA (Kenya), FSA (Seychelles), FSC (Mauritius & BVI) and CBCS (Curaçao).",
+  "licences": [
+   {
+    "country": "GB",
+    "regulator": "Financial Conduct Authority (FCA)",
+    "entity": "Exness (UK) Ltd",
+    "number": "FRN 730729",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "Exness (Cy) Ltd",
+    "number": "178/12",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "ZA",
+    "regulator": "Financial Sector Conduct Authority (FSCA)",
+    "entity": "Exness ZA (Pty) Ltd",
+    "number": "FSP 51024",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "KE",
+    "regulator": "Capital Markets Authority (CMA)",
+    "entity": "Exness (KE) Limited",
+    "number": "162",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "SC",
+    "regulator": "Financial Services Authority (FSA)",
+    "entity": "Exness (SC) Ltd",
+    "number": "SD025",
+    "tier": "Offshore"
+   },
+   {
+    "country": "MU",
+    "regulator": "Financial Services Commission (FSC)",
+    "entity": "Exness (MU) Ltd",
+    "number": "GB20025294",
+    "tier": "Offshore"
+   },
+   {
+    "country": "VG",
+    "regulator": "Financial Services Commission (FSC BVI)",
+    "entity": "Exness (VG) Ltd",
+    "number": "SIBA/L/20/1133",
+    "tier": "Offshore"
+   },
+   {
+    "country": "CW",
+    "regulator": "Central Bank of Curaçao and Sint Maarten (CBCS)",
+    "entity": "Exness B.V.",
+    "number": "0003LSI",
+    "tier": "Offshore"
+   },
+   {
+    "country": "BZ",
+    "regulator": "Financial Services Commission (FSC Belize)",
+    "entity": "Forexite Ltd",
+    "number": "9110312",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Beginners, small accounts, gold (XAUUSD) traders",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://one.exnesstrack.org/a/o6h1j4gy9b"
+   }
+  ],
+  "pros": [
+   "$10 minimum deposit on Standard accounts",
+   "Instant automatic withdrawals on most methods",
+   "9 licences incl. FCA and CySEC",
+   "Huge range of local payment methods"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [],
+  "summary": "Exness is one of the largest retail forex brokers in the world by trading volume. Traders choose it for its very low minimum deposit, tight spreads on gold and major pairs, flexible leverage and fast automated withdrawals, all backed by nine licences including the UK FCA and CySEC.",
+  "top_pick": true
+ },
+ {
+  "slug": "vantage",
+  "name": "Vantage",
+  "type": "forex",
+  "domain": "vantagemarkets.com",
+  "color": "#0B5CFF",
+  "tagline": "Low-cost Raw ECN with copy trading",
+  "score": 9.3,
+  "founded": "2009",
+  "min_deposit": "$50",
+  "min_deposit_note": "$50 on Standard STP and Raw ECN accounts; Pro ECN from $10,000.",
+  "max_leverage": "Up to 1:1000",
+  "spreads": "From 0.0 pips + $6 round-turn (Raw ECN) · from 1.0 pips (Standard STP)",
+  "platforms": "MT4, MT5, TradingView, Vantage app",
+  "copy_trading": "Yes – Vantage copy trading app",
+  "regulation": "Regulated by ASIC (Australia), FCA (UK), FSCA (South Africa), CIMA (Cayman Islands) and VFSC (Vanuatu).",
+  "licences": [
+   {
+    "country": "AU",
+    "regulator": "Australian Securities & Investments Commission (ASIC)",
+    "entity": "Vantage Global Prime Pty Ltd",
+    "number": "AFSL 428901",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "GB",
+    "regulator": "Financial Conduct Authority (FCA)",
+    "entity": "Vantage Global Prime LLP",
+    "number": "OC376560",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "ZA",
+    "regulator": "Financial Sector Conduct Authority (FSCA)",
+    "entity": "Vantage Markets (Pty) Ltd",
+    "number": "FSP 51268",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "KY",
+    "regulator": "Cayman Islands Monetary Authority (CIMA)",
+    "entity": "Vantage International Group Ltd",
+    "number": "SIBL 1383491",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "VU",
+    "regulator": "Vanuatu Financial Services Commission (VFSC)",
+    "entity": "Vantage Global Limited",
+    "number": "700271",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Copy traders, low-cost ECN trading, TradingView users",
+  "links": [
+   {
+    "label": "Visit Site · Asia",
+    "url": "https://vigco.co/la-com-inv/XkcMR6wv"
+   },
+   {
+    "label": "Visit Site · Worldwide",
+    "url": "https://vigco.co/la-com-inv/DTGZ6dQx"
+   }
+  ],
+  "pros": [
+   "$50 minimum on Raw ECN — cheap access to tight spreads",
+   "Built-in copy trading in the Vantage app",
+   "TradingView integration",
+   "Regulated by ASIC and the FCA"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "JP",
+   "SG",
+   "CN",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [
+   "IN"
+  ],
+  "summary": "Vantage is a multi-asset CFD broker combining a low $50 entry point with Raw ECN pricing, TradingView support and an in-app copy-trading feature, regulated by ASIC and the FCA. Traders in Asia can use the Asia server link; everyone else uses the Worldwide link.",
+  "top_pick": true
+ },
+ {
+  "slug": "ic-markets",
+  "name": "IC Markets",
+  "type": "forex",
+  "domain": "icmarkets.com",
+  "color": "#1E73BE",
+  "tagline": "Raw spreads for scalpers and algo traders",
+  "score": 9.2,
+  "founded": "2007",
+  "min_deposit": "$200",
+  "min_deposit_note": "Recommended starting deposit of $200 (or equivalent) on Standard and Raw Spread accounts.",
+  "max_leverage": "Up to 1:1000",
+  "spreads": "From 0.0 pips + $7 round-turn (Raw) · from 0.8 pips (Standard)",
+  "platforms": "MT4, MT5, cTrader, TradingView",
+  "copy_trading": "Yes – IC Social, ZuluTrade, Myfxbook",
+  "regulation": "Regulated by ASIC (Australia), CySEC (Cyprus), SCB (Bahamas) and FSA (Seychelles).",
+  "licences": [
+   {
+    "country": "AU",
+    "regulator": "Australian Securities & Investments Commission (ASIC)",
+    "entity": "International Capital Markets Pty Ltd",
+    "number": "AFSL 335692",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "IC Markets (EU) Ltd",
+    "number": "362/18",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "BS",
+    "regulator": "Securities Commission of The Bahamas (SCB)",
+    "entity": "Raw Trading Ltd",
+    "number": "SIA-F214",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "SC",
+    "regulator": "Financial Services Authority (FSA)",
+    "entity": "Raw Trading Ltd",
+    "number": "SD018",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Scalpers, EA / robot traders, cTrader users",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://icmarkets.com/?camp=82974"
+   }
+  ],
+  "pros": [
+   "Raw spreads from 0.0 pips with deep liquidity",
+   "MT4, MT5, cTrader and TradingView",
+   "Tier-1 regulation from ASIC and CySEC",
+   "Built for EA and scalping strategies"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "NZ",
+   "IL",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [],
+  "summary": "IC Markets is an Australian-founded true-ECN broker known for raw spreads from 0.0 pips, lightning-fast execution and the widest platform choice in the industry — MT4, MT5, cTrader and TradingView. It is a favourite of scalpers and automated (EA) traders worldwide.",
+  "top_pick": false
+ },
+ {
+  "slug": "hfm",
+  "name": "HFM",
+  "type": "forex",
+  "domain": "hfm.com",
+  "color": "#C8102E",
+  "tagline": "HotForex — $0 minimum and 7 licences incl. FCA & DFSA",
+  "score": 9.1,
+  "founded": "2010",
+  "min_deposit": "$0",
+  "min_deposit_note": "No minimum on Cent, Premium and Zero accounts. Formerly known as HotForex.",
+  "max_leverage": "Up to 1:2000",
+  "spreads": "From 0.0 pips + $3/side (Zero) · from 1.2 pips (Premium, no commission)",
+  "platforms": "MT4, MT5, HFM app, WebTrader",
+  "copy_trading": "Yes – HFCOPY",
+  "regulation": "Regulated by the FCA (UK), CySEC (Cyprus), DFSA (Dubai), FSCA (South Africa), CMA (Kenya), FSC (Mauritius) and FSA (Seychelles).",
+  "licences": [
+   {
+    "country": "GB",
+    "regulator": "Financial Conduct Authority (FCA)",
+    "entity": "HF Markets (UK) Ltd",
+    "number": "FRN 801701",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "HF Markets (Europe) Ltd",
+    "number": "183/12",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AE",
+    "regulator": "Dubai Financial Services Authority (DFSA)",
+    "entity": "HF Markets (DIFC) Ltd",
+    "number": "F004885",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "ZA",
+    "regulator": "Financial Sector Conduct Authority (FSCA)",
+    "entity": "HF Markets SA (Pty) Ltd",
+    "number": "FSP 46632",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "KE",
+    "regulator": "Capital Markets Authority (CMA)",
+    "entity": "HFM Kenya entity",
+    "number": "155",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "MU",
+    "regulator": "Financial Services Commission (FSC)",
+    "entity": "HFM Mauritius entity",
+    "number": "C110008214",
+    "tier": "Offshore"
+   },
+   {
+    "country": "SC",
+    "regulator": "Financial Services Authority (FSA)",
+    "entity": "HF Markets (Seychelles) Ltd",
+    "number": "SD015",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "All-round traders, copy trading, very high leverage",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://register.grouphf.com/sv/en/new-live-account/?refid=359861"
+   }
+  ],
+  "pros": [
+   "$0 minimum deposit on popular accounts",
+   "7 licences incl. FCA, CySEC and Dubai DFSA",
+   "HFCOPY copy-trading platform",
+   "Leverage up to 1:2000"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [],
+  "summary": "HFM (formerly HotForex) is a multi-award-winning broker operating since 2010, regulated by seven authorities including the UK FCA, CySEC and the Dubai DFSA. It combines a $0 minimum deposit, raw-spread Zero accounts, MT4/MT5 and the HFCOPY copy-trading platform.",
+  "top_pick": false
+ },
+ {
+  "slug": "eightcap",
+  "name": "Eightcap",
+  "type": "forex",
+  "domain": "eightcap.com",
+  "color": "#0FB5AE",
+  "tagline": "TradingView broker + funded challenges up to $200K",
+  "score": 9.0,
+  "founded": "2009",
+  "min_deposit": "$100",
+  "min_deposit_note": "$100 to open a trading account. Eightcap Challenges (funded accounts) start from $99 for a $10,000 account.",
+  "max_leverage": "Up to 1:500",
+  "spreads": "From 0.0 pips + $3.50/side (Raw) · from 1.0 pips (Standard, no commission)",
+  "platforms": "MT4, MT5, TradingView, TradeLocker (Challenges)",
+  "copy_trading": "Funded challenges – 80–90% profit split",
+  "regulation": "Regulated by ASIC (Australia), the FCA (UK), CySEC (Cyprus), the SCB (Bahamas), the FSA (Seychelles) and the FSC (Mauritius).",
+  "licences": [
+   {
+    "country": "AU",
+    "regulator": "Australian Securities & Investments Commission (ASIC)",
+    "entity": "Eightcap Pty Ltd",
+    "number": "AFSL 391441",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "GB",
+    "regulator": "Financial Conduct Authority (FCA)",
+    "entity": "Eightcap Group Ltd",
+    "number": "FRN 921296",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "Eightcap EU Ltd",
+    "number": "246/14",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "BS",
+    "regulator": "Securities Commission of The Bahamas (SCB)",
+    "entity": "Eightcap Global Limited",
+    "number": "SIA-F220",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "SC",
+    "regulator": "Financial Services Authority (FSA)",
+    "entity": "Eightcap Seychelles entity",
+    "number": "SD100",
+    "tier": "Offshore"
+   },
+   {
+    "country": "MU",
+    "regulator": "Financial Services Commission (FSC)",
+    "entity": "Eightcap Mauritius entity",
+    "number": "GB25204603",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "TradingView users and traders who want a funded account",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://challenges.eightcap.com/?ref_id=3025&campaign_id=1"
+   }
+  ],
+  "pros": [
+   "Eightcap Challenges: funded accounts from $10K to $200K",
+   "80% profit split, up to 90% with add-on",
+   "Native TradingView, MT4 and MT5 trading",
+   "Regulated by ASIC, FCA and CySEC"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "AU",
+   "RU",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [],
+  "summary": "Eightcap, founded in Melbourne in 2009 and regulated by ASIC, the FCA and CySEC, is one of the leading TradingView brokers, offering raw spreads from 0.0 pips on MT4, MT5 and TradingView. Its Eightcap Challenges programme lets you trade a funded account from $10,000 to $200,000 and keep 80–90% of the profits, with evaluations from just $99.",
+  "top_pick": false
+ },
+ {
+  "slug": "avatrade",
+  "name": "AvaTrade",
+  "type": "forex",
+  "domain": "avatrade.com",
+  "color": "#0A3D91",
+  "tagline": "Most regulated — 9 licences on 6 continents",
+  "score": 8.9,
+  "founded": "2006",
+  "min_deposit": "$100",
+  "min_deposit_note": "Minimum deposit of $100 (or equivalent) by card or e-wallet.",
+  "max_leverage": "Up to 1:400 (1:30 for EU/AU retail)",
+  "spreads": "Fixed-style spreads from 0.9 pips (EURUSD avg ~0.8–0.9), no commission",
+  "platforms": "MT4, MT5, AvaTradeGO, AvaOptions, WebTrader",
+  "copy_trading": "Yes – AvaSocial, DupliTrade, ZuluTrade",
+  "regulation": "Regulated by the Central Bank of Ireland, ASIC (Australia), CySEC, FSCA (South Africa), FSRA (Abu Dhabi), JFSA (Japan), ISA (Israel) and BVI FSC.",
+  "licences": [
+   {
+    "country": "IE",
+    "regulator": "Central Bank of Ireland (CBI)",
+    "entity": "AVA Trade EU Ltd",
+    "number": "C53877",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AU",
+    "regulator": "Australian Securities & Investments Commission (ASIC)",
+    "entity": "AVA Capital Markets Australia Pty Ltd",
+    "number": "AFSL 406684",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "AvaTrade EU entity",
+    "number": "347/17",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "JP",
+    "regulator": "Financial Services Agency (JFSA)",
+    "entity": "Ava Trade Japan K.K.",
+    "number": "1662",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AE",
+    "regulator": "Financial Services Regulatory Authority (FSRA), ADGM",
+    "entity": "AVA Trade Middle East Ltd",
+    "number": "190018",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "IL",
+    "regulator": "Israel Securities Authority (ISA)",
+    "entity": "AvaTrade Israel entity",
+    "number": "514666577",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "ZA",
+    "regulator": "Financial Sector Conduct Authority (FSCA)",
+    "entity": "AVA Capital Markets Pty Ltd",
+    "number": "FSP 45984",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "VG",
+    "regulator": "Financial Services Commission (FSC BVI)",
+    "entity": "AVA Trade Markets Ltd",
+    "number": "SIBA/L/13/1049",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Safety-first traders, beginners, options and social trading",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.avatrade.com/trading-account?tag=rf19459580"
+   }
+  ],
+  "pros": [
+   "One of the most regulated brokers in the world",
+   "No commission on standard trading",
+   "AvaOptions and AvaTradeGO apps",
+   "Copy trading via AvaSocial, DupliTrade and ZuluTrade"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [],
+  "summary": "AvaTrade, founded in 2006, is one of the most heavily regulated forex brokers in the world, with licences from the Central Bank of Ireland, ASIC, CySEC, Japan's FSA, Abu Dhabi's FSRA and more. It offers commission-free trading, MT4/MT5, the AvaTradeGO app, options trading and several copy-trading services.",
+  "top_pick": false
+ },
+ {
+  "slug": "octa",
+  "name": "Octa",
+  "type": "forex",
+  "domain": "octafx.com",
+  "color": "#2E5BFF",
+  "tagline": "OctaFX — zero-commission trading from $25",
+  "score": 8.8,
+  "founded": "2011",
+  "min_deposit": "$25",
+  "min_deposit_note": "Start from $25 on MT4, MT5 and OctaTrader accounts. Formerly known as OctaFX.",
+  "max_leverage": "Up to 1:1000",
+  "spreads": "From 0.6 pips, no commission on all accounts",
+  "platforms": "OctaTrader, MT4, MT5",
+  "copy_trading": "Yes – Octa Copytrading",
+  "regulation": "Regulated by CySEC (Cyprus), FSCA (South Africa), FSC (Mauritius) and MISA (Comoros).",
+  "licences": [
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "Octa Markets Cyprus Ltd",
+    "number": "372/18",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "ZA",
+    "regulator": "Financial Sector Conduct Authority (FSCA)",
+    "entity": "Orinoco Capital (Pty) Ltd",
+    "number": "FSP 51913",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "MU",
+    "regulator": "Financial Services Commission (FSC)",
+    "entity": "Uni Fin Invest",
+    "number": "GB21027161",
+    "tier": "Offshore"
+   },
+   {
+    "country": "KM",
+    "regulator": "Mwali International Services Authority (MISA)",
+    "entity": "Octa Markets Ltd",
+    "number": "HY00623410",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Commission-free trading, copy trading, Islamic accounts",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://clickto.trade/bWlYywAuEzO?ib=505744"
+   }
+  ],
+  "pros": [
+   "No commission and no swap (Islamic-friendly) trading",
+   "$25 minimum deposit",
+   "Octa Copytrading built in",
+   "Own OctaTrader platform plus MT4 and MT5"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "GB",
+   "JP",
+   "IL",
+   "NZ",
+   "SG",
+   "UA",
+   "MM",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [
+   "IN",
+   "PK",
+   "PH",
+   "AT",
+   "BE",
+   "BG",
+   "HR",
+   "CY",
+   "CZ",
+   "DK",
+   "EE",
+   "FI",
+   "FR",
+   "DE",
+   "GR",
+   "HU",
+   "IE",
+   "IT",
+   "LV",
+   "LT",
+   "LU",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SK",
+   "SI",
+   "ES",
+   "SE"
+  ],
+  "summary": "Octa (formerly OctaFX) has served traders since 2011 and is known for commission-free, swap-free trading, a low $25 minimum deposit and its own OctaTrader platform alongside MT4 and MT5. It is regulated by CySEC, the FSCA, the FSC Mauritius and MISA, and offers built-in copy trading.",
+  "top_pick": false
+ },
+ {
+  "slug": "pu-prime",
+  "name": "PU Prime",
+  "type": "forex",
+  "domain": "puprime.com",
+  "color": "#E4002B",
+  "tagline": "Cent accounts from $20 and frequent promotions",
+  "score": 8.7,
+  "founded": "2015",
+  "min_deposit": "$20",
+  "min_deposit_note": "$20 Cent account, $50 Standard, $1,000 Prime, $10,000 ECN.",
+  "max_leverage": "Up to 1:1000",
+  "spreads": "From 0.0 pips (Prime/ECN) · from 1.3 pips (Standard, no commission)",
+  "platforms": "MT4, MT5, PU Prime App, WebTrader",
+  "copy_trading": "Yes – PU Social & copy trading",
+  "regulation": "Regulated by the FSCA (South Africa), FSA (Seychelles) and FSC (Mauritius), with a UAE CMA licence for introduction and promotion.",
+  "licences": [
+   {
+    "country": "ZA",
+    "regulator": "Financial Sector Conduct Authority (FSCA)",
+    "entity": "PU Prime (Pty) Ltd",
+    "number": "FSP 52218",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "AE",
+    "regulator": "Capital Market Authority (CMA), UAE – introduction & promotion",
+    "entity": "PU Prime Financial Services LLC",
+    "number": "20200000388",
+    "tier": "Mid-tier"
+   },
+   {
+    "country": "SC",
+    "regulator": "Financial Services Authority (FSA)",
+    "entity": "PU Prime Ltd",
+    "number": "SD050",
+    "tier": "Offshore"
+   },
+   {
+    "country": "MU",
+    "regulator": "Financial Services Commission (FSC)",
+    "entity": "PU Prime Ltd",
+    "number": "GB23202672",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Learning with cent accounts, bonus hunters",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://puvip.co/la-partners/Vh8X6AHJ"
+   }
+  ],
+  "pros": [
+   "$20 Cent account to practise with real money",
+   "Copy trading and social trading apps",
+   "Negative balance protection",
+   "Regular deposit promotions"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "GB",
+   "SG",
+   "AU",
+   "CN",
+   "RU",
+   "PH",
+   "IR",
+   "KP",
+   "SY",
+   "CU",
+   "SD"
+  ],
+  "unclear": [],
+  "summary": "PU Prime (Pacific Union) offers a low-cost $20 Cent account, MT4/MT5, copy trading and regular promotions, regulated by the FSCA in South Africa along with international licences. It is a great choice for new traders who want to start small.",
+  "top_pick": false
+ },
+ {
+  "slug": "roboforex",
+  "name": "RoboForex",
+  "type": "forex",
+  "domain": "roboforex.com",
+  "color": "#00A651",
+  "tagline": "$10 start, 1:2000 leverage and stock trading",
+  "score": 8.6,
+  "founded": "2009",
+  "min_deposit": "$10",
+  "min_deposit_note": "$10 on Pro, ProCent, Prime and ECN accounts; $100 for R StocksTrader.",
+  "max_leverage": "Up to 1:2000",
+  "spreads": "From 0.0 pips + $4 round-turn (ECN) · from 1.3 pips (Pro, no commission)",
+  "platforms": "MT4, MT5, R StocksTrader, RoboForex app",
+  "copy_trading": "Yes – CopyFX",
+  "regulation": "Regulated by the Financial Services Commission (FSC) of Belize.",
+  "licences": [
+   {
+    "country": "BZ",
+    "regulator": "Financial Services Commission (FSC Belize)",
+    "entity": "RoboForex Ltd",
+    "number": "—",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Small accounts, high leverage, stocks and ETFs",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://my.roboforex.com/en/?a=jmvkd"
+   }
+  ],
+  "pros": [
+   "$10 minimum deposit",
+   "Leverage up to 1:2000",
+   "12,000+ stocks and ETFs on R StocksTrader",
+   "CopyFX copy-trading platform"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "JP",
+   "AU",
+   "BZ",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [
+   "AT",
+   "BE",
+   "BG",
+   "HR",
+   "CY",
+   "CZ",
+   "DK",
+   "EE",
+   "FI",
+   "FR",
+   "DE",
+   "GR",
+   "HU",
+   "IE",
+   "IT",
+   "LV",
+   "LT",
+   "LU",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SK",
+   "SI",
+   "ES",
+   "SE"
+  ],
+  "summary": "RoboForex has operated since 2009 and is popular for its $10 minimum deposit, leverage up to 1:2000, raw-spread ECN accounts and the R StocksTrader platform with thousands of stocks and ETFs. Its CopyFX service lets you copy experienced traders automatically.",
+  "top_pick": false
+ },
+ {
+  "slug": "instaforex",
+  "name": "InstaForex",
+  "type": "forex",
+  "domain": "instaforex.com",
+  "color": "#D71920",
+  "tagline": "Start with just $1 — ForexCopy included",
+  "score": 8.4,
+  "founded": "2007",
+  "min_deposit": "$1",
+  "min_deposit_note": "Open an account with as little as $1.",
+  "max_leverage": "Up to 1:1000",
+  "spreads": "From 0 pips (Eurica accounts, commission) · Standard accounts with no commission",
+  "platforms": "MT4, MT5, MultiTerminal, WebTrader, mobile apps",
+  "copy_trading": "Yes – ForexCopy",
+  "regulation": "Regulated by the British Virgin Islands Financial Services Commission (BVI FSC).",
+  "licences": [
+   {
+    "country": "VG",
+    "regulator": "Financial Services Commission (FSC BVI)",
+    "entity": "InstaFinance Ltd",
+    "number": "SIBA/L/14/1082",
+    "tier": "Offshore"
+   }
+  ],
+  "best_for": "Absolute beginners, micro deposits, copy trading",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.instaforex.com/?x=URSMP"
+   }
+  ],
+  "pros": [
+   "$1 minimum deposit — the lowest anywhere",
+   "Leverage up to 1:1000",
+   "ForexCopy copy-trading system",
+   "MT4, MT5 and MultiTerminal"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "JP",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [
+   "GB",
+   "AU",
+   "NZ",
+   "AT",
+   "BE",
+   "BG",
+   "HR",
+   "CY",
+   "CZ",
+   "DK",
+   "EE",
+   "FI",
+   "FR",
+   "DE",
+   "GR",
+   "HU",
+   "IE",
+   "IT",
+   "LV",
+   "LT",
+   "LU",
+   "MT",
+   "NL",
+   "PL",
+   "PT",
+   "RO",
+   "SK",
+   "SI",
+   "ES",
+   "SE"
+  ],
+  "summary": "InstaForex, founded in 2007, is famous for its $1 minimum deposit, leverage up to 1:1000 and its ForexCopy system that lets beginners follow experienced traders. It supports MT4, MT5 and MultiTerminal and is regulated by the BVI Financial Services Commission.",
+  "top_pick": false
+ }
 ]

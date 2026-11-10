@@ -213,10 +213,10 @@ SPECS = {
     "mt4-vs-mt5": ("forex", "platform", "PLATFORMS", "MT4 vs MT5"),
     "crypto-exchange-safety": ("crypto", "shield", "SECURITY", "2FA ON"),
     "what-is-forex-trading": ("forex", "area", "FOREX BASICS", "GBP/USD"),
-    "best-forex-broker": ("forex", "candles", "BEST FOREX BROKER", "TOP 9"),
-    "best-crypto-exchange": ("crypto", "depth", "BEST CRYPTO EXCHANGE", "TOP 8"),
+    "best-forex-broker-ranking": ("forex", "candles", "BEST FOREX BROKER", "RANKED"),
+    "best-crypto-exchange-ranking": ("crypto", "depth", "BEST CRYPTO EXCHANGE", "RANKED"),
 }
-EXTRA_PAGES = ["best-forex-broker", "best-crypto-exchange"]
+EXTRA_PAGES = ["best-forex-broker-ranking", "best-crypto-exchange-ranking"]
 
 
 def make(slug, theme, kind, kicker, ticker):

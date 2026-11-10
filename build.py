@@ -15,6 +15,7 @@ import os
 import re
 import shutil
 import sys
+import urllib.parse
 from datetime import date, datetime, timezone
 from pathlib import Path
 
@@ -28,6 +29,7 @@ SITE_URL = (os.environ.get("SITE_URL") or CFG["site_url"]).rstrip("/")
 SITE = CFG["site_name"]
 YEAR = date.today().year
 TODAY = date.today().isoformat()
+LAST_REVIEWED = date.today().strftime("%B %Y")  # updates automatically on every rebuild
 
 BROKERS = json.loads((DATA / "brokers.json").read_text(encoding="utf-8"))
 EXCHANGES = json.loads((DATA / "exchanges.json").read_text(encoding="utf-8"))
@@ -88,7 +90,7 @@ TIER_LABEL = {"Top-tier": "Top-tier", "Mid-tier": "National regulator", "Offshor
 BEST_FOR = {
     "exness": "Best Forex Broker Overall", "ic-markets": "Best Forex Broker for Scalping & EAs", "hfm": "Best Forex Broker for Copy Trading",
     "vantage": "Best Forex Broker for TradingView", "avatrade": "Best Regulated Forex Broker", "octa": "Best Commission-Free Forex Broker",
-    "pu-prime": "Best Forex Broker for Cent Accounts", "roboforex": "Best Forex Broker for High Leverage", "instaforex": "Best Forex Broker for a $1 Deposit",
+    "pu-prime": "Best Forex Broker for Cent Accounts", "roboforex": "Best Forex Broker for High Leverage", "instaforex": "Best Forex Broker for a $1 Deposit", "eightcap": "Best Forex Broker for Funded Challenges",
     "bitunix": "Best Crypto Exchange Overall", "bybit": "Best Licensed Crypto Exchange", "binance": "Best Crypto Exchange for Beginners",
     "bingx": "Best Crypto Exchange for Copy Trading", "mexc": "Best Crypto Exchange for Altcoins & Low Fees", "blofin": "Best Crypto Exchange for Pro Futures",
     "kucoin": "Best Crypto Exchange for Trading Bots", "bitbase": "Best Crypto Exchange for USDC Futures",
@@ -223,6 +225,88 @@ NAV = [("Forex Brokers", "forex-brokers/", "fx"), ("Crypto Exchanges", "crypto-e
        ("Free Signals", "free-signals/", ""), ("Guides", "guides/", "")]
 
 
+def tg_url(handle):
+    h = handle.strip()
+    if h.startswith("http"):
+        return h
+    return "https://t.me/" + h.lstrip("@").replace("t.me/", "").replace("T.me/", "")
+
+
+def sig_cfg(kind):
+    fx = kind == "forex"
+    return {
+        "channel": tg_url(CFG.get("telegram_forex_signals_url" if fx else "telegram_crypto_signals_url",
+                                  "https://t.me/AforexKingOfficial" if fx else "https://t.me/AlicecryptoPro_Official")),
+        "admin": CFG.get("telegram_forex_admin" if fx else "telegram_crypto_admin", "AforexKingAdmin" if fx else "AliceSupportTeam").lstrip("@").split("/")[-1],
+    }
+
+
+def admin_msg(kind, name, acct=""):
+    fx = kind == "forex"
+    msg = f"Hey 👋 I am using your partner {'broker' if fx else 'exchange'} Name:- {name}"
+    if acct:
+        msg += f"\n{'Account ID' if fx else 'UID'}:- {acct}"
+    return msg
+
+
+def admin_link(kind, name):
+    return f"https://t.me/{sig_cfg(kind)['admin']}?text=" + urllib.parse.quote(admin_msg(kind, name))
+
+
+def admin_box(kind, preset=None):
+    """Card: 'Already trading with a partner broker? Message our admin' with a broker picker."""
+    fx = kind == "forex"
+    items = BROKERS if fx else EXCHANGES
+    word = "broker" if fx else "exchange"
+    first = preset or items[0]
+    opts = "".join(f'<option value="{esc(b["name"])}"{" selected" if b["slug"] == first["slug"] else ""}>{esc(b["name"])}</option>' for b in items)
+    return f"""<div class="tg-box {'fx' if fx else 'cx'}" data-kind="{kind}" data-admin="{esc(sig_cfg(kind)['admin'])}">
+ <span class="kicker {'fx' if fx else 'cx'}">FOR OUR PARTNER CLIENTS</span>
+ <h3>Already trading with one of our partner {word}s?</h3>
+ <p>Get our {'forex' if fx else 'crypto'} signals <strong>free</strong>. Choose your {word} and tap the button — Telegram opens a chat with our admin with your message already written.</p>
+ <div class="tg-form">
+  <label><span>Your {word}</span><select class="tg-broker" aria-label="Your {word}">{opts}</select></label>
+  <label><span>{'Account ID' if fx else 'UID'} (optional)</span><input class="tg-id" inputmode="numeric" placeholder="e.g. 12345678"></label>
+ </div>
+ <p class="tg-preview" aria-live="polite">“{esc(admin_msg(kind, first['name']))}”</p>
+ <a class="btn btn-tg tg-go" href="{esc(admin_link(kind, first['name']))}" target="_blank" rel="noopener">✈ Message @{esc(sig_cfg(kind)['admin'])} on Telegram</a>
+</div>"""
+
+
+
+
+
+TICKER_SYMBOLS = [("OANDA:XAUUSD", "Gold"), ("BINANCE:BTCUSDT", "Bitcoin"), ("OANDA:US30USD", "US30"), ("OANDA:NAS100USD", "NAS100"),
+                  ("FX:EURUSD", "EUR/USD"), ("FX:GBPUSD", "GBP/USD"), ("BINANCE:ETHUSDT", "Ethereum"), ("OANDA:SPX500USD", "S&P 500"),
+                  ("TVC:USOIL", "WTI Oil"), ("OANDA:XAGUSD", "Silver"), ("FX:USDJPY", "USD/JPY"), ("BINANCE:SOLUSDT", "Solana"),
+                  ("BINANCE:XRPUSDT", "XRP"), ("OANDA:DE30EUR", "GER40")]
+MARKET_BLOCKS = [("OANDA:XAUUSD", "Gold", "XAU/USD", "gold"), ("BINANCE:BTCUSDT", "Bitcoin", "BTC/USDT", "cx"),
+                 ("OANDA:US30USD", "US30", "Dow Jones", "fx"), ("OANDA:NAS100USD", "NAS100", "Nasdaq 100", "fx"),
+                 ("FX:EURUSD", "EUR/USD", "Euro / Dollar", "fx"), ("BINANCE:ETHUSDT", "Ethereum", "ETH/USDT", "cx"),
+                 ("FX:GBPUSD", "GBP/USD", "Pound / Dollar", "fx"), ("OANDA:SPX500USD", "S&P 500", "US500", "fx"),
+                 ("TVC:USOIL", "WTI Oil", "Crude oil", "gold"), ("OANDA:XAGUSD", "Silver", "XAG/USD", "gold"),
+                 ("FX:USDJPY", "USD/JPY", "Dollar / Yen", "fx"), ("BINANCE:SOLUSDT", "Solana", "SOL/USDT", "cx")]
+
+
+def ticker_tape():
+    cfg = {"symbols": [{"proName": s, "title": t} for s, t in TICKER_SYMBOLS], "showSymbolLogo": True, "isTransparent": True,
+           "displayMode": "adaptive", "colorTheme": "dark", "locale": "en"}
+    fallback = "".join(f"<span>{esc(t)}</span>" for _, t in TICKER_SYMBOLS[:8])
+    return (f'<div class="tape" aria-label="Live market prices"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"><div class="tape-fallback">{fallback}</div></div>'
+            f'<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>{json.dumps(cfg)}</script></div></div>')
+
+
+def market_blocks(title=None, depth=0):
+    blocks = []
+    for sym, name, sub, tone in MARKET_BLOCKS:
+        cfg = {"symbol": sym, "width": "100%", "isTransparent": True, "colorTheme": "dark", "locale": "en"}
+        blocks.append(f'<div class="mblock {tone}"><div class="mb-head"><b>{esc(name)}</b><small>{esc(sub)}</small></div>'
+                      f'<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><div class="mb-loading">Loading live price…</div>'
+                      f'<script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js" async>{json.dumps(cfg)}</script></div></div>')
+    head = f'<div class="sec-head"><div><span class="kicker" style="color:#8ab6ff">LIVE MARKETS</span><h2>{title or "Live Market Prices"}</h2></div><span class="live"><i></i> Live prices</span></div>'
+    return f'<section class="markets"><div class="wrap section">{head}<div class="mgrid">{"".join(blocks)}</div><p class="tiny mnote">Gold, Bitcoin, US30, NAS100 and the world\'s top markets — real-time quotes powered by TradingView.</p></div></section>'
+
+
 def page(path, title, description, body, depth, keywords="", ld=None, priority="0.6", og_type="website",
          noindex=False, theme="", image=None):
     url = f"{SITE_URL}/{path}"
@@ -270,6 +354,7 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
   <nav class="mainnav" aria-label="Main">{nav_html}</nav>
  </div>
 </header>
+{ticker_tape()}
 <main id="main">
 {body}
 </main>
@@ -282,8 +367,8 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
   <div><h3>By country</h3>{''.join(f'<a href="{link("countries/" + BY_CODE[c]["slug"] + "/", depth)}">{esc(BY_CODE[c]["name"])}</a>' for c in pop[:10])}<a href="{link('countries/', depth)}"><strong>All {len(COUNTRIES)} countries →</strong></a></div>
   <div><h3>Company</h3><a href="{link('about/', depth)}">About & methodology</a><a href="{link('licences/', depth)}">Licences & regulation</a><a href="{link('contact/', depth)}">Contact</a><a href="{link('risk-disclaimer/', depth)}">Risk disclaimer</a><a href="{link('privacy-policy/', depth)}">Privacy policy</a><a href="{link('terms/', depth)}">Terms of use</a></div>
  </div>
- <div class="wrap legal"><p><strong>Risk warning:</strong> CFDs, forex and crypto derivatives are complex instruments with a high risk of losing money rapidly due to leverage. Most retail accounts lose money. Nothing on this site is financial advice. Information is checked as of {esc(CFG['last_reviewed'])} but can change — always confirm terms, regulation and country availability on the provider's official website. Company names and logos belong to their owners and are used only to identify them.</p>
- <p>© {YEAR} {esc(SITE)}. All rights reserved.</p></div>
+ <div class="wrap legal"><p><strong>Risk warning:</strong> CFDs, forex and crypto derivatives are complex instruments with a high risk of losing money rapidly due to leverage. Most retail accounts lose money. Nothing on this site is financial advice. Information is checked as of {esc(LAST_REVIEWED)} but can change — always confirm terms, regulation and country availability on the provider's official website. Company names and logos belong to their owners and are used only to identify them.</p>
+ <p>© <span class="yr">{YEAR}</span> {esc(SITE)}. All rights reserved.</p></div>
 </footer>
 <script src="{r}assets/main.js" defer></script>
 </body>
@@ -306,7 +391,7 @@ def brand_card(b, rank, depth, country=None):
         st = status_for(b, country["code"])
         badge = (f'<span class="pill ok">✓ Accepts traders from {esc(country["in_name"])}</span>' if st == "yes"
                  else f'<span class="pill warn">Confirm {esc(country["in_name"])} at sign-up</span>')
-    top = '<span class="ribbon">★ Top pick</span>' if rank == 1 else ""
+    top = '<span class="ribbon">★ Top pick</span>' if b.get("top_pick") else ""
     if is_fx(b):
         facts = [("Min deposit", b["min_deposit"]), ("Max leverage", b["max_leverage"]), ("Spreads", b["spreads"]), ("Platforms", b["platforms"])]
     else:
@@ -515,7 +600,7 @@ def build_home():
 <section class="hero">
  <div class="hero-bg" aria-hidden="true"></div>
  <div class="wrap hero-in">
-  <p class="eyebrow"><span class="dot"></span> Updated {esc(CFG['last_reviewed'])} · Worldwide · {len(COUNTRIES)} countries</p>
+  <p class="eyebrow"><span class="dot"></span> Updated {esc(LAST_REVIEWED)} · Worldwide · {len(COUNTRIES)} countries</p>
   <h1>Find the Best <span class="g-fx">Forex Broker</span> &amp; <span class="g-cx">Crypto Exchange</span> for Your Country</h1>
   <p class="lead">Licences, minimum deposits, leverage and fees compared side by side — with instant availability checks for every country in the world.</p>
   {country_search(d)}
@@ -533,6 +618,7 @@ def build_home():
  <a class="split-card fx" href="forex-brokers/"><span class="kicker">FOREX · CFDs · GOLD</span><h2>Forex Brokers</h2><p>MT4 / MT5 brokers licensed by the FCA, ASIC, CySEC, DFSA &amp; FSCA. Minimum deposits from $1.</p><span class="logos">{''.join(logo(b, 'sm') for b in BROKERS)}</span><span class="go">Compare forex brokers →</span></a>
  <a class="split-card cx" href="crypto-exchanges/"><span class="kicker">SPOT · FUTURES · COPY TRADING</span><h2>Crypto Exchanges</h2><p>Bitunix, Bybit, Binance, BingX and more — fees, leverage up to 200x, licences and wallets.</p><span class="logos">{''.join(logo(b, 'sm') for b in EXCHANGES)}</span><span class="go">Compare crypto exchanges →</span></a>
 </section>
+{market_blocks()}
 <section class="zone cx-zone">
  <div class="wrap section">
   <div class="sec-head"><div><span class="kicker cx">CRYPTO</span><h2>Best crypto exchanges {YEAR}</h2></div><a href="best-crypto-exchange/">Best crypto exchange guide →</a></div>
@@ -551,8 +637,8 @@ def build_home():
 </section>
 <section class="band">
  <div class="wrap grid g2">
-  <div class="card signal-card fx"><span class="kicker fx">FREE</span><h2>Free Forex Signals</h2><p>XAUUSD gold, EURUSD, GBPUSD and more — entry, stop loss and take profit, shared on Telegram with risk-management tips.</p><a class="btn btn-fx" href="free-forex-signals/">Get free forex signals</a></div>
-  <div class="card signal-card cx"><span class="kicker cx">FREE</span><h2>Free Crypto Signals</h2><p>Bitcoin, Ethereum and altcoin futures setups with clear invalidation levels. Learn position sizing before copying any trade.</p><a class="btn btn-cx" href="free-crypto-signals/">Get free crypto signals</a></div>
+  <div class="card signal-card fx"><span class="kicker fx">FREE</span><h2>Free Forex Signals</h2><p>XAUUSD gold, US30, NAS100, EURUSD, GBPUSD and more — entry, stop loss and take profit, shared on Telegram with risk-management tips.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('forex')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a><a class="btn btn-fx" href="free-forex-signals/">Learn more</a></div><p class="sig-note">Already trading with a partner broker? <a href="{esc(admin_link('forex', BROKERS[0]['name']))}" target="_blank" rel="noopener">Message our admin</a> to get the signals free.</p></div>
+  <div class="card signal-card cx"><span class="kicker cx">FREE</span><h2>Free Crypto Signals</h2><p>Bitcoin, Ethereum and altcoin futures setups with clear invalidation levels. Learn position sizing before copying any trade.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('crypto')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a><a class="btn btn-cx" href="free-crypto-signals/">Learn more</a></div><p class="sig-note">Already trading with a partner exchange? <a href="{esc(admin_link('crypto', EXCHANGES[0]['name']))}" target="_blank" rel="noopener">Message our admin</a> to get the signals free.</p></div>
  </div>
 </section>
 <section class="wrap section">
@@ -654,9 +740,12 @@ def build_hub(kind):
 def brand_sidebar(b, d):
     others = [x for x in (BROKERS if is_fx(b) else EXCHANGES) if x["slug"] != b["slug"]]
     rp = review_path(b)
+    kind = "forex" if is_fx(b) else "crypto"
     return f"""<aside class="side">
   <div class="card sticky side-cta {'fx' if is_fx(b) else 'cx'}">{logo(b, 'lg')}<h3>{esc(b['name'])}</h3><p class="muted">{esc(b['tagline'])}</p>
   <p><strong>Min deposit:</strong> {esc(b['min_deposit'])}<br><strong>Score:</strong> {b['score']:.1f}/10</p>{visit_buttons(b)}
+  <div class="side-sig"><b>Already using {esc(b['name'])}?</b><span>Get our {kind} signals free.</span>
+  <a class="btn btn-tg btn-sm" href="{esc(admin_link(kind, b['name']))}" target="_blank" rel="noopener">✈ Message admin</a></div>
   <nav class="brand-nav"><a href="{link(rp, d)}">{esc(b['name'])} review</a><a href="{link(rp + 'sign-up/', d)}">{esc(b['name'])} sign up</a><a href="{link(rp + 'real-or-fake/', d)}">Is {esc(b['name'])} real or fake?</a></nav></div>
   <div class="card"><h3>Compare {esc(b['name'])}</h3><ul class="plain">{''.join(f'<li><a href="{link(vs_path(b, o), d)}">{esc(b["name"])} vs {esc(o["name"])}</a></li>' for o in others)}</ul></div>
  </aside>"""
@@ -1106,9 +1195,10 @@ def build_signals(kind):
     d = 1
     fx = kind == "forex"
     path = "free-forex-signals/" if fx else "free-crypto-signals/"
+    sc = sig_cfg(kind)
     if fx:
-        h1 = f"Free Forex Signals {YEAR} – XAUUSD Gold, EURUSD & More"
-        pairs = "XAUUSD (gold), EURUSD, GBPUSD, USDJPY, GBPJPY and US30"
+        h1 = f"Free Forex Signals {YEAR} – XAUUSD Gold, US30, NAS100 & More"
+        pairs = "XAUUSD (gold), US30, NAS100, EURUSD, GBPUSD and USDJPY"
         partners = BROKERS
         ex = ("BUY XAUUSD (example)", "Entry: 2,350.00 – 2,348.00", "Stop loss: 2,340.00", "TP1: 2,358.00 · TP2: 2,366.00")
     else:
@@ -1116,19 +1206,22 @@ def build_signals(kind):
         pairs = "BTCUSDT, ETHUSDT, SOLUSDT and selected altcoin perpetual futures"
         partners = EXCHANGES
         ex = ("LONG BTCUSDT (example)", "Entry: 64,800 – 64,500", "Stop loss: 63,900", "TP1: 65,700 · TP2: 66,600 · Leverage: max 5x")
-    faqs = [("Are the signals really free?", "Yes. Our free signals are posted in our public Telegram channel at no charge."),
-            ("How accurate are the signals?", "No signal service is right all the time and losses are a normal part of trading. We do not promise any win rate."),
+    word = "broker" if fx else "exchange"
+    faqs = [("Are the signals really free?", f"Yes. Join our public Telegram channel for free signals. If you trade with one of our partner {word}s, message our admin @{sc['admin']} to get our signals free."),
+            (f"I already use one of your partner {word}s — how do I get the signals?", f"Choose your {word} in the box on this page and tap the button. Telegram opens a chat with @{sc['admin']} with your message already written — just press send."),
             ("How much should I risk per signal?", "Many professional traders risk 1–2% of their account per trade. Always use the stop loss."),
-            ("Which " + ("broker" if fx else "exchange") + " should I use?", f"Any provider that accepts residents of your country. Our top picks are {', '.join(p['name'] for p in partners[:4])}.")]
+            ("Which " + word + " should I use?", f"Our top picks are {', '.join(p['name'] for p in partners if p.get('top_pick'))}. Any of our partner {word}s works with the signals.")]
     body = f"""
 <section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), ("Free Signals", "free-signals/"), (h1.split(' –')[0], path)], d)}
  <h1>{esc(h1)}</h1>
  <p class="lead">Join our free Telegram channel for {esc(pairs)} trade ideas — each with an entry zone, stop loss and take-profit targets — plus risk-management education.</p>
- <a class="btn btn-tg big" href="{esc(CFG['telegram_signals_url'])}" target="_blank" rel="noopener">Join the free signals channel on Telegram</a>
+ <div class="cta-line"><a class="btn btn-tg big" href="{esc(sc['channel'])}" target="_blank" rel="noopener">✈ Join the free {'forex' if fx else 'crypto'} signals channel</a></div>
 </div></section>
+{market_blocks("Markets we trade", d)}
 <section class="wrap section two-col">
  <div class="prose">
+  {admin_box(kind)}
   <h2>What a signal looks like</h2>
   <div class="signal-demo {'fx' if fx else 'cx'}"><b>{esc(ex[0])}</b><span>{esc(ex[1])}</span><span>{esc(ex[2])}</span><span>{esc(ex[3])}</span><small>Illustration only — not a live trade recommendation.</small></div>
   <h2>How to use trading signals safely</h2>
@@ -1137,27 +1230,28 @@ def build_signals(kind):
   <li><strong>Take partial profits</strong> at TP1 and move your stop to break-even if the signal says so.</li>
   <li><strong>Skip late entries</strong> if price has already moved far beyond the entry zone.</li>
   <li><strong>{'Watch news events.' if fx else 'Keep leverage low.'}</strong> {'Spreads widen around NFP, CPI and central bank decisions.' if fx else 'With 100x leverage, a 1% move against you wipes out your margin.'}</li></ol>
-  <h2>Our transparency policy</h2>
-  <p>We share wins and losses openly and never advertise guaranteed profits or made-up accuracy figures. Signals are educational ideas, not personal financial advice.</p>
   {faq_html(faqs)}
  </div>
- <aside class="side"><div class="card"><h3>Trade signals with</h3>{''.join(f'<div class="mini">{logo(p, "sm")}<b>{esc(p["name"])}</b>{visit_buttons(p, small=True, first_only=True)}</div>' for p in partners)}</div></aside>
+ <aside class="side"><div class="card sticky"><h3>Trade our signals with</h3>{''.join(f'<div class="mini">{logo(p, "sm")}<b>{esc(p["name"])}</b>{visit_buttons(p, small=True, first_only=True)}</div>' for p in partners)}
+ <a class="btn btn-tg" style="width:100%;margin-top:12px" href="{esc(sc['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a></div></aside>
 </section>"""
-    kw = ("free forex signals, forex signals telegram, gold signals, XAUUSD signals, free gold signals, best forex signals, forex signals today" if fx
+    kw = ("free forex signals, forex signals telegram, gold signals, XAUUSD signals, US30 signals, NAS100 signals, free gold signals, best forex signals, forex signals today" if fx
           else "free crypto signals, crypto signals telegram, bitcoin signals, crypto futures signals, free bitcoin signals, best crypto signals, BTC signals today")
-    page(path, f"{h1} | {SITE}", f"Free {'forex' if fx else 'crypto'} signals on Telegram: {pairs} with entry, stop loss and take profit, plus risk management.",
+    page(path, f"{h1} | {SITE}", f"Free {'forex' if fx else 'crypto'} signals on Telegram: {pairs} with entry, stop loss and take profit. Partner clients get our signals free.",
          body, d, keywords=kw, ld=[breadcrumb_ld([("Home", ""), ("Free Signals", "free-signals/"), (h1.split(' –')[0], path)]), faq_ld(faqs)], priority="0.9", theme="fx" if fx else "cx")
 
 
 def build_signals_hub():
     d = 1
+    fxc, cxc = sig_cfg("forex"), sig_cfg("crypto")
     body = f"""<section class="pagehead"><div class="wrap">{crumbs_html([("Home", ""), ("Free Signals", "free-signals/")], d)}
-<h1>Free Trading Signals – Forex &amp; Crypto</h1><p class="lead">Transparent trade ideas with entry, stop loss and targets — shared free on Telegram.</p></div></section>
+<h1>Free Trading Signals {YEAR} – Forex &amp; Crypto</h1><p class="lead">Transparent trade ideas with entry, stop loss and targets — shared free on Telegram.</p></div></section>
 <section class="wrap section grid g2">
- <div class="card signal-card fx"><span class="kicker fx">FOREX</span><h2>Free Forex Signals</h2><p>Gold (XAUUSD), EURUSD, GBPUSD, USDJPY and indices.</p><a class="btn btn-fx" href="../free-forex-signals/">Forex signals →</a></div>
- <div class="card signal-card cx"><span class="kicker cx">CRYPTO</span><h2>Free Crypto Signals</h2><p>BTC, ETH and altcoin perpetual futures setups.</p><a class="btn btn-cx" href="../free-crypto-signals/">Crypto signals →</a></div>
-</section>"""
-    page("free-signals/", f"Free Forex & Crypto Signals ({YEAR}) – Telegram | {SITE}", "Free forex and crypto trading signals on Telegram: gold, forex pairs, Bitcoin and altcoin futures with entry, stop loss and take profit.",
+ <div class="card signal-card fx"><span class="kicker fx">FOREX</span><h2>Free Forex Signals</h2><p>Gold (XAUUSD), US30, NAS100, EURUSD, GBPUSD and more.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(fxc['channel'])}" target="_blank" rel="noopener">✈ Join channel</a><a class="btn btn-fx" href="../free-forex-signals/">Details →</a></div></div>
+ <div class="card signal-card cx"><span class="kicker cx">CRYPTO</span><h2>Free Crypto Signals</h2><p>BTC, ETH and altcoin perpetual futures setups.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(cxc['channel'])}" target="_blank" rel="noopener">✈ Join channel</a><a class="btn btn-cx" href="../free-crypto-signals/">Details →</a></div></div>
+</section>
+<section class="wrap section grid g2">{admin_box("forex")}{admin_box("crypto")}</section>"""
+    page("free-signals/", f"Free Forex & Crypto Signals ({YEAR}) – Telegram | {SITE}", "Free forex and crypto trading signals on Telegram: gold, US30, NAS100, forex pairs, Bitcoin and altcoin futures with entry, stop loss and take profit.",
          body, d, keywords="free trading signals, free forex signals, free crypto signals, telegram signals", ld=[breadcrumb_ld([("Home", ""), ("Free Signals", "free-signals/")])], priority="0.8")
 
 
@@ -1225,7 +1319,7 @@ def build_static_pages():
 <p>Before trading, consider your objectives, experience and risk appetite. Never invest money you cannot afford to lose. Seek advice from an independent, licensed financial adviser if you have any doubts.</p>
 <p>Signals, analysis and opinions on this website are general information and education only — not personal financial advice. Past performance is not a reliable indicator of future results.</p>
 <p>Offshore brokers and crypto exchanges may not be authorised in your country, and you may have limited or no protection if they fail. It is your responsibility to make sure that using any provider is legal where you live.</p>"""),
-        "privacy-policy/": ("Privacy Policy", f"""<p>Last updated: {esc(CFG['last_reviewed'])}.</p>
+        "privacy-policy/": ("Privacy Policy", f"""<p>Last updated: {esc(LAST_REVIEWED)}.</p>
 <p>This website does not require an account and does not collect personal information through forms. If Google Analytics is enabled, it uses cookies to collect anonymous usage data (pages visited, device type, approximate country). You can block these cookies in your browser.</p>
 <p>Company icons are loaded from Google's public favicon service, which may receive your IP address when the images load.</p>
 <p>When you click a link to a broker or exchange you leave our website and that provider's privacy policy applies.</p>
@@ -1302,7 +1396,7 @@ def build_pillar(kind):
     kw1 = "best forex broker" if fx else "best crypto exchange"
     K = kw1.title()
     n = len(items)
-    img = f"assets/img/{path.strip('/')}.jpg"
+    img = f"assets/img/{path.strip('/')}-ranking.jpg"
     hero = f'<figure class="art-hero"><img src="../{img}" alt="{K} {YEAR}" width="2400" height="1260" fetchpriority="high"></figure>' if (ROOT / img).exists() else ""
     toc = [(re.sub(r"[^a-z0-9]+", "-", BEST_FOR[b["slug"]].lower()).strip("-"), f"{BEST_FOR[b['slug']]}: {b['name']}") for b in items]
     toc_html = "".join(f'<li><a href="#{h}">{esc(t)}</a></li>' for h, t in toc)
@@ -1380,7 +1474,7 @@ def build_pillar(kind):
         keywords = f"best crypto exchange, best crypto exchange {YEAR}, best crypto exchanges, best crypto exchange wallet, best crypto wallet, best crypto exchange for beginners, best crypto exchange for futures, best crypto exchange low fees, best regulated crypto exchange, best crypto exchange by country, top crypto exchanges"
     body = f"""<section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), (K, path)], d)}
- <span class="kicker">{'FOREX RANKING' if fx else 'CRYPTO RANKING'} · UPDATED {esc(CFG['last_reviewed']).upper()}</span>
+ <span class="kicker">{'FOREX RANKING' if fx else 'CRYPTO RANKING'} · UPDATED {esc(LAST_REVIEWED).upper()}</span>
  <h1>{K} {YEAR} – Top {n} Best {'Forex Brokers' if fx else 'Crypto Exchanges'} {'in the World' if fx else '&amp; Wallets'}</h1>
  <p class="lead">Looking for the {kw1}? We compared {n} {'regulated forex brokers' if fx else 'crypto exchanges'} on licences, {'spreads' if fx else 'fees'}, leverage, minimum deposit and availability in {len(COUNTRIES)} countries. Our {kw1} overall is <strong>{esc(items[0]['name'])}</strong>.</p>
  {country_search(d, 'forex-brokers' if fx else 'crypto-exchanges', 'Find the ' + kw1 + ' in your country…')}
