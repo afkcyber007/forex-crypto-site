@@ -4,11 +4,12 @@ A fast, SEO-ready website that compares forex brokers and crypto exchanges for *
 
 **Design:** the base is deep navy. Forex sections use **MT4 blue** with blue "Visit Site" buttons; crypto sections use **profit green** with green "Visit Site" buttons. Each company shows its real icon, loaded from its official website.
 
-**What's inside (about 810 pages):**
+**What's inside (about 870 pages):**
 - Home page with a country search box and boxed broker and exchange cards with "Open Account" buttons
 - `/forex-brokers/` and `/crypto-exchanges/` comparison pages with ranking tables
-- **Forex brokers:** Exness, IC Markets, Vantage, PU Prime, Elev8
-- **Crypto exchanges:** Bitunix (ranked #1), Binance, BingX, MEXC, KuCoin, BitBase
+- **Forex brokers (9):** Exness, IC Markets, HFM, Vantage, AvaTrade, Octa, PU Prime, RoboForex, InstaForex
+- **Crypto exchanges (8):** Bitunix (ranked #1), Bybit, Binance, BingX, MEXC, BloFin, KuCoin, BitBase
+- **Main SEO pages:** `/best-forex-broker/` and `/best-crypto-exchange/` — long ranking pages built around "best forex broker" and "best crypto exchange" (including a crypto exchange wallet section), each linking to a "best … in [country]" page for all 243 countries
 - **3 brand-search pages for every company**, so people searching the company name can find your site:
   - Review: `/exchanges/bitunix/` ("bitunix review", "is bitunix safe")
   - Sign up: `/exchanges/bitunix/sign-up/` ("bitunix sign up", "bitunix referral code")
@@ -25,13 +26,13 @@ A fast, SEO-ready website that compares forex brokers and crypto exchanges for *
   Each page shows which brokers **accept** or **don't accept** that country, the local regulator, the currency, legal notes and an FAQ.
 - Free Forex Signals and Free Crypto Signals pages that link to your Telegram channel
 - 9 trading guides (gold trading, leverage, crypto futures, risk management and more). Each guide has its own original high-resolution picture in `assets/img/`.
-- About, Contact, Risk Disclaimer, Affiliate Disclosure, Privacy and Terms pages
+- About, Contact, Risk Disclaimer, Privacy and Terms pages
 - Built-in SEO on every page:
   - title, description and keywords tags
   - canonical URL and Open Graph share image
   - Schema.org structured data (FAQ, breadcrumbs, reviews, articles, item lists)
   - `sitemap.xml`, `robots.txt` and a 404 page
-  - `rel="sponsored"` on all affiliate links, as Google requires
+  - `rel="sponsored"` on all broker links, as Google requires
 
 ---
 
@@ -75,7 +76,7 @@ On GitHub, open `config.json`, click the ✏️ pencil, change the values, then 
 
 - **Forex brokers** are in `data/brokers.json`. **Crypto exchanges** are in `data/exchanges.json`.
 - The **order in the file is the ranking order** (Bitunix is first among exchanges).
-- To change an affiliate link, edit the `"url"` inside `"links"`. The `"label"` is the button text ("Visit Site").
+- To change a referral link, edit the `"url"` inside `"links"`. The `"label"` is the button text ("Visit Site").
 - `"licences"` is the licence table. Each entry has a country code, regulator, entity, licence number and tier.
 - `"domain"` is the company's official website, which is used to show its icon.
 - `"ref_code"` is your referral code, shown on the sign-up page.
@@ -130,5 +131,5 @@ With Python 3 installed, run `python build.py`, then open `_site/index.html`.
 ### Important notes
 
 - **Broker facts were checked in November 2026.** Brokers change minimum deposits, leverage and restricted-country lists often, so re-check every couple of months and update the JSON files.
-- **Keep the risk warning and affiliate disclosure.** Search engines and regulators expect them on financial affiliate sites, and they protect you legally.
+- **Keep the risk warning.** Regulators expect it on sites that promote forex and crypto trading.
 - **Free signals pages don't contain made-up results.** Post real signals in your Telegram channel, including losses. Never advertise guaranteed profits or win rates.

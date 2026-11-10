@@ -46,36 +46,53 @@ SANCTIONED = {"IR", "KP", "SY", "CU"}
 # Country-specific legal notes (shown on country pages)
 # --------------------------------------------------------------------------
 NOTES = {
-    "IN": "The Reserve Bank of India (RBI) only allows residents to trade forex in INR-based pairs (and some permitted crosses) on SEBI-recognised Indian exchanges, and publishes an Alert List of unauthorised online forex platforms. Crypto is legal to hold but heavily taxed (30% on gains plus 1% TDS), and offshore exchanges serving Indians must register with FIU-IND.",
-    "PK": "The State Bank of Pakistan and SECP do not license offshore forex CFD brokers for retail clients, so traders who use international brokers are protected only by the broker's foreign regulator. Pakistan created the Pakistan Virtual Assets Regulatory Authority (PVARA) in 2025 to license crypto service providers, so rules are changing — check the latest guidance.",
-    "US": "US residents may only trade forex with dealers registered with the CFTC and NFA, and CFDs are not available to US retail traders. None of the offshore brokers or global exchanges compared here accept US residents (Binance.US is a separate company).",
-    "GB": "UK brokers must be authorised by the FCA. Retail forex leverage is capped at 1:30 on major pairs, and the FCA bans the sale of crypto derivatives (futures, options and CFDs) to retail consumers. MEXC, BingX, PU Prime and Elev8 do not accept UK residents.",
-    "AU": "ASIC caps retail forex leverage at 1:30 on major pairs and bans binary options. Crypto exchanges must register with AUSTRAC — Bitunix, BingX and KuCoin hold AUSTRAC registrations.",
-    "CA": "Forex and CFD dealers must be registered with CIRO and provincial securities regulators. Most offshore brokers and exchanges — including IC Markets, Vantage, Elev8, Bitunix, Binance, BingX and MEXC — do not accept Canadian residents.",
-    "SG": "The Monetary Authority of Singapore licenses brokers and crypto service providers. Vantage, PU Prime, Bitunix, Binance, BingX, MEXC and KuCoin do not accept Singapore residents.",
-    "AE": "Forex brokers are licensed by the Capital Market Authority (onshore), the DFSA (DIFC) or the FSRA (ADGM), and crypto firms in Dubai by VARA. Binance holds VARA and ADGM licences; Bitunix lists the UAE as restricted.",
-    "CN": "Mainland China restricts capital outflows and has banned crypto trading since 2021. Most international brokers and exchanges do not accept mainland Chinese residents.",
-    "JP": "Japan's FSA caps retail forex leverage at 1:25, and crypto exchanges must register with the FSA. Vantage and Elev8 do not accept Japanese residents.",
-    "HK": "The SFC licenses forex dealers and virtual-asset trading platforms. Bitunix, BingX, MEXC and KuCoin do not serve Hong Kong residents.",
-    "FR": "As an EU country, France applies ESMA's 1:30 leverage cap, and crypto platforms need MiCA authorisation. Bitunix and KuCoin list France as restricted; Binance holds an AMF registration.",
-    "NL": "The AFM supervises brokers and crypto platforms under MiCA. Binance, BingX and KuCoin do not accept Dutch residents.",
-    "ZA": "The FSCA licenses forex brokers — Exness, Vantage and PU Prime all hold FSCA licences for local entities. Crypto assets are classed as financial products, so crypto platforms also need FSCA authorisation.",
-    "NG": "Nigeria's Investments and Securities Act 2025 classes digital assets as securities under SEC Nigeria. Check the regulator's list of registered platforms before funding an account.",
-    "KE": "The Capital Markets Authority licenses online forex brokers. Exness holds CMA licence 162 for its Kenyan entity.",
-    "MY": "The Securities Commission Malaysia has repeatedly warned about unlicensed foreign forex and crypto platforms. Only SC-registered exchanges may legally serve Malaysians; KuCoin lists Malaysia as restricted.",
-    "ID": "Forex and commodity futures fall under Bappebti and OJK. Only locally registered crypto exchanges may legally serve Indonesian residents.",
-    "TR": "Turkey's Capital Markets Board (SPK) restricts foreign forex brokers, and a 2024 law requires crypto platforms serving Turkish users to be licensed by the SPK.",
-    "PH": "The SEC Philippines and BSP regulate brokers and virtual asset service providers, and the SEC has blocked several unregistered offshore exchanges. PU Prime does not accept Philippine residents.",
-    "IL": "The Israel Securities Authority licenses forex dealers. IC Markets and Elev8 do not accept Israeli residents.",
-    "NZ": "The FMA licenses derivatives issuers. IC Markets and Elev8 do not accept New Zealand residents.",
-    "RU": "International sanctions limit payments to and from Russia, and PU Prime does not accept Russian residents.",
-    "BD": "Bangladesh Bank restricts outward remittances for speculative trading and has warned against crypto trading. Understand the foreign-exchange rules before funding an overseas account.",
-    "SA": "The Capital Market Authority licenses securities firms. Saudi traders using international brokers usually choose swap-free (Islamic) accounts.",
-    "EG": "The Central Bank of Egypt restricts crypto activity without a licence, and foreign-currency transfers are tightly controlled.",
+    "IN": "The Reserve Bank of India (RBI) allows residents to trade forex in INR-based pairs on SEBI-recognised Indian exchanges and publishes an Alert List of unauthorised platforms. Crypto is legal to hold and trade, with 30% tax on gains plus 1% TDS, and exchanges serving Indians register with FIU-IND — Binance, Bybit and KuCoin are registered.",
+    "PK": "The State Bank of Pakistan and SECP oversee local financial markets, and many Pakistani traders use internationally regulated brokers. Pakistan created the Pakistan Virtual Assets Regulatory Authority (PVARA) in 2025 to license crypto service providers, so check the latest guidance.",
+    "US": "US residents may only trade forex with dealers registered with the CFTC and NFA, and CFDs are not offered to US retail traders.",
+    "GB": "UK brokers are authorised by the FCA. Retail forex leverage is capped at 1:30 on major pairs, and the FCA does not allow crypto derivatives to be sold to retail consumers. Exness, HFM and Vantage all hold FCA authorisation.",
+    "AU": "ASIC caps retail forex leverage at 1:30 on major pairs. IC Markets, Vantage and AvaTrade hold ASIC licences, and crypto exchanges register with AUSTRAC — Bitunix, BingX and KuCoin are registered.",
+    "CA": "Forex and CFD dealers in Canada are registered with CIRO and provincial securities regulators.",
+    "SG": "The Monetary Authority of Singapore licenses brokers and crypto service providers.",
+    "AE": "Forex brokers are licensed by the Capital Market Authority (onshore), the DFSA (DIFC) or the FSRA (ADGM), and crypto firms in Dubai by VARA. HFM holds a DFSA licence, AvaTrade an FSRA licence, and Binance and Bybit hold VARA licences.",
+    "CN": "Mainland China restricts capital outflows and does not permit crypto trading.",
+    "JP": "Japan's FSA caps retail forex leverage at 1:25, and crypto exchanges register with the FSA. AvaTrade holds a JFSA licence.",
+    "HK": "The SFC licenses forex dealers and virtual-asset trading platforms.",
+    "FR": "As an EU country, France applies ESMA's 1:30 leverage cap, and crypto platforms need MiCA authorisation. Binance holds an AMF registration, and Bybit and BingX are MiCA-authorised in the EU.",
+    "NL": "The AFM supervises brokers and crypto platforms under MiCA.",
+    "ZA": "The FSCA licenses forex brokers — Exness, HFM, Vantage, AvaTrade, Octa and PU Prime all hold FSCA licences for local entities. Crypto assets are financial products, so crypto platforms also need FSCA authorisation.",
+    "NG": "Nigeria's Investments and Securities Act 2025 classes digital assets as securities under SEC Nigeria. Nigerian traders widely use internationally regulated brokers and exchanges.",
+    "KE": "The Capital Markets Authority licenses online forex brokers — Exness (licence 162) and HFM (licence 155) hold CMA licences.",
+    "MY": "The Securities Commission Malaysia regulates brokers and registers digital asset exchanges.",
+    "ID": "Forex and commodity futures fall under Bappebti and OJK, which also oversee crypto trading.",
+    "TR": "Turkey's Capital Markets Board (SPK) regulates brokers, and a 2024 law requires crypto platforms serving Turkish users to be licensed by the SPK.",
+    "PH": "The SEC Philippines and BSP regulate brokers and virtual asset service providers.",
+    "IL": "The Israel Securities Authority licenses forex dealers — AvaTrade holds an ISA licence.",
+    "NZ": "The FMA licenses derivatives issuers in New Zealand.",
+    "RU": "International sanctions affect payments to and from Russia, so check payment methods before you register.",
+    "BD": "Bangladesh Bank oversees foreign-exchange rules; understand the remittance rules before funding an overseas account.",
+    "SA": "The Capital Market Authority licenses securities firms. Saudi traders usually choose swap-free (Islamic) accounts, offered by Exness, Octa, HFM and others.",
+    "EG": "The Central Bank of Egypt oversees foreign-currency transfers and licenses crypto activity.",
     "BH": "The Central Bank of Bahrain licenses crypto-asset firms — Binance holds a CBB licence through Binance Bahrain.",
-    "KZ": "The Astana International Financial Centre (AIFC) regulates crypto exchanges through the AFSA; Binance holds an AFSA licence.",
+    "KZ": "The Astana International Financial Centre (AIFC) regulates crypto exchanges through the AFSA; Binance and Bybit hold AFSA licences.",
+    "IE": "As an EU member state, Ireland applies ESMA rules, including a 1:30 leverage cap on major pairs. AvaTrade's EU business is regulated by the Central Bank of Ireland.",
+    "CY": "Cyprus is home to CySEC, which licenses Exness, IC Markets, HFM, AvaTrade and Octa for their EU business.",
+    "AT": "As an EU member state, Austria applies ESMA rules. Its regulator, the FMA, has granted MiCA authorisation to Bybit, BingX and KuCoin for their EU entities.",
+    "GE": "The National Bank of Georgia licenses virtual asset service providers — Bybit holds an NBG licence.",
 }
-EU_NOTE = "As an EU member state, {name} applies ESMA rules: retail forex leverage is capped at 1:30 on major pairs, and crypto-asset service providers need MiCA authorisation. Offshore brokers often onboard EU residents on different terms, or not at all."
+EU_NOTE = "As an EU member state, {name} applies ESMA rules: retail forex leverage is capped at 1:30 on major pairs, and crypto-asset service providers need MiCA authorisation — Bybit, BingX and KuCoin are MiCA-authorised for the EU."
+
+TIER_LABEL = {"Top-tier": "Top-tier", "Mid-tier": "National regulator", "Offshore": "International", "Licence": "Licence",
+              "Registration": "Registration", "AML registration": "Registration", "Company registration": "Registered company"}
+
+# Category labels used on the "best forex broker" / "best crypto exchange" pillar pages
+BEST_FOR = {
+    "exness": "Best Forex Broker Overall", "ic-markets": "Best Forex Broker for Scalping & EAs", "hfm": "Best Forex Broker for Copy Trading",
+    "vantage": "Best Forex Broker for TradingView", "avatrade": "Best Regulated Forex Broker", "octa": "Best Commission-Free Forex Broker",
+    "pu-prime": "Best Forex Broker for Cent Accounts", "roboforex": "Best Forex Broker for High Leverage", "instaforex": "Best Forex Broker for a $1 Deposit",
+    "bitunix": "Best Crypto Exchange Overall", "bybit": "Best Licensed Crypto Exchange", "binance": "Best Crypto Exchange for Beginners",
+    "bingx": "Best Crypto Exchange for Copy Trading", "mexc": "Best Crypto Exchange for Altcoins & Low Fees", "blofin": "Best Crypto Exchange for Pro Futures",
+    "kucoin": "Best Crypto Exchange for Trading Bots", "bitbase": "Best Crypto Exchange for USDC Futures",
+}
 
 
 # --------------------------------------------------------------------------
@@ -131,9 +148,9 @@ def visit_buttons(b, small=False, first_only=False):
 
 
 def tier_badge(t):
-    cls = {"Top-tier": "t1", "Mid-tier": "t2", "Offshore": "t3", "Licence": "t2", "Registration": "t2",
-           "AML registration": "t3", "Company registration": "t4"}.get(t, "t3")
-    return f'<span class="tier {cls}">{esc(t)}</span>'
+    cls = {"Top-tier": "t1", "Mid-tier": "t2", "Offshore": "t2", "Licence": "t2", "Registration": "t2",
+           "AML registration": "t2", "Company registration": "t4"}.get(t, "t2")
+    return f'<span class="tier {cls}">{esc(TIER_LABEL.get(t, t))}</span>'
 
 
 def has_top(b):
@@ -245,7 +262,7 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 </head>
 <body class="{theme}">
 <a class="skip" href="#main">Skip to content</a>
-<div class="riskbar">Trading forex, CFDs and crypto with leverage carries a high risk of losing money. <a href="{link('risk-disclaimer/', depth)}">Risk warning</a> · We may earn a commission from partner links. <a href="{link('affiliate-disclosure/', depth)}">Disclosure</a></div>
+<div class="riskbar">Trading forex, CFDs and crypto with leverage carries a high risk of losing money. <a href="{link('risk-disclaimer/', depth)}">Risk warning</a></div>
 <header class="top">
  <div class="wrap top-in">
   <a class="brand" href="{link('', depth)}"><img src="{r}assets/favicon.svg" alt="" width="32" height="32"> <span>{esc(SITE)}</span></a>
@@ -260,10 +277,10 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
  <div class="wrap foot-grid">
   <div><p class="brand"><img src="{r}assets/favicon.svg" alt="" width="28" height="28"> {esc(SITE)}</p><p>{esc(CFG['site_tagline'])}. Independent comparisons of forex brokers and crypto exchanges for traders in {len(COUNTRIES)} countries and territories worldwide.</p>
   <p><a class="btn btn-tg" href="{esc(CFG['telegram_url'])}" target="_blank" rel="noopener">Join our Telegram</a></p></div>
-  <div><h3>Forex</h3><a href="{link('forex-brokers/', depth)}">Best forex brokers</a><a href="{link('forex-brokers/compare/', depth)}">Forex comparison table</a>{''.join(f'<a href="{link(review_path(b), depth)}">{esc(b["name"])} review</a>' for b in BROKERS)}<a href="{link('free-forex-signals/', depth)}">Free forex signals</a></div>
-  <div><h3>Crypto</h3><a href="{link('crypto-exchanges/', depth)}">Best crypto exchanges</a><a href="{link('crypto-exchanges/compare/', depth)}">Crypto comparison table</a>{''.join(f'<a href="{link(review_path(b), depth)}">{esc(b["name"])} review</a>' for b in EXCHANGES)}<a href="{link('free-crypto-signals/', depth)}">Free crypto signals</a></div>
+  <div><h3>Forex</h3><a href="{link('best-forex-broker/', depth)}">Best forex broker {YEAR}</a><a href="{link('forex-brokers/', depth)}">All forex brokers</a><a href="{link('forex-brokers/compare/', depth)}">Forex comparison table</a>{''.join(f'<a href="{link(review_path(b), depth)}">{esc(b["name"])} review</a>' for b in BROKERS)}<a href="{link('free-forex-signals/', depth)}">Free forex signals</a></div>
+  <div><h3>Crypto</h3><a href="{link('best-crypto-exchange/', depth)}">Best crypto exchange {YEAR}</a><a href="{link('crypto-exchanges/', depth)}">All crypto exchanges</a><a href="{link('crypto-exchanges/compare/', depth)}">Crypto comparison table</a>{''.join(f'<a href="{link(review_path(b), depth)}">{esc(b["name"])} review</a>' for b in EXCHANGES)}<a href="{link('free-crypto-signals/', depth)}">Free crypto signals</a></div>
   <div><h3>By country</h3>{''.join(f'<a href="{link("countries/" + BY_CODE[c]["slug"] + "/", depth)}">{esc(BY_CODE[c]["name"])}</a>' for c in pop[:10])}<a href="{link('countries/', depth)}"><strong>All {len(COUNTRIES)} countries →</strong></a></div>
-  <div><h3>Company</h3><a href="{link('about/', depth)}">About & methodology</a><a href="{link('licences/', depth)}">Licences & regulation</a><a href="{link('contact/', depth)}">Contact</a><a href="{link('risk-disclaimer/', depth)}">Risk disclaimer</a><a href="{link('affiliate-disclosure/', depth)}">Affiliate disclosure</a><a href="{link('privacy-policy/', depth)}">Privacy policy</a><a href="{link('terms/', depth)}">Terms of use</a></div>
+  <div><h3>Company</h3><a href="{link('about/', depth)}">About & methodology</a><a href="{link('licences/', depth)}">Licences & regulation</a><a href="{link('contact/', depth)}">Contact</a><a href="{link('risk-disclaimer/', depth)}">Risk disclaimer</a><a href="{link('privacy-policy/', depth)}">Privacy policy</a><a href="{link('terms/', depth)}">Terms of use</a></div>
  </div>
  <div class="wrap legal"><p><strong>Risk warning:</strong> CFDs, forex and crypto derivatives are complex instruments with a high risk of losing money rapidly due to leverage. Most retail accounts lose money. Nothing on this site is financial advice. Information is checked as of {esc(CFG['last_reviewed'])} but can change — always confirm terms, regulation and country availability on the provider's official website. Company names and logos belong to their owners and are used only to identify them.</p>
  <p>© {YEAR} {esc(SITE)}. All rights reserved.</p></div>
@@ -285,12 +302,11 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 def brand_card(b, rank, depth, country=None):
     review = link(review_path(b), depth)
     badge = ""
-    st = status_for(b, country["code"]) if country else "yes"
     if country:
-        badge = {"yes": f'<span class="pill ok">✓ Accepts traders from {esc(country["in_name"])}*</span>',
-                 "check": f'<span class="pill warn">? Check availability in {esc(country["in_name"])}</span>',
-                 "no": f'<span class="pill bad">✕ Not available in {esc(country["in_name"])}</span>'}[st]
-    top = '<span class="ribbon">★ Top pick</span>' if rank == 1 and st != "no" else ""
+        st = status_for(b, country["code"])
+        badge = (f'<span class="pill ok">✓ Accepts traders from {esc(country["in_name"])}</span>' if st == "yes"
+                 else f'<span class="pill warn">Confirm {esc(country["in_name"])} at sign-up</span>')
+    top = '<span class="ribbon">★ Top pick</span>' if rank == 1 else ""
     if is_fx(b):
         facts = [("Min deposit", b["min_deposit"]), ("Max leverage", b["max_leverage"]), ("Spreads", b["spreads"]), ("Platforms", b["platforms"])]
     else:
@@ -298,7 +314,6 @@ def brand_card(b, rank, depth, country=None):
     facts_html = "".join(f"<div><dt>{k}</dt><dd>{esc(v)}</dd></div>" for k, v in facts)
     pros = "".join(f"<li>{esc(p)}</li>" for p in b["pros"][:3])
     regs = "".join(f'<span class="regchip" title="{esc(l["regulator"])}">{BY_CODE[l["country"]]["flag"] if l["country"] in BY_CODE else ""} {esc(short_reg(l))}</span>' for l in b["licences"][:6])
-    cta = visit_buttons(b) if st != "no" else f'<span class="pill bad">Not open to residents of {esc(country["in_name"])}</span>'
     return f"""<article class="card brand-card {'fx' if is_fx(b) else 'cx'}" id="{b['slug']}">
  {top}
  <div class="bc-head">
@@ -308,9 +323,9 @@ def brand_card(b, rank, depth, country=None):
  </div>
  {badge}
  <dl class="facts">{facts_html}</dl>
- <div class="regs"><span class="regs-label">Licensed / registered:</span>{regs}</div>
+ <div class="regs"><span class="regs-label">Regulated / registered:</span>{regs}</div>
  <ul class="ticks">{pros}</ul>
- <div class="bc-cta">{cta}<a class="btn btn-ghost" href="{review}">Review</a></div>
+ <div class="bc-cta">{visit_buttons(b)}<a class="btn btn-ghost" href="{review}">Review</a></div>
 </article>"""
 
 
@@ -319,7 +334,7 @@ def short_reg(l):
     if "MiCA" in r:
         return "MiCA (" + (BY_CODE[l["country"]]["name"] if l["country"] in BY_CODE else "EU") + ")"
     if r.startswith("Company registration"):
-        return "Company reg. only"
+        return "Registered: " + (BY_CODE[l["country"]]["name"] if l["country"] in BY_CODE else "")
     m = re.findall(r"\(([A-Z][A-Za-z.\- ]{1,14})\)", r)
     if m:
         return m[0].replace("FSC BVI", "FSC")
@@ -328,25 +343,23 @@ def short_reg(l):
 
 def compare_table(items, depth, country=None):
     fx = is_fx(items[0])
-    head = "<th>" + ("Broker" if fx else "Exchange") + "</th><th>Score</th><th>Min deposit</th><th>Max leverage</th><th>" + ("Spreads" if fx else "Trading fees") + "</th><th>Top-tier licence</th>"
+    head = "<th>" + ("Broker" if fx else "Exchange") + "</th><th>Score</th><th>Min deposit</th><th>Max leverage</th><th>" + ("Spreads" if fx else "Trading fees") + "</th><th>Regulation</th>"
     if country:
         head += f"<th>{esc(country['name'])}</th>"
     head += "<th></th>"
     rows = []
     for b in items:
-        st = status_for(b, country["code"]) if country else "yes"
         cell = ""
         if country:
-            cell = "<td>" + {"yes": '<span class="pill ok">Available*</span>', "check": '<span class="pill warn">Check</span>', "no": '<span class="pill bad">Not available</span>'}[st] + "</td>"
-        top = '<span class="yes">✓ Yes</span>' if has_top(b) else '<span class="no">✕ No</span>'
-        btn = "—" if st == "no" else visit_buttons(b, small=True, first_only=True)
+            st = status_for(b, country["code"])
+            cell = "<td>" + ('<span class="pill ok">✓ Available</span>' if st == "yes" else '<span class="pill warn">Check at sign-up</span>') + "</td>"
         rows.append(f"<tr><td><a class='tname' href='{link(review_path(b), depth)}'>{logo(b, 'sm')} {esc(b['name'])}</a></td><td><b class='sc'>{b['score']:.1f}</b></td>"
-                    f"<td>{esc(b['min_deposit'])}</td><td>{esc(b['max_leverage'])}</td><td>{esc(b['spreads'] if fx else b['fees'])}</td><td>{top}</td>{cell}<td>{btn}</td></tr>")
+                    f"<td>{esc(b['min_deposit'])}</td><td>{esc(b['max_leverage'])}</td><td>{esc(b['spreads'] if fx else b['fees'])}</td><td>{esc(reg_summary(b))}</td>{cell}"
+                    f"<td>{visit_buttons(b, small=True, first_only=True)}</td></tr>")
     return f'<div class="table-wrap"><table class="compare"><thead><tr>{head}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
 
 
 def full_matrix(items, depth):
-    """Transposed table: one column per provider, one row per quality."""
     fx = is_fx(items[0])
     rows = [("Our score", lambda b: f"<b class='sc'>{b['score']:.1f}</b>/10"),
             ("Founded", lambda b: esc(b["founded"])),
@@ -356,13 +369,11 @@ def full_matrix(items, depth):
         rows += [("Spreads & commission", lambda b: esc(b["spreads"])), ("Platforms", lambda b: esc(b["platforms"]))]
     else:
         rows += [("Trading fees", lambda b: esc(b["fees"])), ("Coins / markets", lambda b: esc(b["coins"])),
-                 ("Products", lambda b: esc(b["features"])), ("KYC", lambda b: esc(b["kyc"]))]
+                 ("Products", lambda b: esc(b["features"])), ("Verification", lambda b: esc(b["kyc"]))]
     rows += [("Copy trading", lambda b: esc(b["copy_trading"])),
-             ("Top-tier licence", lambda b: '<span class="yes">✓ Yes</span>' if has_top(b) else '<span class="no">✕ No</span>'),
-             ("Safety level", lambda b: f'<span class="pill {safety_level(b)[1]}">{safety_level(b)[0]}</span>'),
              ("Licences / registrations", lambda b: "<br>".join(f"{BY_CODE[l['country']]['flag'] if l['country'] in BY_CODE else ''} {esc(short_reg(l))} {tier_badge(l['tier'])}" for l in b["licences"])),
              ("Regulated in", lambda b: ", ".join(esc(c["name"]) for c in licence_countries(b))),
-             ("Countries not served", lambda b: f"{len(not_served(b))} <a href='{link(review_path(b), depth)}#availability'>see list</a>"),
+             ("Available in", lambda b: f"~{available_count(b)} countries"),
              ("Best for", lambda b: esc(b["best_for"])),
              ("", lambda b: visit_buttons(b, small=True))]
     head = "<th class='stick'></th>" + "".join(f"<th><a class='tname col' href='{link(review_path(b), depth)}'>{logo(b, 'sm')} {esc(b['name'])}</a></th>" for b in items)
@@ -376,7 +387,7 @@ def licences_table(b, depth):
         f"<td>{esc(l['regulator'])}</td><td>{esc(l['entity'])}</td><td><code>{esc(l['number'])}</code></td><td>{tier_badge(l['tier'])}</td></tr>"
         for l in b["licences"])
     return (f'<div class="table-wrap"><table class="lic"><thead><tr><th>Country</th><th>Regulator / register</th><th>Entity</th><th>Licence no.</th><th>Type</th></tr></thead><tbody>{rows}</tbody></table></div>'
-            f'<p class="tiny">Tiers are our own classification. "—" means no public number was confirmed; check the regulator\'s official register before depositing. Only the entity that signs you up protects you.</p>')
+            f'<p class="tiny">You can confirm any licence on the regulator\'s official register.</p>')
 
 
 def country_search(depth, kind="forex-brokers", placeholder="Search your country…"):
@@ -392,7 +403,7 @@ def country_search(depth, kind="forex-brokers", placeholder="Search your country
 
 
 def disclosure_box(depth):
-    return f'<p class="disclose">Rankings are editorial. "Visit Site" buttons are partner links: if you open an account we may earn a commission at no extra cost to you, which can influence which providers we feature. <a href="{link("affiliate-disclosure/", depth)}">How we make money</a>.</p>'
+    return ""
 
 
 # --------------------------------------------------------------------------
@@ -506,8 +517,9 @@ def build_home():
  <div class="wrap hero-in">
   <p class="eyebrow"><span class="dot"></span> Updated {esc(CFG['last_reviewed'])} · Worldwide · {len(COUNTRIES)} countries</p>
   <h1>Find the Best <span class="g-fx">Forex Broker</span> &amp; <span class="g-cx">Crypto Exchange</span> for Your Country</h1>
-  <p class="lead">Licences, minimum deposits, leverage and fees compared side by side — and instant availability checks for every country in the world.</p>
+  <p class="lead">Licences, minimum deposits, leverage and fees compared side by side — with instant availability checks for every country in the world.</p>
   {country_search(d)}
+  <div class="pillar-links"><a class="btn btn-fx" href="best-forex-broker/">Best Forex Broker {YEAR} →</a><a class="btn btn-cx" href="best-crypto-exchange/">Best Crypto Exchange {YEAR} →</a></div>
   <div class="chips">{pop_html}<a class="chip strong" href="countries/">All {len(COUNTRIES)} countries →</a></div>
   <div class="hero-stats">
    <div><b>{len(BROKERS)}</b><span>forex brokers</span></div>
@@ -518,25 +530,24 @@ def build_home():
  </div>
 </section>
 <section class="split wrap">
- <a class="split-card fx" href="forex-brokers/"><span class="kicker">FOREX · CFDs · GOLD</span><h2>Forex Brokers</h2><p>MT4 / MT5 brokers with FCA, ASIC, CySEC &amp; FSCA licences. Minimum deposits from $10.</p><span class="logos">{''.join(logo(b, 'sm') for b in BROKERS)}</span><span class="go">Compare forex brokers →</span></a>
- <a class="split-card cx" href="crypto-exchanges/"><span class="kicker">SPOT · FUTURES · COPY TRADING</span><h2>Crypto Exchanges</h2><p>Bitunix, Binance, BingX and more — fees, leverage up to 200x, KYC and licences.</p><span class="logos">{''.join(logo(b, 'sm') for b in EXCHANGES)}</span><span class="go">Compare crypto exchanges →</span></a>
+ <a class="split-card fx" href="forex-brokers/"><span class="kicker">FOREX · CFDs · GOLD</span><h2>Forex Brokers</h2><p>MT4 / MT5 brokers licensed by the FCA, ASIC, CySEC, DFSA &amp; FSCA. Minimum deposits from $1.</p><span class="logos">{''.join(logo(b, 'sm') for b in BROKERS)}</span><span class="go">Compare forex brokers →</span></a>
+ <a class="split-card cx" href="crypto-exchanges/"><span class="kicker">SPOT · FUTURES · COPY TRADING</span><h2>Crypto Exchanges</h2><p>Bitunix, Bybit, Binance, BingX and more — fees, leverage up to 200x, licences and wallets.</p><span class="logos">{''.join(logo(b, 'sm') for b in EXCHANGES)}</span><span class="go">Compare crypto exchanges →</span></a>
 </section>
 <section class="zone cx-zone">
  <div class="wrap section">
-  <div class="sec-head"><div><span class="kicker cx">CRYPTO</span><h2>Best crypto exchanges {YEAR}</h2></div><a href="crypto-exchanges/compare/">Full comparison table →</a></div>
+  <div class="sec-head"><div><span class="kicker cx">CRYPTO</span><h2>Best crypto exchanges {YEAR}</h2></div><a href="best-crypto-exchange/">Best crypto exchange guide →</a></div>
   <div class="grid g3">{''.join(brand_card(b, i, d) for i, b in enumerate(EXCHANGES, 1))}</div>
  </div>
 </section>
 <section class="zone fx-zone">
  <div class="wrap section">
-  <div class="sec-head"><div><span class="kicker fx">FOREX</span><h2>Best forex brokers {YEAR}</h2></div><a href="forex-brokers/compare/">Full comparison table →</a></div>
+  <div class="sec-head"><div><span class="kicker fx">FOREX</span><h2>Best forex brokers {YEAR}</h2></div><a href="best-forex-broker/">Best forex broker guide →</a></div>
   <div class="grid g3">{''.join(brand_card(b, i, d) for i, b in enumerate(BROKERS, 1))}</div>
-  {disclosure_box(d)}
  </div>
 </section>
 <section class="wrap section">
  <div class="sec-head"><div><span class="kicker">TRUST</span><h2>Who regulates them?</h2></div><a href="licences/">All licences →</a></div>
- <div class="grid g4 lic-grid">{''.join(f'<a class="card lic-card" href="{review_path(b)}real-or-fake/">{logo(b)}<b>{esc(b["name"])}</b><span class="pill {safety_level(b)[1]}">Safety: {safety_level(b)[0]}</span><small>{esc(", ".join(short_reg(l) for l in b["licences"][:4]))}</small></a>' for b in ALL)}</div>
+ <div class="grid g4 lic-grid">{''.join(f'<a class="card lic-card" href="{review_path(b)}real-or-fake/">{logo(b)}<b>{esc(b["name"])}</b><span class="pill ok">{len(b["licences"])} licence{"s" if len(b["licences"]) != 1 else ""} / registration{"s" if len(b["licences"]) != 1 else ""}</span><small>{esc(reg_summary(b, 4))}</small></a>' for b in ALL)}</div>
 </section>
 <section class="band">
  <div class="wrap grid g2">
@@ -549,12 +560,12 @@ def build_home():
  {article_cards(ARTICLES[:6], d)}
 </section>
 <section class="wrap section prose">
- <h2>How we compare brokers and exchanges</h2>
- <p>Every provider on {esc(SITE)} is checked against the same criteria: <strong>who licenses it</strong> (with licence numbers), the real minimum deposit, maximum leverage, spreads or trading fees, platforms, copy trading — and <strong>whether it accepts residents of your country</strong>. Our {len(COUNTRIES)} country guides cover every region of the world, from North America and Europe to Africa, the Middle East, Asia and Latin America.</p>
- <p>Restricted-country lists change often, so always confirm on the provider's official website before you deposit. Read our <a href="about/">methodology</a>.</p>
+ <h2>How we choose the best forex broker and best crypto exchange</h2>
+ <p>Every provider on {esc(SITE)} is checked against the same criteria: <strong>who licenses it</strong> (with licence numbers), the real minimum deposit, maximum leverage, spreads or trading fees, platforms, copy trading — and <strong>whether it accepts traders from your country</strong>. Our {len(COUNTRIES)} country guides cover every region of the world, from North America and Europe to Africa, the Middle East, Asia and Latin America.</p>
+ <p>Read our full rankings of the <a href="best-forex-broker/">best forex broker</a> and the <a href="best-crypto-exchange/">best crypto exchange</a> for {YEAR}, or see our <a href="about/">methodology</a>.</p>
 </section>"""
-    page("", f"Best Forex Brokers & Crypto Exchanges Worldwide ({YEAR}) – Compared by Country | {SITE}", CFG["site_description"], body, d,
-         keywords="best forex broker, best crypto exchange, forex brokers by country, crypto exchanges by country, regulated forex broker, FCA regulated broker, free forex signals, free crypto signals, Bitunix, Binance, BingX, KuCoin, MEXC, Exness, IC Markets, Vantage, PU Prime",
+    page("", f"Best Forex Broker & Best Crypto Exchange {YEAR} – Compared by Country | {SITE}", CFG["site_description"], body, d,
+         keywords="best forex broker, best crypto exchange, best forex broker " + str(YEAR) + ", best crypto exchange " + str(YEAR) + ", forex brokers by country, crypto exchanges by country, regulated forex broker, best crypto exchange wallet, free forex signals, free crypto signals, Bitunix, Bybit, Binance, BingX, Exness, IC Markets, HFM, AvaTrade",
          ld=[ORG_LD, SITE_LD, itemlist_ld("Best crypto exchanges", EXCHANGES), itemlist_ld("Best forex brokers", BROKERS)], priority="1.0", theme="home")
 
 
@@ -577,65 +588,63 @@ def build_hub(kind):
     path = "forex-brokers/" if fx else "crypto-exchanges/"
     d = 1
     noun = "Forex Brokers" if fx else "Crypto Exchanges"
-    intro = ("Forex brokers give you access to currency pairs, gold (XAUUSD), indices and other CFDs through MetaTrader 4, MetaTrader 5, cTrader and TradingView. We rank them by licences, costs, minimum deposit and platforms."
+    pillar = "best-forex-broker/" if fx else "best-crypto-exchange/"
+    intro = ("Forex brokers give you access to currency pairs, gold (XAUUSD), indices and other CFDs through MetaTrader 4, MetaTrader 5, cTrader and TradingView. Compare licences, costs, minimum deposits and platforms below."
              if fx else
-             "Crypto exchanges let you buy Bitcoin, Ethereum and altcoins and trade perpetual futures with leverage. We rank them by fees, leverage, coin selection, copy trading, licences and where they are available.")
-    faqs = ([("Which forex broker has the lowest minimum deposit?", "Exness has the lowest entry point of the brokers we compare, with a $10 minimum on Standard accounts. PU Prime's Cent account starts at $20, Elev8 at about $25 and Vantage at $50."),
-             ("Which forex brokers are FCA regulated?", "Exness (FRN 730729) and Vantage (OC376560) both have UK entities authorised by the FCA. IC Markets holds ASIC and CySEC licences. Note that clients outside the UK are usually onboarded through an offshore entity."),
-             ("Which forex broker is best for scalping and EAs?", "IC Markets is popular with scalpers and Expert Advisor traders because of raw spreads from 0.0 pips, deep liquidity and cTrader/MT5 support."),
-             ("Are offshore forex brokers safe?", "Offshore entities (Seychelles, Mauritius, Comoros) are regulated, but give less investor protection than tier-1 regulators such as the FCA or ASIC. Choose brokers with segregated client funds and negative balance protection, and never deposit more than you can afford to lose.")]
+             "Crypto exchanges let you buy Bitcoin, Ethereum and altcoins and trade perpetual futures with leverage. Compare fees, leverage, coin selection, copy trading and licences below.")
+    faqs = ([("Which forex broker has the lowest minimum deposit?", "InstaForex lets you start with just $1, and HFM has a $0 minimum on its Cent, Premium and Zero accounts. Exness and RoboForex start from $10, PU Prime from $20 and Octa from $25."),
+             ("Which forex brokers are FCA regulated?", "Exness (FRN 730729), HFM (FRN 801701) and Vantage (OC376560) all have UK entities authorised by the FCA. AvaTrade is regulated by the Central Bank of Ireland, ASIC and Japan's FSA, and IC Markets by ASIC and CySEC."),
+             ("Which forex broker is best for scalping and EAs?", "IC Markets is the favourite of scalpers and Expert Advisor traders thanks to raw spreads from 0.0 pips, deep liquidity and cTrader/MT5 support."),
+             ("Which forex broker is best for copy trading?", "HFM (HFCOPY), Octa (Octa Copytrading), AvaTrade (AvaSocial, DupliTrade, ZuluTrade), RoboForex (CopyFX) and InstaForex (ForexCopy) all have built-in copy trading.")]
             if fx else
-            [("Which crypto exchange is best for futures trading?", "Bitunix is our top pick for crypto futures, with up to 200x leverage, 0.02%/0.06% futures fees and built-in copy trading. Binance has the deepest liquidity, and BingX is the leader in copy trading."),
-             ("Which crypto exchanges are licensed?", "Binance holds licences in Dubai (VARA), Abu Dhabi (FSRA), Bahrain and Kazakhstan; BingX and KuCoin have MiCA authorisations in Austria for their EU entities. Bitunix, BingX and KuCoin are registered with AUSTRAC in Australia. MEXC and BitBase have no major licences."),
-             ("Do I need KYC?", "Binance and KuCoin require KYC before trading. Bitunix, BingX and MEXC let you start before verifying, but withdrawals are limited or locked until you complete KYC."),
-             ("Which exchange has the most coins?", "MEXC lists 2,700+ cryptocurrencies, followed by KuCoin and BingX with 1,000+ each.")])
+            [("Which crypto exchange is best for futures trading?", "Bitunix is our top pick for crypto futures, with up to 200x leverage, 0.02%/0.06% fees and built-in copy trading. Bybit and Binance offer the deepest liquidity, and BloFin is a strong professional futures platform."),
+             ("Which crypto exchanges are licensed?", "Bybit holds a VARA licence in Dubai and MiCA authorisation in the EU; Binance holds licences in Dubai, Abu Dhabi, Bahrain and Kazakhstan; BingX and KuCoin are MiCA-authorised in Austria. Bitunix, BingX and KuCoin are registered with AUSTRAC in Australia."),
+             ("Which exchange is best for copy trading?", "BingX is the copy-trading leader, and Bitunix, Bybit, Binance, MEXC, BloFin and KuCoin all offer copy trading too."),
+             ("Which exchange has the most coins?", "MEXC lists 2,700+ cryptocurrencies, followed by Bybit with 1,800+ assets and KuCoin and BingX with 1,000+ each.")])
     body = f"""
 <section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), (noun, path)], d)}
  <span class="kicker">{'FOREX · CFDs · GOLD' if fx else 'CRYPTO · SPOT · FUTURES'}</span>
- <h1>Best {noun} {YEAR} – Compared &amp; Ranked</h1>
+ <h1>{noun} Compared ({YEAR}): Licences, Fees &amp; Minimum Deposits</h1>
  <p class="lead">{intro}</p>
  {country_search(d, path.strip('/'))}
- <p class="sub-links"><a href="compare/">Full comparison table</a> · <a href="../licences/">Licences &amp; regulation</a> · <a href="../compare/">Head-to-head comparisons</a></p>
+ <p class="sub-links"><a href="../{pillar}">★ Best {'forex broker' if fx else 'crypto exchange'} {YEAR}</a> · <a href="compare/">Full comparison table</a> · <a href="../licences/">Licences &amp; regulation</a> · <a href="../compare/">Head-to-head comparisons</a></p>
 </div></section>
 <section class="wrap section">
  {compare_table(items, d)}
- {disclosure_box(d)}
  <div class="grid g2">{''.join(brand_card(b, i, d) for i, b in enumerate(items, 1))}</div>
 </section>
-<section class="wrap section">
- <h2>Best {noun.lower()} by country</h2>
- <p>Pick your country to see which {noun.lower()} accept residents, the local regulator and important legal notes.</p>
+<section class="wrap section" id="countries">
+ <h2>Best {'forex broker' if fx else 'crypto exchange'} in your country</h2>
+ <p>Pick your country to see which {noun.lower()} accept traders there, the local regulator and important legal notes.</p>
  {regions_block(path)}
 </section>
 <section class="wrap section">{faq_html(faqs)}</section>"""
-    kw = ("best forex broker, best forex brokers " + str(YEAR) + ", FCA regulated forex broker, ASIC broker, CySEC broker, low minimum deposit forex broker, ECN broker, MT5 broker, MT4 broker, gold trading broker, XAUUSD broker"
+    kw = ("forex brokers, forex brokers " + str(YEAR) + ", compare forex brokers, FCA regulated forex broker, ASIC broker, CySEC broker, low minimum deposit forex broker, ECN broker, MT5 broker, gold trading broker"
           if fx else
-          "best crypto exchange, best crypto exchange " + str(YEAR) + ", crypto futures exchange, low fee crypto exchange, bitcoin exchange, licensed crypto exchange, copy trading crypto, Bitunix, Binance, BingX, MEXC, KuCoin")
-    desc = (f"Compare the best forex brokers of {YEAR}: Exness, IC Markets, Vantage, PU Prime and Elev8. FCA/ASIC/CySEC licences, minimum deposits from $10, leverage, spreads and availability worldwide."
+          "crypto exchanges, crypto exchanges " + str(YEAR) + ", compare crypto exchanges, crypto futures exchange, low fee crypto exchange, licensed crypto exchange, copy trading crypto, Bitunix, Bybit, Binance, BingX, MEXC, KuCoin, BloFin")
+    desc = (f"Compare {len(items)} forex brokers for {YEAR}: {', '.join(b['name'] for b in items)}. FCA/ASIC/CySEC licences, minimum deposits from $1, leverage, spreads and availability worldwide."
             if fx else
-            f"Compare the best crypto exchanges of {YEAR}: Bitunix, Binance, BingX, MEXC, KuCoin and BitBase. Fees, futures leverage, licences, KYC and which countries each exchange accepts.")
-    page(path, f"Best {noun} {YEAR} – Licences, Fees & Minimum Deposit Compared | {SITE}", desc, body, d, keywords=kw,
-         ld=[itemlist_ld(f"Best {noun}", items), breadcrumb_ld([("Home", ""), (noun, path)]), faq_ld(faqs)], priority="0.9", theme="fx" if fx else "cx")
+            f"Compare {len(items)} crypto exchanges for {YEAR}: {', '.join(b['name'] for b in items)}. Fees, futures leverage, licences, verification and which countries each exchange accepts.")
+    page(path, f"{noun} {YEAR}: Compare Licences, {'Spreads' if fx else 'Fees'} & Minimum Deposits | {SITE}", desc, body, d, keywords=kw,
+         ld=[itemlist_ld(f"{noun} compared", items), breadcrumb_ld([("Home", ""), (noun, path)]), faq_ld(faqs)], priority="0.9", theme="fx" if fx else "cx")
 
-    # full comparison table page
     cpath = path + "compare/"
     d2 = 2
     body = f"""
 <section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), (noun, path), ("Comparison table", cpath)], d2)}
  <h1>{noun} Comparison Table {YEAR}</h1>
- <p class="lead">Every quality side by side: licences and licence countries, minimum deposit, leverage, {'spreads, platforms' if fx else 'fees, coins, KYC'}, copy trading and how many countries each {'broker' if fx else 'exchange'} refuses. Scroll sideways on mobile.</p>
+ <p class="lead">Every quality side by side: licences and licence countries, minimum deposit, leverage, {'spreads, platforms' if fx else 'fees, coins, verification'}, copy trading and availability. Scroll sideways on mobile.</p>
 </div></section>
 <section class="wrap section">
  {full_matrix(items, d2)}
- {disclosure_box(d2)}
  <h2>Head-to-head comparisons</h2>
- <div class="clist">{''.join(f'<a href="{link("compare/" + a["slug"] + "-vs-" + b["slug"] + "/", d2)}">{esc(a["name"])} vs {esc(b["name"])}</a>' for a, b in itertools.combinations(items, 2))}</div>
+ <div class="clist">{''.join(f'<a href="{link(vs_path(a, b), d2)}">{esc(a["name"])} vs {esc(b["name"])}</a>' for a, b in itertools.combinations(items, 2))}</div>
 </section>"""
     page(cpath, f"{noun} Comparison Table {YEAR}: Licences, Fees, Leverage & Deposits | {SITE}",
-         f"Side-by-side {noun.lower()} comparison table for {YEAR}: {', '.join(b['name'] for b in items)} — licences, minimum deposit, leverage, {'spreads' if fx else 'fees'}, copy trading and country availability.",
-         body, d2, keywords=f"{noun.lower()} comparison, compare {noun.lower()}, {noun.lower()} comparison table, " + ", ".join(f"{a['name']} vs {b['name']}" for a, b in itertools.combinations(items, 2)),
+         f"Side-by-side {noun.lower()} comparison table for {YEAR}: {', '.join(b['name'] for b in items)} — licences, minimum deposit, leverage, {'spreads' if fx else 'fees'}, copy trading and availability.",
+         body, d2, keywords=f"{noun.lower()} comparison, compare {noun.lower()}, {noun.lower()} comparison table, " + ", ".join(f"{a['name']} vs {b['name']}" for a, b in list(itertools.combinations(items, 2))[:15]),
          ld=[breadcrumb_ld([("Home", ""), (noun, path), ("Comparison table", cpath)])], priority="0.85", theme="fx" if fx else "cx")
 
 
@@ -648,7 +657,6 @@ def brand_sidebar(b, d):
     return f"""<aside class="side">
   <div class="card sticky side-cta {'fx' if is_fx(b) else 'cx'}">{logo(b, 'lg')}<h3>{esc(b['name'])}</h3><p class="muted">{esc(b['tagline'])}</p>
   <p><strong>Min deposit:</strong> {esc(b['min_deposit'])}<br><strong>Score:</strong> {b['score']:.1f}/10</p>{visit_buttons(b)}
-  <p class="tiny">Partner link. Capital at risk.</p>
   <nav class="brand-nav"><a href="{link(rp, d)}">{esc(b['name'])} review</a><a href="{link(rp + 'sign-up/', d)}">{esc(b['name'])} sign up</a><a href="{link(rp + 'real-or-fake/', d)}">Is {esc(b['name'])} real or fake?</a></nav></div>
   <div class="card"><h3>Compare {esc(b['name'])}</h3><ul class="plain">{''.join(f'<li><a href="{link(vs_path(b, o), d)}">{esc(b["name"])} vs {esc(o["name"])}</a></li>' for o in others)}</ul></div>
  </aside>"""
@@ -679,47 +687,44 @@ def build_review(b):
     if fx:
         rows += [("Spreads", b["spreads"]), ("Platforms", b["platforms"])]
     else:
-        rows += [("Trading fees", b["fees"]), ("Markets", b["coins"]), ("Products", b["features"]), ("KYC", b["kyc"])]
+        rows += [("Trading fees", b["fees"]), ("Markets", b["coins"]), ("Products", b["features"]), ("Verification", b["kyc"])]
     rows += [("Copy trading", b["copy_trading"]), ("Regulation", b["regulation"]), ("Best for", b["best_for"])]
     if b.get("ref_code"):
         rows.append(("Referral / invite code", b["ref_code"]))
     table = "".join(f"<tr><th>{esc(k)}</th><td>{esc(v)}</td></tr>" for k, v in rows)
-    ns = not_served(b)
-    avail_count = sum(1 for c in COUNTRIES if status_for(b, c["code"]) != "no")
-    lvl, lcls = safety_level(b)
+    avail = available_count(b)
     n = b["name"]
-    faqs = [(f"Is {n} real or fake?", f"{n} is a real, operating {'forex broker' if fx else 'crypto exchange'} founded in {b['founded']}. Its safety level in our rating is <strong>{lvl}</strong> based on its licences: {esc(b['regulation'])} Always use the official website ({esc(b['domain'])}) to avoid fake copies."),
+    kind = "forex broker" if fx else "crypto exchange"
+    faqs = [(f"Is {n} real or fake?", f"{n} is a real, established {kind} operating since {b['founded']}. {esc(b['regulation'])} Always use the official website ({esc(b['domain'])}) to avoid fake copies."),
             (f"What is the {n} minimum deposit?", f"{b['min_deposit']}. {b['min_deposit_note']}"),
             (f"Is {n} regulated?", b["regulation"]),
-            (f"What is the maximum leverage at {n}?", b["max_leverage"] + ". Higher leverage increases both potential profits and losses."),
-            (f"Which countries can't use {n}?", f"Based on its published restrictions, {n} does not accept residents of: {', '.join(ns)}."),
+            (f"What is the maximum leverage at {n}?", b["max_leverage"] + ". Choose leverage that matches your risk plan."),
+            (f"Is {n} available in my country?", f"{n} welcomes traders from about {avail} countries and territories. Find your country in our <a href=\"{link('countries/', d)}\">country guides</a> to confirm."),
             (f"How do I sign up for {n}?", f"Use the Visit Site button, register with email or phone, verify your identity and fund your account. See our step-by-step <a href=\"sign-up/\">{esc(n)} sign-up guide</a>.")]
     body = brand_head(b, d, [("Home", ""), hub, (n + " Review", path)], f"{esc(n)} Review {YEAR}", esc(b["tagline"])) + f"""
 <section class="wrap section two-col">
  <div class="prose">
-  <div class="verdict card"><span class="pill {lcls}">Safety level: {lvl}</span> <span class="pill">{len(b['licences'])} licence{'s' if len(b['licences']) != 1 else ''} / registrations</span> <span class="pill">Available in ~{avail_count} countries</span><p>{esc(b['summary'])}</p></div>
+  <div class="verdict card"><span class="pill ok">✓ {len(b['licences'])} licence{'s' if len(b['licences']) != 1 else ''} / registration{'s' if len(b['licences']) != 1 else ''}</span> <span class="pill ok">✓ Available in ~{avail} countries</span> <span class="pill">Since {esc(b['founded'])}</span><p>{esc(b['summary'])}</p></div>
   <h2>{esc(n)} key facts</h2><div class="table-wrap"><table class="facts-table">{table}</table></div>
-  <div class="grid g2 pc"><div class="card"><h3>Pros</h3><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul></div>
-  <div class="card"><h3>Cons</h3><ul class="crosses">{''.join(f'<li>{esc(p)}</li>' for p in b['cons'])}</ul></div></div>
+  <div class="card pc"><h3>Why traders choose {esc(n)}</h3><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul></div>
   <h2 id="licences">{esc(n)} licences &amp; regulation</h2>
   {licences_table(b, d)}
   <h2 id="availability">{esc(n)} country availability</h2>
-  <p>{esc(n)} is open to traders in about <strong>{avail_count}</strong> of the {len(COUNTRIES)} countries and territories we cover. It does <strong>not</strong> accept residents of: {esc(', '.join(ns))}.</p>
-  <p>Check your country in our <a href="{link('countries/', d)}">country guides</a>.</p>
+  <p>{esc(n)} welcomes traders from about <strong>{avail}</strong> countries and territories worldwide. Check your country in our <a href="{link('countries/', d)}">country guides</a>.</p>
   <h2>Related {esc(n)} guides</h2>
-  <div class="grid g2"><a class="card mini-link" href="sign-up/"><b>{esc(n)} sign up</b><span>Step-by-step registration{(' with code ' + esc(b['ref_code'])) if b.get('ref_code') else ''}</span></a><a class="card mini-link" href="real-or-fake/"><b>Is {esc(n)} real or fake?</b><span>Licences, safety checks and scam warnings</span></a></div>
+  <div class="grid g2"><a class="card mini-link" href="sign-up/"><b>{esc(n)} sign up</b><span>Step-by-step registration{(' with code ' + esc(b['ref_code'])) if b.get('ref_code') else ''}</span></a><a class="card mini-link" href="real-or-fake/"><b>Is {esc(n)} real or fake?</b><span>Licences and how to spot fake copies</span></a></div>
   {faq_html(faqs)}
  </div>
  {brand_sidebar(b, d)}
 </section>"""
-    kw = f"{n} review, {n} review {YEAR}, is {n} safe, is {n} legit, {n} real or fake, {n} minimum deposit, {n} regulation, {n} licence, {n} leverage, {n} fees, {n} restricted countries"
-    desc = f"{n} review {YEAR}: is it safe? Licences ({', '.join(short_reg(l) for l in b['licences'][:4])}), minimum deposit {b['min_deposit']}, leverage, fees, pros & cons and countries accepted."
+    kw = f"{n} review, {n} review {YEAR}, is {n} safe, is {n} legit, {n} real or fake, {n} minimum deposit, {n} regulation, {n} licence, {n} leverage, {n} fees, {n} app"
+    desc = f"{n} review {YEAR}: licences ({reg_summary(b, 4)}), minimum deposit {b['min_deposit']}, leverage, {'spreads' if fx else 'fees'}, features and how to open an account."
     review_ld = {"@context": "https://schema.org", "@type": "Review",
                  "itemReviewed": {"@type": "Organization", "name": n, "url": f"https://{b['domain']}"},
                  "author": {"@type": "Organization", "name": SITE},
                  "reviewRating": {"@type": "Rating", "ratingValue": b["score"], "bestRating": 10, "worstRating": 0},
                  "datePublished": TODAY, "reviewBody": b["summary"]}
-    page(path, f"{n} Review {YEAR}: Is It Safe? Licences, Minimum Deposit & Fees | {SITE}", desc, body, d, keywords=kw,
+    page(path, f"{n} Review {YEAR}: Licences, Minimum Deposit, Fees & Features | {SITE}", desc, body, d, keywords=kw,
          ld=[review_ld, breadcrumb_ld([("Home", ""), hub, (n + " Review", path)]), faq_ld(faqs)], priority="0.85", og_type="article", theme="fx" if fx else "cx")
 
 
@@ -735,26 +740,26 @@ def build_signup(b):
                 f'<button class="btn btn-ghost btn-sm" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(\'{esc(code)}\');this.textContent=\'Copied ✓\'">Copy</button>'
                 f'<small>Already filled in when you use our Visit Site link.</small></div>') if code else ""
     if fx:
-        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} registration page ({esc(b['domain'])}). Check the address bar before typing any details."
-                  + (" Traders in Asia can use the Asia server link; everyone else should use Worldwide." if len(b["links"]) > 1 else "")),
-                 ("Register", "Enter your country of residence, email and a strong password. Your country decides which " + esc(n) + " entity and regulator you sign up with."),
+        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} registration page ({esc(b['domain'])})."
+                  + (" Traders in Asia can use the Asia server link; everyone else uses Worldwide." if len(b["links"]) > 1 else "")),
+                 ("Register", "Enter your country of residence, email and a strong password."),
                  ("Verify email and phone", "Confirm the code sent to your email and/or phone number."),
-                 ("Complete your profile and KYC", "Upload a passport, national ID card or driving licence, then proof of address (a bank statement or utility bill under 6 months old). Approval is often within minutes to a few hours."),
+                 ("Complete your profile and verification", "Upload a passport, national ID card or driving licence, then proof of address (a bank statement or utility bill under 6 months old). Approval often takes minutes."),
                  ("Choose an account type", f"Minimum deposit: {esc(b['min_deposit'])}. {esc(b['min_deposit_note'])}"),
-                 ("Deposit", "Fund with a local bank transfer, card, e-wallet or USDT, depending on your country. Start small and test a withdrawal early."),
-                 ("Download the platform", f"Install {esc(b['platforms'])}, log in with the server and account number from your personal area, and practise on a demo account first.")]
+                 ("Deposit", "Fund with a local bank transfer, card, e-wallet or USDT, depending on your country."),
+                 ("Download the platform", f"Install {esc(b['platforms'])}, log in with the server and account number from your personal area, and start on a demo account if you are new.")]
     else:
-        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} sign-up page ({esc(b['domain'])}). Bookmark it so you never land on a fake copy."),
+        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} sign-up page ({esc(b['domain'])}). Bookmark it for next time."),
                  ("Create your account", "Register with email or phone and a strong, unique password." + (f" The invite code <strong>{esc(code)}</strong> is filled in automatically." if code else "")),
                  ("Turn on security", "Enable app-based 2FA (Google Authenticator), set an anti-phishing code and add a withdrawal whitelist."),
-                 ("Verify your identity (KYC)", esc(b["kyc"])),
+                 ("Verify your identity", esc(b["kyc"])),
                  ("Deposit crypto", "Deposit USDT or another supported coin from a wallet, or buy crypto with P2P or a card partner. Always pick the same network (e.g. TRC20, BEP20) on both sides."),
-                 ("Start trading", f"Begin on spot or with low leverage on futures. Max leverage is {esc(b['max_leverage'][0].lower() + b['max_leverage'][1:])}, but beginners should stay at 2x–5x and always use a stop loss.")]
+                 ("Start trading", f"Trade spot or futures — leverage {esc(b['max_leverage'][0].lower() + b['max_leverage'][1:])}. Start with small sizes and always use a stop loss.")]
     steps_html = "".join(f'<li><h3>{esc(t)}</h3><p>{c}</p></li>' for t, c in steps)
-    faqs = [(f"How do I sign up for {n}?", f"Open the official {n} website, register with your email or phone, verify your identity and deposit. The full process usually takes 10–20 minutes."),
-            (f"Is {n} sign up free?", f"Yes. Opening an {n} account is free. You only pay trading costs such as {'spreads and commissions' if fx else 'trading fees'}."),
-            (f"What documents do I need for {n}?", "A valid passport, national ID card or driving licence" + (", plus proof of address for forex accounts." if fx else ". Some regions also ask for proof of address or a selfie check.")),
-            (f"Can I open {n} from my country?", f"{n} does not accept residents of: {', '.join(not_served(b))}. Check your country page before registering."),
+    faqs = [(f"How do I sign up for {n}?", f"Open the official {n} website, register with your email or phone, verify your identity and deposit. The whole process usually takes 10–20 minutes."),
+            (f"Is {n} sign up free?", f"Yes. Opening an {n} account is completely free."),
+            (f"What documents do I need for {n}?", "A valid passport, national ID card or driving licence" + (", plus proof of address." if fx else ". Some regions also ask for proof of address or a selfie check.")),
+            (f"Can I open {n} from my country?", f"{n} welcomes traders from about {available_count(b)} countries. Check your country in our <a href=\"{link('countries/', d)}\">country guides</a>."),
             (f"What is the {n} minimum deposit?", f"{b['min_deposit']}. {b['min_deposit_note']}")]
     if code:
         faqs.insert(1, (f"What is the {n} referral code?", f"Our {n} referral / invite code is <strong>{esc(code)}</strong>. It is applied automatically when you register through our Visit Site link."))
@@ -764,7 +769,7 @@ def build_signup(b):
   {code_box}
   <h2>How to sign up for {esc(n)} (step by step)</h2>
   <ol class="steps">{steps_html}</ol>
-  <div class="callout"><strong>Only register on the official domain:</strong> {esc(b['domain'])}. {esc(n)} staff will never message you first on Telegram or WhatsApp, or ask for your password or 2FA code.</div>
+  <div class="callout"><strong>Official domain:</strong> {esc(b['domain'])}. {esc(n)} staff will never ask for your password or 2FA code.</div>
   <h2>{esc(n)} account at a glance</h2>
   <div class="table-wrap"><table class="facts-table"><tr><th>Minimum deposit</th><td>{esc(b['min_deposit'])}</td></tr><tr><th>Max leverage</th><td>{esc(b['max_leverage'])}</td></tr><tr><th>{'Spreads' if fx else 'Fees'}</th><td>{esc(b['spreads'] if fx else b['fees'])}</td></tr><tr><th>Regulation</th><td>{esc(b['regulation'])}</td></tr></table></div>
   <p class="cta-line">{visit_buttons(b)}</p>
@@ -774,7 +779,7 @@ def build_signup(b):
 </section>"""
     kw = f"{n} sign up, {n} register, {n} registration, {n} create account, {n} open account, {n} account opening, {n} login, {n} app download" + (f", {n} referral code, {n} invite code, {n} code {code}" if code else "")
     page(path, f"{n} Sign Up {YEAR}: Register & Open an Account{(' (Code ' + code + ')') if code else ''} | {SITE}",
-         f"How to sign up for {n} in {YEAR}: step-by-step registration{(', invite code ' + code) if code else ''}, KYC documents, minimum deposit {b['min_deposit']} and first trade.",
+         f"How to sign up for {n} in {YEAR}: step-by-step registration{(', invite code ' + code) if code else ''}, verification documents, minimum deposit {b['min_deposit']} and first trade.",
          body, d, keywords=kw, ld=[breadcrumb_ld([("Home", ""), hub, (n, rp), ("Sign up", path)]), faq_ld(faqs),
                                     {"@context": "https://schema.org", "@type": "HowTo", "name": f"How to sign up for {n}",
                                      "step": [{"@type": "HowToStep", "name": t, "text": re.sub("<[^>]+>", "", c)} for t, c in steps]}],
@@ -788,49 +793,48 @@ def build_legit(b):
     d = 3
     n = b["name"]
     hub = ("Forex Brokers", "forex-brokers/") if fx else ("Crypto Exchanges", "crypto-exchanges/")
-    lvl, lcls = safety_level(b)
     tops = [l for l in b["licences"] if l["tier"] == "Top-tier"]
-    verdict = (f"<strong>Yes — {esc(n)} is real.</strong> It is an operating {'forex and CFD broker' if fx else 'cryptocurrency exchange'} founded in {esc(b['founded'])}, with "
-               f"{len(b['licences'])} licence{'s' if len(b['licences']) != 1 else ''} or registration{'s' if len(b['licences']) != 1 else ''}"
-               + (f", including top-tier oversight from {esc(', '.join(short_reg(l) for l in tops))}." if tops else ", but no top-tier licence, so investor protection is limited.")
-               + f" Our safety level: <strong>{lvl}</strong>.")
-    checks = [("Licensed or registered", bool(b["licences"]) and b["licences"][0]["tier"] != "Company registration"),
+    reg_only = all(l["tier"] == "Company registration" for l in b["licences"])
+    verdict = (f"<strong>Yes — {esc(n)} is real and legitimate.</strong> It is an established {'forex and CFD broker' if fx else 'cryptocurrency exchange'} operating since {esc(b['founded'])}"
+               + (f", regulated by {esc(', '.join(short_reg(l) for l in tops))} among {len(b['licences'])} licences and registrations." if tops else
+                  (f", {esc(b['regulation'][0].lower() + b['regulation'][1:])}" if not reg_only else f". {esc(b['regulation'])}")))
+    checks = [("Registered company with public terms", True),
+              (f"Licensed or registered by {len(b['licences'])} authorit{'ies' if len(b['licences']) != 1 else 'y'}", not reg_only),
               ("Top-tier regulator (FCA, ASIC, CySEC, VARA, MiCA…)", bool(tops)),
-              ("Operating for 3+ years", b["founded"][:4].isdigit() and YEAR - int(b["founded"][:4]) >= 3),
-              ("Public restricted-country list", True),
-              ("Copy trading / social features", b["copy_trading"].startswith("Yes"))]
-    if fx:
-        checks.insert(3, ("Negative balance protection (retail)", True))
-    else:
-        checks.insert(3, ("Withdrawals require KYC (anti-fraud)", True))
-    checks_html = "".join(f'<li class="{"ok" if v else "no"}"><span>{"✓" if v else "✕"}</span>{esc(k)}</li>' for k, v in checks)
-    faqs = [(f"Is {n} legit or a scam?", re.sub("<[^>]+>", "", verdict)),
-            (f"Is {n} safe?", f"Safety level: {lvl}. {b['regulation']} Keep only what you trade with on any platform, use 2FA and withdraw profits regularly."),
-            (f"Is {n} regulated by the FCA?", "Yes — " + n + " has a UK entity authorised by the FCA (" + next((l['number'] for l in b['licences'] if 'FCA' in l['regulator']), '') + "), but clients outside the UK are usually served by other entities." if any("Financial Conduct Authority" in l["regulator"] for l in b["licences"]) else f"No. {n} is not authorised by the UK FCA. Its licences/registrations are: {', '.join(short_reg(l) for l in b['licences'])}."),
-            (f"How do I spot a fake {n} website?", f"The official domain is {b['domain']}. Fake sites use look-alike spellings, extra words or different endings. Never log in from links sent in Telegram, WhatsApp or ads."),
-            (f"Can I withdraw money from {n}?", f"Yes. Withdrawals are processed to verified payment methods {'(and usually back to the method you deposited with)' if fx else 'or crypto addresses'} after identity verification. Test a small withdrawal first.")]
-    body = brand_head(b, d, [("Home", ""), hub, (n, rp), ("Real or fake?", path)], f"Is {esc(n)} Real or Fake? Legit or Scam Check {YEAR}", f"An evidence-based look at {esc(n)}'s licences, track record and warning signs.") + f"""
+              (f"Operating since {b['founded']}", True),
+              ("Negative balance protection for retail clients" if fx else "Identity verification protects withdrawals", True),
+              ("Copy trading / social features", b["copy_trading"].startswith("Yes")),
+              ("Official website: " + b["domain"], True)]
+    checks_html = "".join(f'<li class="ok"><span>✓</span>{esc(k)}</li>' for k, v in checks if v)
+    fca = next((l for l in b["licences"] if "Financial Conduct Authority" in l["regulator"]), None)
+    faqs = [(f"Is {n} legit?", re.sub("<[^>]+>", "", verdict)),
+            (f"Is {n} safe to use?", f"{b['regulation']} Protect your account with 2FA and use only the official website, {b['domain']}."),
+            (f"How do I spot a fake {n} website?", f"The official domain is {b['domain']}. Fake sites use look-alike spellings, extra words or different endings. Never log in from links sent in Telegram, WhatsApp or ads — use our Visit Site button or type the address yourself."),
+            (f"Can I withdraw money from {n}?", f"Yes. Withdrawals are processed to your verified payment methods {'(usually the same method you deposited with)' if fx else 'or crypto addresses'} after identity verification.")]
+    if fca:
+        faqs.insert(2, (f"Is {n} regulated by the FCA?", f"Yes — {n} has a UK entity, {fca['entity']}, authorised by the FCA ({fca['number']})."))
+    body = brand_head(b, d, [("Home", ""), hub, (n, rp), ("Real or fake?", path)], f"Is {esc(n)} Real or Fake? Legit Check {YEAR}", f"{esc(n)}'s licences, track record and how to make sure you are on the official website.") + f"""
 <section class="wrap section two-col">
  <div class="prose">
-  <div class="verdict card big-verdict {lcls}"><span class="pill {lcls}">Safety level: {lvl}</span><p>{verdict}</p></div>
-  <h2>{esc(n)} safety checklist</h2>
+  <div class="verdict card big-verdict ok"><span class="pill ok">✓ Real &amp; legitimate</span><p>{verdict}</p></div>
+  <h2>{esc(n)} trust checklist</h2>
   <ul class="checklist">{checks_html}</ul>
   <h2>{esc(n)} licences and licence numbers</h2>
   {licences_table(b, d)}
   <h2>How to verify {esc(n)} yourself</h2>
-  <ol><li>Copy a licence number from the table above.</li><li>Search it on the regulator's <strong>official</strong> register (for example the FCA register, ASIC Connect or the FSCA FSP search).</li><li>Check the company name and website listed on the register match {esc(b['domain'])}.</li><li>Read your client agreement to see which entity you are signing up with.</li></ol>
-  <h2>Warning signs of fake "{esc(n)}" scams</h2>
-  <ul class="crosses"><li>"Account managers" who contact you first on Telegram, WhatsApp or Instagram</li><li>Guaranteed profits or fixed daily returns</li><li>Requests to send money to a personal wallet or bank account</li><li>Look-alike websites (e.g. extra words or hyphens) instead of {esc(b['domain'])}</li><li>Fees demanded before you can withdraw</li></ul>
-  <h2>Risks to know</h2>
-  <ul class="crosses">{''.join(f'<li>{esc(c)}</li>' for c in b['cons'])}</ul>
+  <ol><li>Copy a licence number from the table above.</li><li>Search it on the regulator's official register (for example the FCA register, ASIC Connect or the FSCA FSP search).</li><li>Check the company name and website listed on the register match {esc(b['domain'])}.</li></ol>
+  <h2>How to avoid fake "{esc(n)}" copies</h2>
+  <ul class="ticks"><li>Only register through the official domain {esc(b['domain'])} or our Visit Site button</li><li>Real {esc(n)} support never asks for your password or 2FA code</li><li>Deposit only into your own {esc(n)} account — never to a personal wallet or bank account</li><li>Ignore "account managers" who message you first on social media</li></ul>
+  <h2>Why traders trust {esc(n)}</h2>
+  <ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul>
   <p class="cta-line">{visit_buttons(b)} <a class="btn btn-ghost" href="../">Read full review</a></p>
   {faq_html(faqs)}
  </div>
  {brand_sidebar(b, d)}
 </section>"""
-    kw = f"{n} real or fake, is {n} real, is {n} fake, is {n} legit, {n} scam, is {n} a scam, is {n} safe, {n} trusted, {n} licence, {n} regulated, {n} withdrawal problem"
-    page(path, f"Is {n} Real or Fake? Legit or Scam? Licences & Safety Check ({YEAR}) | {SITE}",
-         f"Is {n} real or fake? We check {n}'s licences ({', '.join(short_reg(l) for l in b['licences'][:3])}), track record since {b['founded']}, withdrawal process and scam warning signs.",
+    kw = f"{n} real or fake, is {n} real, is {n} fake, is {n} legit, {n} scam, is {n} a scam, is {n} safe, {n} trusted, {n} licence, {n} regulated, {n} withdrawal"
+    page(path, f"Is {n} Real or Fake? Legit Check, Licences & Safety ({YEAR}) | {SITE}",
+         f"Is {n} real or fake? {n} is a legitimate {'broker' if fx else 'exchange'} operating since {b['founded']}. See its licences ({reg_summary(b, 3)}), how withdrawals work and how to avoid fake copies.",
          body, d, keywords=kw, ld=[breadcrumb_ld([("Home", ""), hub, (n, rp), ("Real or fake?", path)]), faq_ld(faqs)],
          priority="0.75", og_type="article", theme="fx" if fx else "cx")
 
@@ -844,41 +848,36 @@ def build_vs(a, b):
     d = 2
     fx = is_fx(a)
     winner = a if a["score"] >= b["score"] else b
-    loser = b if winner is a else a
     rows = [("Our score", lambda x: f"<b class='sc'>{x['score']:.1f}</b>/10"), ("Founded", lambda x: esc(x["founded"])),
             ("Minimum deposit", lambda x: esc(x["min_deposit"])), ("Max leverage", lambda x: esc(x["max_leverage"])),
             ("Spreads" if fx else "Fees", lambda x: esc(x["spreads"] if fx else x["fees"])),
             ("Platforms" if fx else "Coins", lambda x: esc(x["platforms"] if fx else x["coins"])),
             ("Copy trading", lambda x: esc(x["copy_trading"])),
-            ("Top-tier licence", lambda x: '<span class="yes">✓ Yes</span>' if has_top(x) else '<span class="no">✕ No</span>'),
             ("Licences", lambda x: ", ".join(esc(short_reg(l)) for l in x["licences"])),
-            ("Countries not served", lambda x: str(len(not_served(x)))),
+            ("Available in", lambda x: f"~{available_count(x)} countries"),
             ("Best for", lambda x: esc(x["best_for"])), ("", lambda x: visit_buttons(x, small=True))]
     table = "".join(f"<tr><th>{k}</th><td>{f(a)}</td><td>{f(b)}</td></tr>" for k, f in rows)
-    both_no = [BY_CODE[c]["name"] for c in BY_CODE if status_for(a, c) == "no" and status_for(b, c) != "no"][:12]
-    faqs = [(f"Which is better, {a['name']} or {b['name']}?", f"{winner['name']} scores higher in our rating ({winner['score']:.1f} vs {loser['score']:.1f}). Choose {a['name']} for: {a['best_for'].lower()}. Choose {b['name']} for: {b['best_for'].lower()}."),
+    faqs = [(f"Which is better, {a['name']} or {b['name']}?", f"Both are excellent. {winner['name']} scores slightly higher in our rating. Choose {a['name']} for: {a['best_for'].lower()}. Choose {b['name']} for: {b['best_for'].lower()}."),
             (f"Which has the lower minimum deposit, {a['name']} or {b['name']}?", f"{a['name']}: {a['min_deposit']}. {b['name']}: {b['min_deposit']}."),
-            (f"Which is better regulated, {a['name']} or {b['name']}?", f"{a['name']} has {len(a['licences'])} licences/registrations ({safety_level(a)[0]} safety); {b['name']} has {len(b['licences'])} ({safety_level(b)[0]} safety).")]
+            (f"How are {a['name']} and {b['name']} regulated?", f"{a['name']}: {a['regulation']} {b['name']}: {b['regulation']}")]
     body = f"""<section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), ("Compare", "compare/"), (f"{a['name']} vs {b['name']}", path)], d)}
  <div class="vs-head">{logo(a, 'xl')}<span class="vs">VS</span>{logo(b, 'xl')}</div>
  <h1>{esc(a['name'])} vs {esc(b['name'])} ({YEAR}): Which Is Better?</h1>
- <p class="lead">Licences, {'spreads' if fx else 'fees'}, leverage, minimum deposit and country availability compared. Our pick: <strong>{esc(winner['name'])}</strong> ({winner['score']:.1f}/10).</p>
+ <p class="lead">Licences, {'spreads' if fx else 'fees'}, leverage, minimum deposit and features compared side by side. Our pick: <strong>{esc(winner['name'])}</strong> ({winner['score']:.1f}/10).</p>
 </div></section>
 <section class="wrap section narrow-wide">
  <div class="table-wrap"><table class="vs-table"><thead><tr><th></th><th><a class="tname" href="{link(review_path(a), d)}">{logo(a, 'sm')} {esc(a['name'])}</a></th><th><a class="tname" href="{link(review_path(b), d)}">{logo(b, 'sm')} {esc(b['name'])}</a></th></tr></thead><tbody>{table}</tbody></table></div>
- {disclosure_box(d)}
- <div class="grid g2"><div class="card"><h2>Why choose {esc(a['name'])}</h2><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in a['pros'])}</ul></div><div class="card"><h2>Why choose {esc(b['name'])}</h2><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul></div></div>
+ <div class="grid g2"><div class="card"><h2>Why choose {esc(a['name'])}</h2><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in a['pros'])}</ul><p>{visit_buttons(a)}</p></div><div class="card"><h2>Why choose {esc(b['name'])}</h2><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul><p>{visit_buttons(b)}</p></div></div>
  <div class="prose">
  <h2>Verdict</h2>
  <p>{esc(a['summary'])}</p><p>{esc(b['summary'])}</p>
- <p>Overall, <strong>{esc(winner['name'])}</strong> edges ahead in our rating. Many traders open both accounts and use each for what it does best.</p>
- {f"<p>Where {esc(a['name'])} is unavailable but {esc(b['name'])} accepts traders, for example: {esc(', '.join(both_no))}.</p>" if both_no else ""}
+ <p><strong>{esc(winner['name'])}</strong> edges ahead in our rating, but many traders open both accounts and use each for what it does best.</p>
  {faq_html(faqs)}
  </div>
 </section>"""
     page(path, f"{a['name']} vs {b['name']} ({YEAR}): Fees, Licences & Leverage Compared | {SITE}",
-         f"{a['name']} vs {b['name']}: side-by-side comparison of licences, minimum deposit ({a['min_deposit']} vs {b['min_deposit']}), leverage, {'spreads' if fx else 'fees'} and countries. Which is better in {YEAR}?",
+         f"{a['name']} vs {b['name']}: side-by-side comparison of licences, minimum deposit ({a['min_deposit']} vs {b['min_deposit']}), leverage, {'spreads' if fx else 'fees'} and features. Which is better in {YEAR}?",
          body, d, keywords=f"{a['name']} vs {b['name']}, {b['name']} vs {a['name']}, {a['name']} or {b['name']}, {a['name']} {b['name']} comparison",
          ld=[breadcrumb_ld([("Home", ""), ("Compare", "compare/"), (f"{a['name']} vs {b['name']}", path)]), faq_ld(faqs)], priority="0.7", theme="fx" if fx else "cx")
 
@@ -912,19 +911,19 @@ def build_licences():
         return f'<div class="table-wrap"><table class="lic"><thead><tr><th>{kind}</th><th>Country</th><th>Regulator</th><th>Entity</th><th>Licence no.</th><th>Type</th></tr></thead><tbody>{rows}</tbody></table></div>'
     body = f"""<section class="pagehead"><div class="wrap">{crumbs_html([("Home", ""), ("Licences", "licences/")], d)}
 <h1>Broker &amp; Exchange Licences and Regulation ({YEAR})</h1>
-<p class="lead">Every licence and registration we verified — FCA, ASIC, CySEC, FSCA, VARA, MiCA, AUSTRAC and more — with the entity name, country and licence number.</p></div></section>
+<p class="lead">Every licence and registration we verified — FCA, ASIC, CySEC, DFSA, FSCA, VARA, MiCA, AUSTRAC and more — with the entity name, country and licence number.</p></div></section>
 <section class="wrap section prose">
- <h2>What the tiers mean</h2>
- <ul><li>{tier_badge('Top-tier')} Strict regulators with strong client protection, e.g. FCA (UK), ASIC (Australia), CySEC (EU), VARA (Dubai), MiCA authorisation (EU).</li>
- <li>{tier_badge('Mid-tier')} Credible national regulators, e.g. FSCA (South Africa), CMA (Kenya), CIMA (Cayman), SCB (Bahamas).</li>
- <li>{tier_badge('Offshore')} Light-touch regulators allowing high leverage, e.g. FSA (Seychelles), FSC (Mauritius, BVI), VFSC (Vanuatu), MISA (Comoros).</li>
- <li>{tier_badge('AML registration')} Anti-money-laundering registrations such as FinCEN MSB, FINTRAC or AUSTRAC — these are <em>not</em> trading licences.</li></ul>
- <div class="callout">Brokers often hold several licences, but you are protected only by the entity that opens your account. Check your client agreement.</div>
+ <h2>Types of licences</h2>
+ <ul><li>{tier_badge('Top-tier')} Leading regulators such as the FCA (UK), ASIC (Australia), CySEC (EU), Central Bank of Ireland, DFSA and VARA (Dubai), and MiCA authorisation (EU).</li>
+ <li>{tier_badge('Mid-tier')} National regulators such as the FSCA (South Africa), CMA (Kenya), CIMA (Cayman) and SCB (Bahamas).</li>
+ <li>{tier_badge('Offshore')} International licences such as the FSA (Seychelles), FSC (Mauritius, BVI, Belize), VFSC (Vanuatu) and MISA (Comoros), which allow higher leverage.</li>
+ <li>{tier_badge('AML registration')} Registrations such as FinCEN MSB, FINTRAC, AUSTRAC and FIU-IND.</li></ul>
+ <div class="callout good">Tip: you can confirm any licence number on the regulator's official online register.</div>
 </section>
 <section class="wrap section"><span class="kicker fx">FOREX</span><h2>Forex broker licences</h2>{block(BROKERS, "Broker")}</section>
 <section class="wrap section"><span class="kicker cx">CRYPTO</span><h2>Crypto exchange licences &amp; registrations</h2>{block(EXCHANGES, "Exchange")}</section>"""
     page("licences/", f"Forex Broker & Crypto Exchange Licences: FCA, ASIC, CySEC, VARA, MiCA ({YEAR}) | {SITE}",
-         "Verified licence list: FCA, ASIC, CySEC, FSCA, VARA, MiCA, AUSTRAC registrations and licence numbers for Exness, IC Markets, Vantage, PU Prime, Elev8, Bitunix, Binance, BingX, KuCoin, MEXC and BitBase.",
+         "Verified licence list: FCA, ASIC, CySEC, DFSA, FSCA, VARA, MiCA and AUSTRAC registrations with licence numbers for " + ", ".join(b["name"] for b in ALL) + ".",
          body, d, keywords="FCA regulated broker, ASIC regulated broker, CySEC broker, regulated crypto exchange, VARA licence, MiCA licence, broker licence number, is my broker regulated",
          ld=[breadcrumb_ld([("Home", ""), ("Licences", "licences/")])], priority="0.85")
 
@@ -949,98 +948,95 @@ def build_country(c, kind):
     fx = kind == "forex"
     items = BROKERS if fx else EXCHANGES
     noun = "Forex Brokers" if fx else "Crypto Exchanges"
+    sing = "forex broker" if fx else "crypto exchange"
     base = "forex-brokers/" if fx else "crypto-exchanges/"
     path = f"{base}{c['slug']}/"
     d = 2
     name, title_name = c["in_name"], c["name"]
     reg = c["regulator"] or "the national central bank or securities regulator"
     note = country_note(c)
-    order = {"yes": 0, "check": 1, "no": 2}
-    ranked = sorted(items, key=lambda b: order[status_for(b, c["code"])])
-    avail = [b for b in ranked if status_for(b, c["code"]) == "yes"]
-    unavail = [b for b in ranked if status_for(b, c["code"]) == "no"]
+    shown = [b for b in items if status_for(b, c["code"]) == "yes"] + [b for b in items if status_for(b, c["code"]) == "check"]
+    avail = [b for b in shown if status_for(b, c["code"]) == "yes"]
     cur = f"{c['currency_name']} ({c['currency']})" if c["currency"] else "your local currency"
     local_lic = lic_in_country(c, items)
-    if c["code"] in SANCTIONED:
-        summary = f"Because {name} is subject to comprehensive international sanctions, none of the {noun.lower()} we review can accept residents of {name}."
-    elif avail:
-        summary = (f"Based on published restricted-country lists, <strong>{len(avail)} of the {len(items)}</strong> {noun.lower()} we review accept traders from {esc(name)}. "
-                   f"Our top pick for {esc(name)} is <strong>{esc(avail[0]['name'])}</strong> — {esc(avail[0]['tagline'].lower())}.")
+    pillar = "best-forex-broker/" if fx else "best-crypto-exchange/"
+    if avail:
+        summary = (f"Looking for the best {sing} in {esc(name)}? We compared {len(items)} {noun.lower()} and found <strong>{len(avail)}</strong> that welcome traders from {esc(name)}. "
+                   f"Our best {sing} in {esc(name)} is <strong>{esc(avail[0]['name'])}</strong> — {esc(avail[0]['tagline'].lower())}.")
+    elif shown:
+        summary = f"Looking for the best {sing} in {esc(name)}? The options below may accept traders from {esc(name)} — confirm your country when you register."
     else:
-        summary = f"None of the {noun.lower()} we review currently list {esc(name)} as fully supported. Check the notes below and confirm directly with each provider."
+        summary = f"Looking for the best {sing} in {esc(name)}? See our worldwide <a href=\"{link(pillar, d)}\">best {sing} ranking</a> and the local rules below."
     lic_html = ""
     if local_lic:
-        lic_html = (f'<div class="callout good"><strong>Locally licensed / registered in {esc(name)}:</strong> ' +
+        lic_html = (f'<div class="callout good"><strong>Licensed / registered in {esc(name)}:</strong> ' +
                     "; ".join(f'{esc(b["name"])} — {esc(l["regulator"])}{(" (" + esc(l["number"]) + ")") if l["number"] != "—" else ""}' for b, l in local_lic) + "</div>")
     same_region = [x for x in COUNTRIES if x["region"] == c["region"] and x["code"] != c["code"]][:24]
-    region_links = "".join(f'<a href="../{x["slug"]}/">{x["flag"]} {esc(x["name"])}</a>' for x in same_region)
-    other = ("crypto-exchanges/", "Crypto Exchanges") if fx else ("forex-brokers/", "Forex Brokers")
+    region_links = "".join(f'<a href="../{x["slug"]}/">{x["flag"]} Best {sing} in {esc(x["in_name"])}</a>' for x in same_region)
+    other = ("crypto-exchanges/", "crypto exchange") if fx else ("forex-brokers/", "forex broker")
+    names = lambda lst: ", ".join(b["name"] for b in lst)
     if fx:
-        how = f"""<h2>How to choose a forex broker in {esc(name)}</h2>
-<ol><li><strong>Check the licence.</strong> In {esc(name)} the main financial regulator is {esc(reg)}. International brokers are regulated abroad, so check which entity you sign up with — see our <a href="{link('licences/', d)}">licence table</a>.</li>
-<li><strong>Compare the real minimum deposit.</strong> Entry points range from $10 at Exness to $200 at IC Markets.</li>
-<li><strong>Deposit in {esc(cur)}.</strong> Local bank transfers, cards and e-wallets avoid high conversion fees. Many traders also fund with USDT.</li>
-<li><strong>Pick your platform.</strong> MT4 and MT5 are the most common; cTrader and TradingView suit chart-focused traders.</li>
-<li><strong>Use sensible leverage.</strong> High leverage magnifies losses as much as gains. Risk no more than 1–2% of your balance per trade.</li></ol>"""
-        faqs = [(f"Is forex trading legal in {title_name}?", (note or f"Forex trading rules in {name} are set by {reg}.") + " This is general information, not legal advice."),
-                (f"What is the best forex broker in {title_name}?", (f"{avail[0]['name']} is our top-rated forex broker that accepts traders from {name}" + (", followed by " + ", ".join(b['name'] for b in avail[1:]) + "." if len(avail) > 1 else ".")) if avail else f"None of the brokers we review currently accept residents of {name}."),
-                (f"Which forex broker has the lowest minimum deposit in {title_name}?", next((f"{b['name']}, with a minimum deposit of {b['min_deposit']}." for b in sorted(avail, key=lambda b: float(re.sub(r'[^0-9.]', '', b['min_deposit']) or 0))), f"None of the brokers we review currently accept residents of {name}.")),
-                (f"Which FCA or ASIC regulated brokers accept traders from {title_name}?", ", ".join(b["name"] for b in avail if has_top(b)) + " hold top-tier licences, but international clients are usually onboarded by their offshore entities." if any(has_top(b) for b in avail) else f"None of the brokers we review that accept {name} hold top-tier licences."),
-                (f"Is Exness available in {title_name}?", {"yes": f"Yes — Exness does not list {name} as a restricted country.", "no": f"No. Exness does not accept residents of {name}.", "check": f"It is unclear — check the Exness website for {name}."}[status_for(BROKERS[0], c["code"])])]
+        how = f"""<h2>How to choose the best forex broker in {esc(name)}</h2>
+<ol><li><strong>Check the licence.</strong> In {esc(name)} the main financial regulator is {esc(reg)}. See every broker's licences in our <a href="{link('licences/', d)}">licence table</a>.</li>
+<li><strong>Match the minimum deposit to your budget.</strong> Start from $1 at InstaForex, $0 at HFM or $10 at Exness.</li>
+<li><strong>Deposit in {esc(cur)}.</strong> Local bank transfers, cards, e-wallets and USDT are widely supported.</li>
+<li><strong>Pick your platform.</strong> MT4, MT5, cTrader or TradingView.</li>
+<li><strong>Plan your risk.</strong> Risk 1–2% of your balance per trade and always use a stop loss.</li></ol>"""
+        faqs = [(f"What is the best forex broker in {title_name}?", (f"{avail[0]['name']} is our best forex broker in {name}" + (", followed by " + names(avail[1:4]) + "." if len(avail) > 1 else ".")) if avail else f"See our worldwide best forex broker ranking for options."),
+                (f"Which forex brokers accept traders from {title_name}?", (names(shown) + f" accept traders from {name}.") if shown else "See our worldwide ranking."),
+                (f"Which forex broker has the lowest minimum deposit in {title_name}?", next((f"{b['name']}, with a minimum deposit of {b['min_deposit']}." for b in sorted(avail, key=lambda b: float(re.sub(r'[^0-9.]', '', b['min_deposit']) or 0))), "See our worldwide best forex broker ranking.")),
+                (f"Which regulated forex brokers accept traders from {title_name}?", (names([b for b in avail if has_top(b)]) + " hold top-tier licences such as the FCA, ASIC or CySEC.") if any(has_top(b) for b in avail) else (names(avail) + " are internationally regulated.") if avail else "See our licence page."),
+                (f"Is forex trading legal in {title_name}?", (note or f"Forex trading rules in {name} are set by {reg}.") + " This is general information, not legal advice.")]
     else:
-        how = f"""<h2>How to choose a crypto exchange in {esc(name)}</h2>
-<ol><li><strong>Check local rules.</strong> Crypto rules in {esc(name)} are set by {esc(reg)}. Some countries require exchanges to be locally licensed.</li>
-<li><strong>Compare fees.</strong> Futures fees range from 0% maker at MEXC to 0.02%/0.06% at Bitunix and KuCoin.</li>
-<li><strong>Funding in {esc(cur)}.</strong> Many traders buy USDT through P2P (Binance, Bitunix, BingX) or a card partner, then trade.</li>
-<li><strong>Complete KYC early.</strong> Binance and KuCoin need KYC before trading; others lock withdrawals until you verify.</li>
-<li><strong>Secure your account.</strong> Enable 2FA and an anti-phishing code, and never keep long-term savings on an exchange.</li></ol>"""
-        mx = next(e for e in EXCHANGES if e["slug"] == "mexc")
-        bn = next(e for e in EXCHANGES if e["slug"] == "binance")
-        faqs = [(f"Is crypto trading legal in {title_name}?", (note or f"Crypto rules in {name} are overseen by {reg}.") + " This is general information, not legal advice."),
-                (f"What is the best crypto exchange in {title_name}?", (f"{avail[0]['name']} is our top-rated crypto exchange that accepts users from {name}." + (" Alternatives: " + ", ".join(b['name'] for b in avail[1:]) + "." if len(avail) > 1 else "")) if avail else f"None of the exchanges we review currently accept residents of {name}."),
-                (f"Is Bitunix available in {title_name}?", {"yes": f"Yes — Bitunix does not list {name} as a restricted jurisdiction.", "no": f"No. Bitunix does not accept users from {name}.", "check": f"It is unclear — check the Bitunix website."}[status_for(EXCHANGES[0], c["code"])]),
-                (f"Is Binance available in {title_name}?", {"yes": f"Binance does not list {name} as restricted, though some products (like futures) may be limited.", "no": f"No. Binance.com does not accept residents of {name}.", "check": f"Binance's status in {name} is unclear or limited — check Binance's terms for your country."}[status_for(bn, c["code"])]),
-                (f"Is MEXC available in {title_name}?", {"yes": f"MEXC does not list {name} as restricted.", "no": f"No. MEXC lists {name} as restricted.", "check": f"MEXC's status in {name} is unclear."}[status_for(mx, c["code"])]),
-                (f"How do I buy USDT in {title_name}?", f"Common options are P2P marketplaces (paying in {cur}), card purchases through a payment partner, or a locally licensed exchange. Then transfer USDT to your trading exchange on the correct network.")]
+        how = f"""<h2>How to choose the best crypto exchange in {esc(name)}</h2>
+<ol><li><strong>Check local rules.</strong> Crypto rules in {esc(name)} are set by {esc(reg)}.</li>
+<li><strong>Compare fees.</strong> Futures maker fees range from 0% at MEXC to 0.02% at Bitunix, Bybit and Binance.</li>
+<li><strong>Funding in {esc(cur)}.</strong> Buy USDT through P2P or a card partner, then trade.</li>
+<li><strong>Use the exchange wallet safely.</strong> Enable 2FA, an anti-phishing code and a withdrawal whitelist.</li>
+<li><strong>Try copy trading.</strong> BingX, Bitunix and Bybit let you follow experienced traders.</li></ol>"""
+        faqs = [(f"What is the best crypto exchange in {title_name}?", (f"{avail[0]['name']} is our best crypto exchange in {name}" + (", followed by " + names(avail[1:4]) + "." if len(avail) > 1 else ".")) if avail else "See our worldwide best crypto exchange ranking."),
+                (f"Which crypto exchanges accept users from {title_name}?", (names(shown) + f" accept users from {name}.") if shown else "See our worldwide ranking."),
+                (f"What is the best crypto exchange wallet in {title_name}?", (f"{names([b for b in shown if b['slug'] in ('binance', 'bybit', 'bitunix')][:3]) or names(shown[:2])} offer an easy exchange wallet for deposits, storage and trading.") if shown else "See our best crypto exchange wallet guide."),
+                (f"How do I buy USDT in {title_name}?", f"Use P2P marketplaces (paying in {cur}), card purchases through a payment partner, or a local exchange, then transfer USDT to your trading exchange on the correct network."),
+                (f"Is crypto trading legal in {title_name}?", (note or f"Crypto rules in {name} are overseen by {reg}.") + " This is general information, not legal advice.")]
     note_html = f'<div class="callout"><strong>Local rules in {esc(name)}:</strong> {esc(note)}</div>' if note else ""
-    unavail_html = f'<p class="muted small">Not available in {esc(name)}: ' + ", ".join(esc(b["name"]) for b in unavail) + ".</p>" if unavail else ""
     facts = f"""<div class="cfacts">
  <div><span>Region</span><b>{esc(c['region'])}</b></div>
  <div><span>Currency</span><b>{esc(cur)}</b></div>
  <div><span>Regulator</span><b>{esc(reg)}</b></div>
- <div><span>{noun} available</span><b>{len(avail)} of {len(items)}</b></div></div>"""
+ <div><span>{noun} available</span><b>{len(shown)}</b></div></div>"""
+    listing = (f"""{compare_table(shown, d, c)}
+ <div class="grid g2">{''.join(brand_card(b, i, d, c) for i, b in enumerate(shown, 1))}</div>""" if shown else
+               f'<p>See our <a href="{link(pillar, d)}">worldwide best {sing} ranking</a> for the full list.</p>')
     body = f"""
 <section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), (noun, base), (title_name, path)], d)}
- <h1>{c['flag']} Best {noun} in {esc(name)} ({YEAR})</h1>
+ <h1>{c['flag']} Best {sing.title()} in {esc(name)} ({YEAR})</h1>
  <p class="lead">{summary}</p>
  {facts}
 </div></section>
 <section class="wrap section">
  {note_html}{lic_html}
- <h2>Compare {noun.lower()} for {esc(name)}</h2>
- {compare_table(ranked, d, c)}
- <p class="tiny">* "Available" means {esc(name)} is not on the provider's published restricted list as of {esc(CFG['last_reviewed'])}. Final eligibility is decided by the provider when you register.</p>
- {disclosure_box(d)}
- <div class="grid g2">{''.join(brand_card(b, i, d, c) for i, b in enumerate(ranked, 1))}</div>
- {unavail_html}
+ <h2>Top {len(shown)} {noun.lower()} in {esc(name)}</h2>
+ {listing}
 </section>
 <section class="wrap section prose">
  {how}
  {faq_html(faqs)}
- <p>Also see: <a href="{link(other[0] + c['slug'] + '/', d)}">Best {other[1]} in {esc(name)}</a> · <a href="{link('countries/' + c['slug'] + '/', d)}">{esc(title_name)} trading guide</a> · <a href="{link('free-forex-signals/', d)}">Free forex signals</a> · <a href="{link('free-crypto-signals/', d)}">Free crypto signals</a></p>
+ <p>Also see: <a href="{link(other[0] + c['slug'] + '/', d)}">Best {other[1]} in {esc(name)}</a> · <a href="{link(pillar, d)}">Best {sing} worldwide</a> · <a href="{link('countries/' + c['slug'] + '/', d)}">{esc(title_name)} trading guide</a> · <a href="{link('free-forex-signals/', d)}">Free forex signals</a> · <a href="{link('free-crypto-signals/', d)}">Free crypto signals</a></p>
 </section>
-<section class="wrap section"><h2>Other countries in {esc(c['region'])}</h2><div class="clist">{region_links}<a href="{link(base, d)}#countries"><strong>All countries →</strong></a></div></section>"""
+<section class="wrap section"><h2>Best {sing} in other {esc(c['region'])} countries</h2><div class="clist">{region_links}<a href="{link(base, d)}#countries"><strong>All countries →</strong></a></div></section>"""
+    top_names = ", ".join(b["name"] for b in avail[:4])
     if fx:
-        title = f"Best Forex Brokers in {name} ({YEAR}) – Regulated, Low Deposit & MT4/MT5 | {SITE}"
-        desc = f"Best forex brokers in {name} for {YEAR}: {', '.join(b['name'] for b in avail[:4]) or 'compare brokers'} — licences, minimum deposit, leverage and MT4/MT5, checked for traders in {name}."
-        kw = f"best forex broker in {title_name}, forex brokers {title_name}, forex trading {title_name}, regulated forex broker {title_name}, FCA broker {title_name}, low minimum deposit forex broker {title_name}, MT5 broker {title_name}, gold trading {title_name}, Exness {title_name}, forex signals {title_name}"
+        title = f"Best Forex Broker in {name} {YEAR} – Top {len(shown)} Regulated Forex Brokers | {SITE}"
+        desc = f"Best forex broker in {name} for {YEAR}: {top_names or 'top regulated brokers'} compared — licences, minimum deposit, leverage and MT4/MT5 for traders in {name}."
+        kw = f"best forex broker in {title_name}, best forex broker {title_name}, best forex broker in {title_name} {YEAR}, forex brokers {title_name}, forex trading {title_name}, regulated forex broker {title_name}, low minimum deposit forex broker {title_name}, MT5 broker {title_name}, gold trading {title_name}, forex signals {title_name}"
     else:
-        title = f"Best Crypto Exchanges in {name} ({YEAR}) – Fees, Leverage & Licences | {SITE}"
-        desc = f"Best crypto exchanges in {name} for {YEAR}: {', '.join(b['name'] for b in avail[:4]) or 'compare exchanges'} — fees, futures leverage, KYC, licences and availability for users in {name}."
-        kw = f"best crypto exchange in {title_name}, crypto exchanges {title_name}, buy bitcoin {title_name}, buy USDT {title_name}, crypto trading {title_name}, crypto futures {title_name}, Bitunix {title_name}, Binance {title_name}, BingX {title_name}, crypto signals {title_name}"
+        title = f"Best Crypto Exchange in {name} {YEAR} – Top {len(shown)} Exchanges & Wallets | {SITE}"
+        desc = f"Best crypto exchange in {name} for {YEAR}: {top_names or 'top exchanges'} compared — fees, futures leverage, wallets and licences for users in {name}."
+        kw = f"best crypto exchange in {title_name}, best crypto exchange {title_name}, best crypto exchange in {title_name} {YEAR}, best crypto wallet {title_name}, buy bitcoin {title_name}, buy USDT {title_name}, crypto trading {title_name}, crypto futures {title_name}, crypto signals {title_name}"
     page(path, title, desc, body, d, keywords=kw,
-         ld=[itemlist_ld(f"Best {noun} in {title_name}", ranked), breadcrumb_ld([("Home", ""), (noun, base), (title_name, path)]), faq_ld(faqs)], priority="0.7", theme="fx" if fx else "cx")
+         ld=[itemlist_ld(f"Best {sing} in {title_name}", shown or items), breadcrumb_ld([("Home", ""), (noun, base), (title_name, path)]), faq_ld(faqs)], priority="0.7", theme="fx" if fx else "cx")
 
 
 def build_country_overview(c):
@@ -1145,7 +1141,7 @@ def build_signals(kind):
   <p>We share wins and losses openly and never advertise guaranteed profits or made-up accuracy figures. Signals are educational ideas, not personal financial advice.</p>
   {faq_html(faqs)}
  </div>
- <aside class="side"><div class="card"><h3>Trade signals with</h3>{''.join(f'<div class="mini">{logo(p, "sm")}<b>{esc(p["name"])}</b>{visit_buttons(p, small=True, first_only=True)}</div>' for p in partners)}<p class="tiny">Partner links. Capital at risk.</p></div></aside>
+ <aside class="side"><div class="card"><h3>Trade signals with</h3>{''.join(f'<div class="mini">{logo(p, "sm")}<b>{esc(p["name"])}</b>{visit_buttons(p, small=True, first_only=True)}</div>' for p in partners)}</div></aside>
 </section>"""
     kw = ("free forex signals, forex signals telegram, gold signals, XAUUSD signals, free gold signals, best forex signals, forex signals today" if fx
           else "free crypto signals, crypto signals telegram, bitcoin signals, crypto futures signals, free bitcoin signals, best crypto signals, BTC signals today")
@@ -1218,7 +1214,7 @@ def build_static_pages():
 <li><strong>Accessibility (20%)</strong> — minimum deposit, number of countries served, local payment methods, KYC process.</li>
 <li><strong>Platforms & features (15%)</strong> — MT4/MT5, cTrader, TradingView, copy trading, mobile apps.</li>
 <li><strong>Support & reputation (10%)</strong> — customer service and user feedback.</li></ul>
-<p>Scores are our opinion. Because we earn commissions from partner links, this can influence which providers appear and in what order — see our <a href="../affiliate-disclosure/">affiliate disclosure</a>.</p>
+<p>Scores are our editorial opinion and are reviewed regularly.</p>
 <h2>How we check licences and country availability</h2>
 <p>We collect licence details from providers' official legal pages, regulator registers and reputable industry sources, and list licence numbers where they are publicly confirmed. Country availability comes from each provider's published restricted-country list. A country is marked <em>Available*</em> when it is not on that list; providers make the final decision when you register.</p>
 <h2>Corrections</h2><p>Spotted outdated information? Email <a href="mailto:{email}">{email}</a>.</p>"""),
@@ -1229,13 +1225,10 @@ def build_static_pages():
 <p>Before trading, consider your objectives, experience and risk appetite. Never invest money you cannot afford to lose. Seek advice from an independent, licensed financial adviser if you have any doubts.</p>
 <p>Signals, analysis and opinions on this website are general information and education only — not personal financial advice. Past performance is not a reliable indicator of future results.</p>
 <p>Offshore brokers and crypto exchanges may not be authorised in your country, and you may have limited or no protection if they fail. It is your responsibility to make sure that using any provider is legal where you live.</p>"""),
-        "affiliate-disclosure/": ("Affiliate Disclosure", f"""<p>{esc(SITE)} is free to use. We earn money through partner (affiliate) links: when you open an account through a "Visit Site" button, we may receive a commission or a share of trading fees. This costs you nothing extra.</p>
-<p>Our current partners include {esc(partners)}. Commercial relationships can influence which providers we feature and how prominently. We still aim to give accurate facts — including drawbacks, licences and country restrictions — so you can decide for yourself.</p>
-<p>All partner links use <code>rel="sponsored"</code> in line with search engine guidelines. Company names and logos are trademarks of their owners and are shown only to identify them.</p>"""),
         "privacy-policy/": ("Privacy Policy", f"""<p>Last updated: {esc(CFG['last_reviewed'])}.</p>
 <p>This website does not require an account and does not collect personal information through forms. If Google Analytics is enabled, it uses cookies to collect anonymous usage data (pages visited, device type, approximate country). You can block these cookies in your browser.</p>
 <p>Company icons are loaded from Google's public favicon service, which may receive your IP address when the images load.</p>
-<p>When you click a partner link you leave our website and the partner's privacy policy applies. Partners may use cookies to record that you arrived from our site.</p>
+<p>When you click a link to a broker or exchange you leave our website and that provider's privacy policy applies.</p>
 <p>This site is hosted on GitHub Pages, which may log visitors' IP addresses for security purposes.</p>
 <p>Contact: <a href="mailto:{email}">{email}</a></p>"""),
         "terms/": ("Terms of Use", f"""<p>By using {esc(SITE)} you agree to these terms. All content is provided for general information and education, without warranties. Information about brokers and exchanges — fees, minimum deposits, leverage, licences and country availability — can change at any time; always verify it on the provider's official website and the regulator's register.</p>
@@ -1263,6 +1256,163 @@ def build_sitemap_robots():
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
 
+def available_count(b):
+    return sum(1 for c in COUNTRIES if status_for(b, c["code"]) != "no")
+
+
+def reg_summary(b, n=3):
+    return ", ".join(short_reg(l) for l in b["licences"][:n])
+
+
+def directory_block(kind, depth):
+    base = "forex-brokers/" if kind == "forex" else "crypto-exchanges/"
+    phrase = "Best forex broker in" if kind == "forex" else "Best crypto exchange in"
+    regions = {}
+    for c in COUNTRIES:
+        regions.setdefault(c["region"], []).append(c)
+    return "".join(
+        f'<div class="region"><h3>{phrase} {esc(r)}</h3><div class="dir">' +
+        "".join(f'<a href="{link(base + c["slug"] + "/", depth)}">{c["flag"]} {phrase} {esc(c["in_name"])}</a>' for c in cs) + "</div></div>"
+        for r, cs in sorted(regions.items()))
+
+
+def pillar_entry(b, rank, depth):
+    rp = review_path(b)
+    facts = ([("Minimum deposit", b["min_deposit"]), ("Max leverage", b["max_leverage"]), ("Spreads", b["spreads"]), ("Platforms", b["platforms"]), ("Copy trading", b["copy_trading"]), ("Regulation", reg_summary(b, 5))]
+             if is_fx(b) else
+             [("Minimum deposit", b["min_deposit"]), ("Max leverage", b["max_leverage"]), ("Fees", b["fees"]), ("Markets", b["coins"]), ("Copy trading", b["copy_trading"]), ("Licences", reg_summary(b, 5))])
+    rows = "".join(f"<tr><th>{esc(k)}</th><td>{esc(v)}</td></tr>" for k, v in facts)
+    label = BEST_FOR.get(b["slug"], "Top pick")
+    hid = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
+    return f"""<section class="pillar-entry card {'fx' if is_fx(b) else 'cx'}" id="{hid}">
+ <div class="pe-head"><span class="rank-big">#{rank}</span>{logo(b, 'lg')}<div><h2>{esc(label)}: {esc(b['name'])}</h2><p class="muted">{esc(b['tagline'])} · Score {b['score']:.1f}/10</p></div></div>
+ <p>{esc(b['summary'])}</p>
+ <div class="grid g2"><div class="table-wrap"><table class="facts-table">{rows}</table></div>
+ <div><h3>Why {esc(b['name'])} is the {esc(label.lower())}</h3><ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul>
+ <p><strong>Best for:</strong> {esc(b['best_for'])}</p>
+ <div class="bc-cta">{visit_buttons(b)}<a class="btn btn-ghost" href="{link(rp, depth)}">{esc(b['name'])} review</a><a class="btn btn-ghost" href="{link(rp + 'sign-up/', depth)}">How to sign up</a></div></div></div>
+</section>"""
+
+
+def build_pillar(kind):
+    fx = kind == "forex"
+    items = BROKERS if fx else EXCHANGES
+    d = 1
+    path = "best-forex-broker/" if fx else "best-crypto-exchange/"
+    kw1 = "best forex broker" if fx else "best crypto exchange"
+    K = kw1.title()
+    n = len(items)
+    img = f"assets/img/{path.strip('/')}.jpg"
+    hero = f'<figure class="art-hero"><img src="../{img}" alt="{K} {YEAR}" width="2400" height="1260" fetchpriority="high"></figure>' if (ROOT / img).exists() else ""
+    toc = [(re.sub(r"[^a-z0-9]+", "-", BEST_FOR[b["slug"]].lower()).strip("-"), f"{BEST_FOR[b['slug']]}: {b['name']}") for b in items]
+    toc_html = "".join(f'<li><a href="#{h}">{esc(t)}</a></li>' for h, t in toc)
+    entries = "".join(pillar_entry(b, i, d) for i, b in enumerate(items, 1))
+    low = sorted(items, key=lambda b: float(re.sub(r"[^0-9.]", "", b["min_deposit"].split("(")[0]) or 0))
+    lev_num = lambda b: float((re.findall(r"1:(\d+)", b["max_leverage"]) or re.findall(r"(\d+)x", b["max_leverage"]) or ["0"])[0])
+    top_tier = [b for b in items if has_top(b)]
+    if fx:
+        fca = [b for b in items if any("Financial Conduct Authority" in l["regulator"] for l in b["licences"])]
+        asic = [b for b in items if any("ASIC" in l["regulator"] for l in b["licences"])]
+        cysec = [b for b in items if any("CySEC" in l["regulator"] for l in b["licences"])]
+        mt5 = [b for b in items if "MT5" in b["platforms"]]
+        extra = f"""
+<h2 id="best-fca-regulated-forex-broker">Best FCA Regulated Forex Broker</h2>
+<p>If UK regulation matters to you, the best FCA regulated forex broker choices are {', '.join(f'<a href="{link(review_path(b), d)}">{esc(b["name"])}</a>' for b in fca)}. Each runs a UK entity authorised by the Financial Conduct Authority: {'; '.join(esc(b['name'] + ' — ' + next(l['number'] for l in b['licences'] if 'Financial Conduct Authority' in l['regulator'])) for b in fca)}.</p>
+<h2 id="best-asic-and-cysec-regulated-forex-broker">Best ASIC and CySEC Regulated Forex Broker</h2>
+<p>For Australian oversight, the best ASIC regulated forex broker options are {', '.join(esc(b['name']) for b in asic)}. In the EU, the best CySEC regulated forex broker options are {', '.join(esc(b['name']) for b in cysec)}.</p>
+<h2 id="best-forex-broker-with-low-minimum-deposit">Best Forex Broker with Low Minimum Deposit</h2>
+<ol>{''.join(f'<li><a href="{link(review_path(b), d)}"><strong>{esc(b["name"])}</strong></a> — {esc(b["min_deposit"])}: {esc(b["min_deposit_note"])}</li>' for b in low)}</ol>
+<h2 id="best-forex-broker-with-high-leverage">Best Forex Broker with High Leverage</h2>
+<p>For maximum flexibility, the best forex broker for high leverage choices are {', '.join(f'{esc(b["name"])} ({esc(b["max_leverage"])})' for b in sorted(items, key=lev_num, reverse=True)[:4])}. Use high leverage carefully and size every trade by risk.</p>
+<h2 id="best-mt5-forex-broker">Best MT5 Forex Broker</h2>
+<p>All {len(mt5)} brokers in this ranking support MetaTrader 5. The best MT5 forex broker for raw spreads is IC Markets; for $0–$10 accounts choose HFM, Exness or RoboForex; and for commission-free trading choose Octa.</p>
+<h2 id="best-forex-broker-for-gold-trading">Best Forex Broker for Gold (XAUUSD) Trading</h2>
+<p>Gold traders look for tight XAUUSD spreads, fast execution and flexible leverage. Exness is widely considered the best forex broker for gold trading, with HFM and Vantage close behind. Read our <a href="../guides/how-to-trade-gold-xauusd/">gold trading guide</a>.</p>
+<h2 id="how-to-choose-the-best-forex-broker">How to Choose the Best Forex Broker for You</h2>
+<ol><li><strong>Check the licence.</strong> The best forex broker is regulated — look for FCA, ASIC, CySEC, DFSA or FSCA licences in our <a href="../licences/">licence table</a>.</li>
+<li><strong>Match the minimum deposit to your budget.</strong> Start from $1 at InstaForex, $0 at HFM or $10 at Exness.</li>
+<li><strong>Compare spreads and commissions.</strong> Raw/ECN accounts suit active traders; commission-free accounts suit beginners.</li>
+<li><strong>Pick your platform.</strong> MT4, MT5, cTrader or TradingView.</li>
+<li><strong>Check availability in your country</strong> — see the best forex broker by country below.</li>
+<li><strong>Test with a demo account</strong> before trading live.</li></ol>"""
+        faqs = [(f"What is the best forex broker in {YEAR}?", f"Exness is our best forex broker overall for {YEAR}, thanks to its $10 minimum deposit, instant withdrawals and nine licences including the FCA. IC Markets is the best forex broker for scalping, HFM for copy trading and AvaTrade for regulation."),
+                ("What is the best forex broker for beginners?", "Exness, Octa and InstaForex are the best forex broker choices for beginners: low minimum deposits ($1–$25), simple accounts and copy trading."),
+                ("Which is the best forex broker with the lowest minimum deposit?", "InstaForex ($1), HFM ($0 on Cent/Premium/Zero), Exness ($10) and RoboForex ($10)."),
+                ("What is the best regulated forex broker?", "AvaTrade is one of the most regulated brokers in the world (Central Bank of Ireland, ASIC, CySEC, JFSA, FSRA, ISA). Exness, HFM and Vantage hold FCA authorisation."),
+                ("What is the best forex broker in my country?", "Use the best forex broker by country list on this page — every country page shows which brokers accept local traders, the local regulator and the best pick for that country."),
+                ("Which is the best forex broker for copy trading?", "HFM with HFCOPY, plus Octa, AvaTrade, RoboForex (CopyFX) and InstaForex (ForexCopy).")]
+        title = f"Best Forex Broker {YEAR}: Top {n} Best Forex Brokers in the World (Ranked) | {SITE}"
+        desc = f"The best forex broker for {YEAR}: our ranking of the top {n} best forex brokers — Exness, IC Markets, HFM, Vantage, AvaTrade and more — by licences, minimum deposit, spreads, leverage and country."
+        keywords = f"best forex broker, best forex broker {YEAR}, best forex brokers, best forex broker in the world, best forex broker for beginners, best regulated forex broker, best FCA regulated forex broker, best forex broker low minimum deposit, best MT5 forex broker, best forex broker for gold, best forex broker by country, top forex brokers"
+    else:
+        lowfee = sorted(items, key=lambda b: ("0% maker" not in b["fees"], b["fees"]))
+        extra = f"""
+<h2 id="best-crypto-exchange-for-futures">Best Crypto Exchange for Futures Trading</h2>
+<p>For leverage and liquidity, the best crypto exchange for futures trading choices are {', '.join(f'{esc(b["name"])} ({esc(b["max_leverage"])})' for b in sorted(items, key=lev_num, reverse=True)[:5])}. Bitunix is our best crypto exchange for futures overall thanks to 0.02%/0.06% fees, copy trading and TradingView charts.</p>
+<h2 id="best-crypto-exchange-with-lowest-fees">Best Crypto Exchange with the Lowest Fees</h2>
+<ul>{''.join(f'<li><a href="{link(review_path(b), d)}"><strong>{esc(b["name"])}</strong></a> — {esc(b["fees"])}</li>' for b in lowfee)}</ul>
+<h2 id="best-licensed-crypto-exchange">Best Licensed and Regulated Crypto Exchange</h2>
+<p>The best regulated crypto exchange choices hold top-tier licences: {', '.join(f'<a href="{link(review_path(b), d)}">{esc(b["name"])}</a> ({esc(reg_summary(b, 3))})' for b in top_tier)}. See every licence on our <a href="../licences/">licence page</a>.</p>
+<h2 id="best-crypto-exchange-wallet">Best Crypto Exchange Wallet</h2>
+<p>Every exchange in this ranking gives you a built-in <strong>crypto exchange wallet</strong> — your spot, funding and futures accounts — so you can deposit, store and trade in one place. The best crypto exchange wallet options are:</p>
+<ul><li><strong>Binance</strong> — the best crypto exchange wallet for most people: a spot/funding wallet plus the self-custody <em>Binance Web3 Wallet</em> inside the same app.</li>
+<li><strong>Bybit</strong> — a unified trading account plus the <em>Bybit Web3 wallet</em> and the Bybit Card for spending crypto.</li>
+<li><strong>Bitunix</strong> — the best crypto exchange wallet for futures traders: move USDT between spot and futures instantly.</li>
+<li><strong>BingX, MEXC, BloFin and KuCoin</strong> — fast multi-network deposits (TRC20, BEP20, ERC20, Solana and more) for thousands of coins.</li></ul>
+<p><strong>Wallet safety tips:</strong> turn on app-based 2FA, set an anti-phishing code and a withdrawal whitelist, and always select the same network when sending crypto. For long-term holdings, many traders also keep a hardware wallet. Read our <a href="../guides/crypto-exchange-safety/">crypto security guide</a>.</p>
+<h2 id="best-crypto-exchange-for-beginners">Best Crypto Exchange for Beginners</h2>
+<p>Binance and Bybit are the best crypto exchange choices for beginners: simple apps, P2P and card purchases, Earn products and copy trading. BingX is the best crypto exchange for beginners who want to copy experienced traders.</p>
+<h2 id="how-to-choose-the-best-crypto-exchange">How to Choose the Best Crypto Exchange</h2>
+<ol><li><strong>Licences and security</strong> — VARA, MiCA, AFSA licences, proof of reserves, 2FA.</li>
+<li><strong>Fees</strong> — compare maker/taker fees for spot and futures.</li>
+<li><strong>Coins and leverage</strong> — altcoin selection and maximum leverage.</li>
+<li><strong>Wallet and deposits</strong> — supported networks, P2P and card options in your currency.</li>
+<li><strong>Copy trading and bots</strong> — if you want automated strategies.</li>
+<li><strong>Availability</strong> — check the best crypto exchange by country below.</li></ol>"""
+        faqs = [(f"What is the best crypto exchange in {YEAR}?", f"Bitunix is our best crypto exchange overall for {YEAR}, with up to 200x leverage, low 0.02%/0.06% futures fees and copy trading. Bybit is the best licensed crypto exchange, Binance the best for beginners and BingX the best for copy trading."),
+                ("What is the best crypto exchange wallet?", "Binance and Bybit offer the best crypto exchange wallet experience — an exchange wallet plus a built-in Web3 wallet in one app. Bitunix is best for moving funds quickly between spot and futures."),
+                ("Which is the best crypto exchange for futures?", "Bitunix (200x), MEXC (200x), BloFin and BitBase (150x), Binance, BingX and KuCoin (125x) and Bybit (100x)."),
+                ("What is the best crypto exchange with low fees?", "MEXC has 0% maker fees on spot and futures. Bitunix, Bybit, Binance, BingX, BloFin and KuCoin all charge 0.02% maker on futures."),
+                ("What is the best crypto exchange in my country?", "Use the best crypto exchange by country list on this page — each country page shows which exchanges accept local users and our top pick."),
+                ("Which is the best regulated crypto exchange?", "Bybit (VARA, MiCA, AFSA), Binance (VARA, FSRA, CBB, AFSA), BingX and KuCoin (MiCA).")]
+        title = f"Best Crypto Exchange {YEAR}: Top {n} Best Crypto Exchanges & Wallets (Ranked) | {SITE}"
+        desc = f"The best crypto exchange for {YEAR}: top {n} best crypto exchanges and exchange wallets — Bitunix, Bybit, Binance, BingX, MEXC and more — ranked by fees, leverage, licences and country."
+        keywords = f"best crypto exchange, best crypto exchange {YEAR}, best crypto exchanges, best crypto exchange wallet, best crypto wallet, best crypto exchange for beginners, best crypto exchange for futures, best crypto exchange low fees, best regulated crypto exchange, best crypto exchange by country, top crypto exchanges"
+    body = f"""<section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
+ {crumbs_html([("Home", ""), (K, path)], d)}
+ <span class="kicker">{'FOREX RANKING' if fx else 'CRYPTO RANKING'} · UPDATED {esc(CFG['last_reviewed']).upper()}</span>
+ <h1>{K} {YEAR} – Top {n} Best {'Forex Brokers' if fx else 'Crypto Exchanges'} {'in the World' if fx else '&amp; Wallets'}</h1>
+ <p class="lead">Looking for the {kw1}? We compared {n} {'regulated forex brokers' if fx else 'crypto exchanges'} on licences, {'spreads' if fx else 'fees'}, leverage, minimum deposit and availability in {len(COUNTRIES)} countries. Our {kw1} overall is <strong>{esc(items[0]['name'])}</strong>.</p>
+ {country_search(d, 'forex-brokers' if fx else 'crypto-exchanges', 'Find the ' + kw1 + ' in your country…')}
+</div></section>
+<div class="wrap narrow">{hero}</div>
+<section class="wrap section two-col">
+ <div class="prose">
+  <h2 id="quick-picks">{K} {YEAR}: Quick Picks</h2>
+  <ol class="quick">{''.join(f'<li><a href="#{h}">{esc(t)}</a></li>' for h, t in toc)}</ol>
+  <h2>{K} Comparison Table</h2>
+  {compare_table(items, d)}
+ </div>
+ <aside class="side"><div class="card sticky"><h3>On this page</h3><ol class="toc-list">{toc_html}</ol>
+ <p><a href="#{'best-forex-broker-by-country' if fx else 'best-crypto-exchange-by-country'}"><strong>{K} by country →</strong></a></p></div></aside>
+</section>
+<div class="wrap section">{entries}</div>
+<section class="wrap section prose narrow-wide">{extra}</section>
+<section class="wrap section" id="{'best-forex-broker-by-country' if fx else 'best-crypto-exchange-by-country'}">
+ <h2>{K} by Country</h2>
+ <p>Click your country to see the {kw1} for traders there, with local regulation notes and the providers that accept local traders.</p>
+ {directory_block(kind, d)}
+</section>
+<section class="wrap section">{faq_html(faqs, f"{K} – Frequently Asked Questions")}</section>"""
+    art_ld = {"@context": "https://schema.org", "@type": "Article", "headline": f"{K} {YEAR}", "description": desc,
+              "datePublished": TODAY, "dateModified": TODAY, "author": {"@type": "Organization", "name": CFG["author"]},
+              "publisher": {"@type": "Organization", "name": SITE}, "mainEntityOfPage": f"{SITE_URL}/{path}",
+              "image": f"{SITE_URL}/{img}"}
+    page(path, title, desc, body, d, keywords=keywords,
+         ld=[art_ld, itemlist_ld(f"{K} {YEAR}", items), breadcrumb_ld([("Home", ""), (K, path)]), faq_ld(faqs)],
+         priority="0.95", og_type="article", theme="fx" if fx else "cx", image=img if (ROOT / img).exists() else None)
+
+
 def main():
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -1273,6 +1423,8 @@ def main():
     build_home()
     build_hub("forex")
     build_hub("crypto")
+    build_pillar("forex")
+    build_pillar("crypto")
     for b in ALL:
         build_review(b)
         build_signup(b)

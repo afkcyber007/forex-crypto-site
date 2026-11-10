@@ -213,7 +213,10 @@ SPECS = {
     "mt4-vs-mt5": ("forex", "platform", "PLATFORMS", "MT4 vs MT5"),
     "crypto-exchange-safety": ("crypto", "shield", "SECURITY", "2FA ON"),
     "what-is-forex-trading": ("forex", "area", "FOREX BASICS", "GBP/USD"),
+    "best-forex-broker": ("forex", "candles", "BEST FOREX BROKER", "TOP 9"),
+    "best-crypto-exchange": ("crypto", "depth", "BEST CRYPTO EXCHANGE", "TOP 8"),
 }
+EXTRA_PAGES = ["best-forex-broker", "best-crypto-exchange"]
 
 
 def make(slug, theme, kind, kicker, ticker):
@@ -243,17 +246,21 @@ def make(slug, theme, kind, kicker, ticker):
 
 def main():
     articles = sorted((ROOT / "data" / "articles").glob("*.md"))
-    for f in articles:
-        slug = f.stem
+    targets = [(f.stem, f) for f in articles] + [(s, None) for s in EXTRA_PAGES]
+    for slug, f in targets:
+        if (OUT / f"{slug}.jpg").exists():
+            continue  # keep existing pictures (and any photo you added yourself)
         spec = SPECS.get(slug)
         if not spec:
-            text = f.read_text(encoding="utf-8").lower()
+            text = f.read_text(encoding="utf-8").lower() if f else ""
             theme = "gold" if "gold" in text[:400] else "crypto" if "crypto" in text[:400] else "forex"
             spec = (theme, random.Random(slug).choice(["candles", "area", "depth"]), "TRADING GUIDE", "")
         img = make(slug, *spec)
         img.save(OUT / f"{slug}.jpg", quality=86, optimize=True, progressive=True)
         print("wrote", slug)
     # home page backgrounds (no text)
+    if (OUT / "hero-forex.jpg").exists() and (OUT / "hero-crypto.jpg").exists():
+        print("done"); return
     make("hero-forex", "forex", "candles", "", "").save(OUT / "hero-forex.jpg", quality=82, optimize=True, progressive=True)
     make("hero-crypto", "crypto", "candles", "", "").save(OUT / "hero-crypto.jpg", quality=82, optimize=True, progressive=True)
     print("done")

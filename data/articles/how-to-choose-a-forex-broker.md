@@ -11,19 +11,23 @@ Choosing a forex broker is the most important decision you make before you place
 
 Regulation is the first filter. Tier-1 regulators such as the UK FCA, Australia's ASIC and Cyprus's CySEC enforce strict rules on capital, client-money segregation and leverage. Offshore regulators such as the Seychelles FSA or Mauritius FSC allow higher leverage but give clients less protection.
 
-Many global brokers run several companies at once. Exness, IC Markets and Vantage all hold tier-1 licences, but most clients outside Europe and Australia are signed up under their offshore entity. Check the name of the company in your client agreement, then look it up on the regulator's official register.
+Many global brokers run several regulated companies at once. Exness, HFM and Vantage hold FCA authorisation, IC Markets and AvaTrade hold ASIC licences, and most hold CySEC licences for Europe. You can look up any licence number on the regulator's official register — see our [licence table](/licences/).
 
 ## 2. Make sure the broker accepts your country
 
-Every broker publishes a list of countries it does not serve. IC Markets, for example, does not accept residents of the US, Canada, New Zealand or Israel. Our [country guides](/countries/) show which brokers accept residents of each country.
+Every broker serves a different set of countries. Our [country guides](/countries/) show the best forex broker for each of 240+ countries and which brokers accept local traders.
 
 ## 3. Compare the real minimum deposit
 
 Minimum deposits vary a lot:
 
-- **Exness** — from $10 on Standard accounts
+- **HFM** — $0 on Cent, Premium and Zero accounts
+- **InstaForex** — from $1
+- **Exness** and **RoboForex** — from $10
 - **PU Prime** — from $20 on the Cent account
+- **Octa** — from $25
 - **Vantage** — from $50 on Standard STP and Raw ECN
+- **AvaTrade** — from $100
 - **IC Markets** — $200 recommended
 
 A low minimum is great for learning, but make sure your balance is big enough to trade with a proper stop loss and a small risk per trade.
@@ -42,7 +46,7 @@ Look for local payment methods in your currency, e-wallets and USDT. Before depo
 
 ## 7. Look for negative balance protection
 
-Negative balance protection means you cannot lose more than your account balance, even after a sudden price gap. All four brokers we review offer it on retail accounts.
+Negative balance protection means you cannot lose more than your account balance, even after a sudden price gap. Most brokers we review offer it on retail accounts.
 
 ## 8. Be careful with leverage
 
@@ -52,4 +56,4 @@ Leverage of 1:500 or "unlimited" lets you open very large positions with little 
 
 Every serious broker offers a free demo account. Use it to test the platform, execution speed and your strategy before you risk real money.
 
-> Quick comparison: see our ranked table of the [best forex brokers](/forex-brokers/) with minimum deposits, regulation and leverage side by side.
+> Quick comparison: see our ranking of the [best forex broker](/best-forex-broker/) for 2026, or the full [forex broker table](/forex-brokers/) with minimum deposits, regulation and leverage side by side.
