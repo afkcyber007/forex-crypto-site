@@ -251,6 +251,10 @@ def main():
         if (OUT / f"{slug}.jpg").exists():
             continue  # keep existing pictures (and any photo you added yourself)
         spec = SPECS.get(slug)
+        m = re.match(r"^(crypto-market-report|gold-forex-market-report)-([a-z]+)-(\d{4})$", slug)
+        if not spec and m:
+            tag = f"{m.group(2)[:3].upper()} {m.group(3)}"
+            spec = ("crypto", "candles", "CRYPTO REPORT", tag) if m.group(1).startswith("crypto") else ("gold", "candles", "GOLD & FOREX", tag)
         if not spec:
             text = f.read_text(encoding="utf-8").lower() if f else ""
             theme = "gold" if "gold" in text[:400] else "crypto" if "crypto" in text[:400] else "forex"

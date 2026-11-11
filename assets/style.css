@@ -368,3 +368,21 @@ ol.quick li{margin:.45em 0;font-weight:600}
 .split-card{min-width:0}.split-card .logos{flex-wrap:wrap}
 .mb-loading{color:#8a96ae;font-size:.8rem;padding:22px 4px 10px}
 .tradingview-widget-container:has(iframe) .mb-loading,.tradingview-widget-container:has(iframe) .tape-fallback{display:none}
+
+/* ===== Blog ===== */
+.blog-head{background:linear-gradient(135deg,var(--fx-soft),var(--cx-soft));border-top:4px solid;border-image:linear-gradient(90deg,var(--fx),var(--cx)) 1}
+.g1{grid-template-columns:1fr}
+.featured .art-card{flex-direction:row;min-height:300px}
+.featured .thumb{flex:1.2;aspect-ratio:auto}
+.featured .art-body{flex:1;padding:28px;justify-content:center}
+.featured h3{font-size:clamp(1.3rem,2.4vw,1.8rem)}
+@media (max-width:760px){.featured .art-card{flex-direction:column}.featured .thumb{aspect-ratio:40/21}}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 18px}
+.chip-f{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:8px 14px;border-radius:999px;font-weight:700;font-size:.88rem;cursor:pointer}
+.chip-f:hover{border-color:var(--fx)}
+.chip-f.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.art-meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.art-meta .tag{margin:0}
+.art-meta time{font-size:.78rem;color:var(--muted)}
+.md-table{min-width:520px}
+.md-table td,.md-table th{font-size:.9rem}

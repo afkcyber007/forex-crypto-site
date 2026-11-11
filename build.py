@@ -222,7 +222,7 @@ def itemlist_ld(name, items):
 # --------------------------------------------------------------------------
 NAV = [("Forex Brokers", "forex-brokers/", "fx"), ("Crypto Exchanges", "crypto-exchanges/", "cx"),
        ("Compare", "compare/", ""), ("Licences", "licences/", ""), ("Countries", "countries/", ""),
-       ("Free Signals", "free-signals/", ""), ("Guides", "guides/", "")]
+       ("Free Signals", "free-signals/", ""), ("Blog", "blog/", "")]
 
 
 def tg_url(handle):
@@ -307,7 +307,7 @@ def market_blocks(title=None, depth=0):
     return f'<section class="markets"><div class="wrap section">{head}<div class="mgrid">{"".join(blocks)}</div><p class="tiny mnote">Gold, Bitcoin, US30, NAS100 and the world\'s top markets — real-time quotes powered by TradingView.</p></div></section>'
 
 
-def page(path, title, description, body, depth, keywords="", ld=None, priority="0.6", og_type="website",
+def page(path, title, description, body, depth, keywords="", ld=None, priority="0.6", og_type="website", canonical=None, in_sitemap=True,
          noindex=False, theme="", image=None):
     url = f"{SITE_URL}/{path}"
     ld_html = "".join(jsonld(x) for x in (ld or []))
@@ -330,7 +330,7 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 <meta name="description" content="{esc(description)}">
 {f'<meta name="keywords" content="{esc(keywords)}">' if keywords else ''}
 <meta name="robots" content="{'noindex, follow' if noindex else 'index, follow, max-image-preview:large'}">
-<link rel="canonical" href="{esc(url)}">
+<link rel="canonical" href="{esc(f"{SITE_URL}/{canonical}" if canonical is not None else url)}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{esc(SITE)}">
 <meta property="og:title" content="{esc(title)}">
@@ -378,7 +378,8 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
     if not noindex:
-        PAGES.append((path, priority))
+        if in_sitemap:
+            PAGES.append((path, priority))
 
 
 # --------------------------------------------------------------------------
@@ -521,8 +522,21 @@ def md_to_html(md, depth):
         if lst:
             out.append(f"</{lst}>")
             lst = None
+    rows = []
+
+    def flush_table():
+        nonlocal rows
+        if rows:
+            cells = [[c.strip() for c in r.strip().strip("|").split("|")] for r in rows if not re.match(r"^\|?\s*:?-{2,}", r.strip())]
+            head, rest = cells[0], cells[1:]
+            out.append('<div class="table-wrap"><table class="md-table"><thead><tr>' + "".join(f"<th>{inline_md(c, depth)}</th>" for c in head) + "</tr></thead><tbody>"
+                       + "".join("<tr>" + "".join(f"<td>{inline_md(c, depth)}</td>" for c in r) + "</tr>" for r in rest) + "</tbody></table></div>")
+            rows = []
     for line in md.splitlines():
         t = line.strip()
+        if t.startswith("|"):
+            flush(); close_list(); rows.append(t); continue
+        flush_table()
         if not t:
             flush(); close_list(); continue
         m = re.match(r"^(#{2,3})\s+(.*)", t)
@@ -548,7 +562,7 @@ def md_to_html(md, depth):
             continue
         close_list()
         buf.append(t)
-    flush(); close_list()
+    flush(); close_list(); flush_table()
     return "\n".join(out), toc
 
 
@@ -574,13 +588,25 @@ def load_articles():
 ARTICLES = load_articles()
 
 
-def article_cards(arts, depth):
+def nice_date(d):
+    try:
+        return datetime.strptime(d, "%Y-%m-%d").strftime("%d %b %Y")
+    except (ValueError, TypeError):
+        return d or ""
+
+
+def cat_slug(c):
+    return re.sub(r"[^a-z0-9]+", "-", (c or "guide").lower()).strip("-")
+
+
+def article_cards(arts, depth, cls="g3"):
     def card(a):
         img = f'<img src="{rel(depth)}{a["image"]}" alt="{esc(a["title"])}" loading="lazy" width="2400" height="1260">' if a["image"] else ""
-        return (f'<a class="card art-card" href="{link("guides/" + a["slug"] + "/", depth)}"><div class="thumb">{img}</div><div class="art-body">'
-                f'<span class="tag">{esc(a.get("category", "Guide"))}</span><h3>{esc(a["title"])}</h3><p>{esc(a["description"])}</p>'
-                f'<span class="more">Read guide →</span></div></a>')
-    return '<div class="grid g3">' + "".join(card(a) for a in arts) + "</div>"
+        return (f'<a class="card art-card" data-cat="{cat_slug(a.get("category"))}" href="{link("guides/" + a["slug"] + "/", depth)}"><div class="thumb">{img}</div><div class="art-body">'
+                f'<div class="art-meta"><span class="tag">{esc(a.get("category", "Guide"))}</span><time datetime="{esc(a.get("date", ""))}">{esc(nice_date(a.get("date")))}</time></div>'
+                f'<h3>{esc(a["title"])}</h3><p>{esc(a["description"])}</p>'
+                f'<span class="more">Read article →</span></div></a>')
+    return f'<div class="grid {cls}">' + "".join(card(a) for a in arts) + "</div>"
 
 
 ORG_LD = {"@context": "https://schema.org", "@type": "Organization", "name": SITE, "url": SITE_URL + "/",
@@ -642,7 +668,7 @@ def build_home():
  </div>
 </section>
 <section class="wrap section">
- <div class="sec-head"><div><span class="kicker">LEARN</span><h2>Trading guides</h2></div><a href="guides/">All guides →</a></div>
+ <div class="sec-head"><div><span class="kicker">BLOG</span><h2>Latest from the blog</h2></div><a href="blog/">All articles →</a></div>
  {article_cards(ARTICLES[:6], d)}
 </section>
 <section class="wrap section prose">
@@ -1155,7 +1181,7 @@ def build_country_overview(c):
  <h2>Trading regulation in {esc(name)}</h2>
  <p>The main financial regulator in {esc(name)} is {esc(reg)}. Local currency: {esc(c['currency_name'] or '—')} {('(' + esc(c['currency']) + ')') if c['currency'] else ''}. Region: {esc(c['region'])}.</p>
  {f'<p>{esc(note)}</p>' if note else ''}
- <p>Signals and education: <a href="{link('free-forex-signals/', d)}">free forex signals</a> · <a href="{link('free-crypto-signals/', d)}">free crypto signals</a> · <a href="{link('guides/', d)}">trading guides</a>.</p>
+ <p>Signals and education: <a href="{link('free-forex-signals/', d)}">free forex signals</a> · <a href="{link('free-crypto-signals/', d)}">free crypto signals</a> · <a href="{link('blog/', d)}">trading blog</a>.</p>
  {disclosure_box(d)}
 </section>"""
     page(path, f"Forex & Crypto Trading in {name} ({YEAR}): Brokers, Exchanges & Rules | {SITE}",
@@ -1258,37 +1284,67 @@ def build_signals_hub():
 # --------------------------------------------------------------------------
 # Guides
 # --------------------------------------------------------------------------
+BLOG_TITLE = f"{SITE} Blog"
+
+
 def build_guides():
     d = 1
-    body = f"""<section class="pagehead"><div class="wrap">{crumbs_html([("Home", ""), ("Guides", "guides/")], d)}
-<h1>Forex &amp; Crypto Trading Guides</h1><p class="lead">Practical, plain-English guides on choosing a broker, managing risk, trading gold and crypto futures.</p></div></section>
+    cats = []
+    for x in ARTICLES:
+        c = x.get("category", "Guide")
+        if c not in cats:
+            cats.append(c)
+    chips = '<button class="chip-f on" type="button" data-f="all">All articles</button>' + "".join(f'<button class="chip-f" type="button" data-f="{cat_slug(c)}">{esc(c)}</button>' for c in cats)
+    body = f"""<section class="pagehead blog-head"><div class="wrap">{crumbs_html([("Home", ""), ("Blog", "blog/")], d)}
+<span class="kicker">THE {esc(SITE.upper())} BLOG</span>
+<h1>Forex &amp; Crypto Trading Blog {YEAR}: Guides, Market Reports &amp; Broker Tips</h1>
+<p class="lead">Monthly gold, forex and crypto market reports, step-by-step how-to guides and beginner education — {len(ARTICLES)} articles and counting, with new articles published automatically every month.</p></div></section>
+<section class="wrap section">
+ <div class="featured">{article_cards(ARTICLES[:1], d, "g1")}</div>
+ <div class="filters" aria-label="Filter articles">{chips}</div>
+ <div id="blog-list">{article_cards(ARTICLES, d)}</div>
+</section>
+<section class="wrap section grid g2">
+ <div class="card signal-card fx"><span class="kicker fx">FREE</span><h2>Free Forex Signals</h2><p>Gold, US30, NAS100 and major pairs on Telegram.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('forex')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a></div></div>
+ <div class="card signal-card cx"><span class="kicker cx">FREE</span><h2>Free Crypto Signals</h2><p>BTC, ETH and altcoin futures setups on Telegram.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('crypto')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a></div></div>
+</section>"""
+    blog_ld = {"@context": "https://schema.org", "@type": "Blog", "name": BLOG_TITLE, "url": f"{SITE_URL}/blog/",
+               "blogPost": [{"@type": "BlogPosting", "headline": x["title"], "url": f"{SITE_URL}/guides/{x['slug']}/", "datePublished": x.get("date", TODAY)} for x in ARTICLES[:30]]}
+    page("blog/", f"Forex & Crypto Trading Blog {YEAR} – Guides, Market Reports & Broker Tips | {SITE}",
+         f"The {SITE} blog: monthly gold, forex and crypto market reports, how-to guides, broker tips and trading education for {YEAR}.",
+         body, d, keywords="forex blog, crypto blog, trading blog, forex trading guides, crypto market report, gold market report, broker guides",
+         ld=[blog_ld, breadcrumb_ld([("Home", ""), ("Blog", "blog/")])], priority="0.9")
+    # The old /guides/ list stays online (no broken links) but tells Google the main page is now /blog/
+    body = f"""<section class="pagehead"><div class="wrap">{crumbs_html([("Home", ""), ("Blog", "blog/")], d)}
+<h1>Forex &amp; Crypto Trading Guides</h1><p class="lead">All our guides now live on the <a href="../blog/">{esc(BLOG_TITLE)}</a>.</p></div></section>
 <section class="wrap section">{article_cards(ARTICLES, d)}</section>"""
-    page("guides/", f"Forex & Crypto Trading Guides | {SITE}", "Learn forex and crypto trading: choosing a broker, risk management, leverage, gold trading, crypto futures and trading signals.",
-         body, d, keywords="forex trading guide, crypto trading guide, learn forex, learn crypto futures, risk management", ld=[breadcrumb_ld([("Home", ""), ("Guides", "guides/")])], priority="0.8")
+    page("guides/", f"Forex & Crypto Trading Guides | {SITE}", "Learn forex and crypto trading: guides, market reports and broker tips.",
+         body, d, canonical="blog/", in_sitemap=False)
     for a in ARTICLES:
         path = f"guides/{a['slug']}/"
         d2 = 2
         html_body, toc = md_to_html(a["body"], d2)
         toc_html = "".join(f'<a href="#{h}">{esc(t)}</a>' for h, t in toc)
-        related = [x for x in ARTICLES if x["slug"] != a["slug"]][:3]
+        related = ([x for x in ARTICLES if x["slug"] != a["slug"] and x.get("category") == a.get("category")] + [x for x in ARTICLES if x["slug"] != a["slug"] and x.get("category") != a.get("category")])[:3]
         hero = f'<figure class="art-hero"><img src="{rel(d2)}{a["image"]}" alt="{esc(a["title"])}" width="2400" height="1260" fetchpriority="high"></figure>' if a["image"] else ""
         cat = a.get("category", "Guide")
-        promo_items = EXCHANGES[:3] if cat in ("Crypto", "Signals") else BROKERS[:3]
+        crypto_cat = cat in ("Crypto", "Signals") or "crypto" in a["slug"]
+        promo_items = [x for x in (EXCHANGES if crypto_cat else BROKERS) if x.get("top_pick")] or (EXCHANGES if crypto_cat else BROKERS)[:3]
         promo = "".join(f'<div class="mini">{logo(p, "sm")}<a href="{link(review_path(p), d2)}">{esc(p["name"])}</a>{visit_buttons(p, small=True, first_only=True)}</div>' for p in promo_items)
-        body = f"""<section class="pagehead"><div class="wrap narrow">{crumbs_html([("Home", ""), ("Guides", "guides/"), (a["title"], path)], d2)}
+        body = f"""<section class="pagehead"><div class="wrap narrow">{crumbs_html([("Home", ""), ("Blog", "blog/"), (a["title"], path)], d2)}
 <span class="tag">{esc(cat)}</span><h1>{esc(a['title'])}</h1><p class="lead">{esc(a['description'])}</p>
-<p class="byline">By {esc(CFG['author'])} · Updated <time datetime="{esc(a.get('date', TODAY))}">{esc(a.get('date', TODAY))}</time></p></div></section>
+<p class="byline">By {esc(CFG['author'])} · Published <time datetime="{esc(a.get('date', TODAY))}">{esc(nice_date(a.get('date', TODAY)))}</time></p></div></section>
 <div class="wrap narrow">{hero}</div>
 <section class="wrap section two-col"><article class="prose">{html_body}{disclosure_box(d2)}</article>
 <aside class="side"><div class="card sticky"><h3>On this page</h3><nav class="toc">{toc_html}</nav><h3 class="mt">Top picks</h3>{promo}</div></aside></section>
-<section class="wrap section"><h2>Related guides</h2>{article_cards(related, d2)}</section>"""
-        art_ld = {"@context": "https://schema.org", "@type": "Article", "headline": a["title"], "description": a["description"],
+<section class="wrap section"><div class="sec-head"><h2>Related articles</h2><a href="{link('blog/', d2)}">All blog articles →</a></div>{article_cards(related, d2)}</section>"""
+        art_ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": a["title"], "description": a["description"],
                   "datePublished": a.get("date", TODAY), "dateModified": a.get("date", TODAY),
                   "author": {"@type": "Organization", "name": CFG["author"]},
                   "publisher": {"@type": "Organization", "name": SITE, "logo": {"@type": "ImageObject", "url": SITE_URL + "/assets/og-image.png"}},
                   "mainEntityOfPage": f"{SITE_URL}/{path}", "image": f"{SITE_URL}/{a['image']}" if a["image"] else SITE_URL + "/assets/og-image.png"}
         page(path, f"{a['title']} | {SITE}", a["description"], body, d2, keywords=a.get("keywords", ""),
-             ld=[art_ld, breadcrumb_ld([("Home", ""), ("Guides", "guides/"), (a["title"], path)])], priority="0.7", og_type="article", image=a["image"])
+             ld=[art_ld, breadcrumb_ld([("Home", ""), ("Blog", "blog/"), (a["title"], path)])], priority="0.7", og_type="article", image=a["image"])
 
 
 # --------------------------------------------------------------------------

@@ -50,3 +50,19 @@
   var y = new Date().getFullYear();
   document.querySelectorAll('.yr').forEach(function (e) { if (+e.textContent < y) e.textContent = y; });
 })();
+
+// Blog category filter
+(function () {
+  var chips = document.querySelectorAll('.chip-f');
+  if (!chips.length) return;
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      chips.forEach(function (x) { x.classList.remove('on'); });
+      c.classList.add('on');
+      var f = c.dataset.f;
+      document.querySelectorAll('#blog-list .art-card').forEach(function (a) {
+        a.style.display = (f === 'all' || a.dataset.cat === f) ? '' : 'none';
+      });
+    });
+  });
+})();
