@@ -96,13 +96,158 @@
   "top_pick": true
  },
  {
+  "slug": "weex",
+  "name": "WEEX",
+  "type": "crypto",
+  "domain": "weex.com",
+  "color": "#E6B800",
+  "tagline": "Top pick — up to 400x futures and 1,000+ coins",
+  "score": 9.5,
+  "founded": "2018",
+  "ref_code": "b9ze",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "No fixed minimum deposit; fund with any amount of USDT or other supported crypto.",
+  "max_leverage": "Up to 400x on perpetual futures",
+  "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
+  "coins": "1,000+ cryptocurrencies, 700+ futures pairs",
+  "copy_trading": "Yes",
+  "features": "Spot, USDT-M perpetual futures up to 400x, copy trading, demo trading, OTC, WE-Launch",
+  "regulation": "Registered as a Money Services Business with FinCEN (US) and FINTRAC (Canada), and as a Bitcoin Service Provider in El Salvador.",
+  "licences": [
+   {
+    "country": "US",
+    "regulator": "FinCEN – Money Services Business",
+    "entity": "WEEX group entity",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "CA",
+    "regulator": "FINTRAC – Money Services Business",
+    "entity": "WEEX group entity",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "SV",
+    "regulator": "Bitcoin Service Provider registration (El Salvador)",
+    "entity": "WEEX group entity",
+    "number": "—",
+    "tier": "Licence"
+   }
+  ],
+  "kyc": "Sign up with email or phone and start trading; ID verification raises your withdrawal limits and unlocks fiat services.",
+  "best_for": "High-leverage futures traders, altcoin traders, copy trading",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.weex.com/en/register?vipCode=b9ze"
+   }
+  ],
+  "pros": [
+   "Up to 400x leverage — among the highest in crypto",
+   "1,000+ coins and 700+ futures pairs",
+   "Low futures fees (0.02% / 0.06%)",
+   "Copy trading and demo trading built in"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "CN",
+   "HK",
+   "SG",
+   "KR",
+   "MM",
+   "KP",
+   "AE",
+   "IR",
+   "SY",
+   "SD",
+   "SO",
+   "CU",
+   "VE"
+  ],
+  "unclear": [],
+  "summary": "WEEX is a derivatives-focused crypto exchange founded in 2018. It offers perpetual futures with up to 400x leverage, more than 1,000 cryptocurrencies, low trading fees, copy trading and a clean, fast trading interface — a top pick for futures traders who want maximum flexibility.",
+  "top_pick": true
+ },
+ {
+  "slug": "blofin",
+  "name": "BloFin",
+  "type": "crypto",
+  "domain": "blofin.com",
+  "color": "#FF6A00",
+  "tagline": "Pro futures platform with 150x and copy trading",
+  "score": 9.4,
+  "founded": "2019",
+  "ref_code": "AliceCrypto",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "Deposit any supported crypto; P2P and fiat after verification.",
+  "max_leverage": "Up to 150x on BTC & ETH perpetuals",
+  "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
+  "coins": "500+ assets, 460+ USDT perpetuals",
+  "copy_trading": "Yes",
+  "features": "Spot, USDT perpetual futures, copy trading, grid bots, unified trading account",
+  "regulation": "Registered company, ISO 27001 certified for information security.",
+  "licences": [
+   {
+    "country": "KY",
+    "regulator": "Company registration (Cayman Islands)",
+    "entity": "BloFin",
+    "number": "—",
+    "tier": "Company registration"
+   }
+  ],
+  "kyc": "Start with email only (Level 0, up to 20,000 USDT/day withdrawals); ID verification raises limits to 1M USDT/day.",
+  "best_for": "Futures traders who want a fast, professional platform",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://partner.blofin.com/d/AliceCrypto"
+   }
+  ],
+  "pros": [
+   "Up to 150x leverage on BTC and ETH",
+   "460+ USDT perpetual futures",
+   "Copy trading and grid bots",
+   "Trade with email-only sign-up (Level 0)"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "CN",
+   "IN",
+   "SG",
+   "AE",
+   "RU",
+   "AF",
+   "IR",
+   "KP",
+   "SY",
+   "CU"
+  ],
+  "unclear": [],
+  "summary": "BloFin began in 2019 and launched its exchange in 2023, focusing on professional futures trading: 460+ USDT perpetuals, up to 150x leverage on BTC and ETH, copy trading, grid bots and a unified trading account. It is ISO 27001 certified and lets you start trading with just an email.",
+  "top_pick": true
+ },
+ {
   "slug": "bybit",
   "name": "Bybit",
   "type": "crypto",
   "domain": "bybit.com",
   "color": "#F7A600",
   "tagline": "World's #2 exchange — licensed in Dubai & the EU",
-  "score": 9.5,
+  "score": 9.3,
   "founded": "2018",
   "ref_code": "116150",
   "min_deposit": "No minimum (crypto)",
@@ -186,71 +331,7 @@
    "AE"
   ],
   "summary": "Bybit, founded in 2018 and headquartered in Dubai, is one of the world's largest crypto exchanges. It holds a VARA licence in Dubai, MiCA authorisation for the EU, and licences in Kazakhstan and Georgia, and offers 1,800+ assets, deep perpetual-futures liquidity, copy trading, bots and a built-in Web3 wallet.",
-  "top_pick": true
- },
- {
-  "slug": "blofin",
-  "name": "BloFin",
-  "type": "crypto",
-  "domain": "blofin.com",
-  "color": "#FF6A00",
-  "tagline": "Pro futures platform with 150x and copy trading",
-  "score": 9.4,
-  "founded": "2019",
-  "ref_code": "AliceCrypto",
-  "min_deposit": "No minimum (crypto)",
-  "min_deposit_note": "Deposit any supported crypto; P2P and fiat after verification.",
-  "max_leverage": "Up to 150x on BTC & ETH perpetuals",
-  "fees": "Spot 0.10% / 0.10% · Futures 0.02% maker / 0.06% taker",
-  "coins": "500+ assets, 460+ USDT perpetuals",
-  "copy_trading": "Yes",
-  "features": "Spot, USDT perpetual futures, copy trading, grid bots, unified trading account",
-  "regulation": "Registered company, ISO 27001 certified for information security.",
-  "licences": [
-   {
-    "country": "KY",
-    "regulator": "Company registration (Cayman Islands)",
-    "entity": "BloFin",
-    "number": "—",
-    "tier": "Company registration"
-   }
-  ],
-  "kyc": "Start with email only (Level 0, up to 20,000 USDT/day withdrawals); ID verification raises limits to 1M USDT/day.",
-  "best_for": "Futures traders who want a fast, professional platform",
-  "links": [
-   {
-    "label": "Visit Site",
-    "url": "https://partner.blofin.com/d/AliceCrypto"
-   }
-  ],
-  "pros": [
-   "Up to 150x leverage on BTC and ETH",
-   "460+ USDT perpetual futures",
-   "Copy trading and grid bots",
-   "Trade with email-only sign-up (Level 0)"
-  ],
-  "restricted": [
-   "US",
-   "PR",
-   "GU",
-   "VI",
-   "AS",
-   "MP",
-   "CA",
-   "CN",
-   "IN",
-   "SG",
-   "AE",
-   "RU",
-   "AF",
-   "IR",
-   "KP",
-   "SY",
-   "CU"
-  ],
-  "unclear": [],
-  "summary": "BloFin began in 2019 and launched its exchange in 2023, focusing on professional futures trading: 460+ USDT perpetuals, up to 150x leverage on BTC and ETH, copy trading, grid bots and a unified trading account. It is ISO 27001 certified and lets you start trading with just an email.",
-  "top_pick": true
+  "top_pick": false
  },
  {
   "slug": "binance",
@@ -259,7 +340,7 @@
   "domain": "binance.com",
   "color": "#F0B90B",
   "tagline": "World's largest exchange by volume",
-  "score": 9.3,
+  "score": 9.2,
   "founded": "2017",
   "ref_code": "35451277",
   "min_deposit": "No minimum (crypto)",
@@ -383,13 +464,132 @@
   "top_pick": false
  },
  {
+  "slug": "gate",
+  "name": "Gate",
+  "type": "crypto",
+  "domain": "gate.com",
+  "color": "#2354E6",
+  "tagline": "Gate.io — 3,500+ coins, MiCA & VARA licensed",
+  "score": 9.1,
+  "founded": "2013",
+  "ref_code": "BlhCU1lZ",
+  "min_deposit": "No minimum (crypto)",
+  "min_deposit_note": "No fixed minimum deposit; buy crypto with P2P, card or 65+ fiat currencies.",
+  "max_leverage": "Up to 100x on perpetual futures",
+  "fees": "Spot 0.10% / 0.10% (0.09% with GT) · Futures 0.02% maker / 0.05% taker",
+  "coins": "3,500+ cryptocurrencies",
+  "copy_trading": "Yes – copy trading and trading bots",
+  "features": "Spot, perpetual & delivery futures, options, copy trading, grid/DCA bots, pre-market trading, Earn, proof of reserves",
+  "regulation": "Licensed under MiCA by the Malta Financial Services Authority, holds a full VARA licence in Dubai, and is registered with Japan's FSA, AUSTRAC (Australia) and other regulators.",
+  "licences": [
+   {
+    "country": "MT",
+    "regulator": "Malta Financial Services Authority (MFSA) – MiCA CASP authorisation",
+    "entity": "Gate Technology Ltd",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AE",
+    "regulator": "Virtual Assets Regulatory Authority (VARA), Dubai",
+    "entity": "Gate Technology FZE",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "JP",
+    "regulator": "Financial Services Agency (FSA) – crypto-asset exchange registration",
+    "entity": "Gate Japan K.K.",
+    "number": "—",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "CY",
+    "regulator": "Cyprus Securities and Exchange Commission (CySEC)",
+    "entity": "Gate Securities (Cyprus) Ltd",
+    "number": "CIF 395/20",
+    "tier": "Top-tier"
+   },
+   {
+    "country": "AU",
+    "regulator": "AUSTRAC – Digital Currency Exchange",
+    "entity": "Gate Information Pty Ltd",
+    "number": "—",
+    "tier": "AML registration"
+   },
+   {
+    "country": "GI",
+    "regulator": "Gibraltar Financial Services Commission (GFSC) – DLT provider",
+    "entity": "Hippo Capital Co. Ltd",
+    "number": "—",
+    "tier": "Licence"
+   }
+  ],
+  "kyc": "Complete ID verification in the app before your first deposit or withdrawal — it takes only a few minutes.",
+  "best_for": "Altcoin hunters, new listings, copy trading and trading bots",
+  "links": [
+   {
+    "label": "Visit Site",
+    "url": "https://www.gate.com/signup/BlhCU1lZ?ref_type=103"
+   }
+  ],
+  "pros": [
+   "3,500+ cryptocurrencies — one of the biggest selections",
+   "MiCA licence (Malta) and full VARA licence (Dubai)",
+   "Monthly proof of reserves above 100%",
+   "Copy trading, grid bots and pre-market trading"
+  ],
+  "restricted": [
+   "US",
+   "PR",
+   "GU",
+   "VI",
+   "AS",
+   "MP",
+   "CA",
+   "CN",
+   "GB",
+   "SG",
+   "MY",
+   "IN",
+   "ID",
+   "TH",
+   "KR",
+   "PH",
+   "KH",
+   "MM",
+   "PK",
+   "UZ",
+   "IR",
+   "SD",
+   "CU",
+   "VE",
+   "AR",
+   "KP",
+   "SY"
+  ],
+  "unclear": [
+   "HK",
+   "JP",
+   "AE",
+   "MT",
+   "FR",
+   "DE",
+   "ES",
+   "NL",
+   "AT"
+  ],
+  "summary": "Gate (formerly Gate.io) has served crypto traders since 2013 and lists more than 3,500 cryptocurrencies — one of the largest selections of any major exchange. It holds a MiCA licence in Malta and a full VARA licence in Dubai, publishes monthly proof of reserves, and offers futures, copy trading and trading bots.",
+  "top_pick": false
+ },
+ {
   "slug": "bingx",
   "name": "BingX",
   "type": "crypto",
   "domain": "bingx.com",
   "color": "#2A54FF",
   "tagline": "Copy-trading leader with 125x futures",
-  "score": 9.1,
+  "score": 9.0,
   "founded": "2018",
   "ref_code": "BIALC3",
   "min_deposit": "No minimum (crypto)",
@@ -475,7 +675,7 @@
   "domain": "mexc.com",
   "color": "#1972F5",
   "tagline": "Biggest altcoin selection, 0% maker fees",
-  "score": 9.0,
+  "score": 8.9,
   "founded": "2018",
   "ref_code": "mexc-12TsTD",
   "min_deposit": "No minimum (crypto)",

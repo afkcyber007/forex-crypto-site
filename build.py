@@ -56,18 +56,19 @@ NOTES = {
     "PK": "The State Bank of Pakistan and SECP oversee local financial markets, and many Pakistani traders use internationally regulated brokers. Pakistan created the Pakistan Virtual Assets Regulatory Authority (PVARA) in 2025 to license crypto service providers, so check the latest guidance.",
     "US": "US residents may only trade forex with dealers registered with the CFTC and NFA, and CFDs are not offered to US retail traders.",
     "GB": "UK brokers are authorised by the FCA. Retail forex leverage is capped at 1:30 on major pairs, and the FCA does not allow crypto derivatives to be sold to retail consumers. Exness, HFM and Vantage all hold FCA authorisation.",
-    "AU": "ASIC caps retail forex leverage at 1:30 on major pairs. IC Markets, Vantage and AvaTrade hold ASIC licences, and crypto exchanges register with AUSTRAC — Bitunix, BingX and KuCoin are registered.",
+    "AU": "ASIC caps retail forex leverage at 1:30 on major pairs. IC Markets, FP Markets, Vantage and AvaTrade hold ASIC licences, and crypto exchanges register with AUSTRAC — Bitunix, BingX, KuCoin and Gate are registered.",
     "CA": "Forex and CFD dealers in Canada are registered with CIRO and provincial securities regulators.",
     "SG": "The Monetary Authority of Singapore licenses brokers and crypto service providers.",
-    "AE": "Forex brokers are licensed by the Capital Market Authority (onshore), the DFSA (DIFC) or the FSRA (ADGM), and crypto firms in Dubai by VARA. HFM holds a DFSA licence, AvaTrade an FSRA licence, and Binance and Bybit hold VARA licences.",
+    "AE": "Forex brokers are licensed by the Capital Market Authority (onshore), the DFSA (DIFC) or the FSRA (ADGM), and crypto firms in Dubai by VARA. HFM holds a DFSA licence, AvaTrade an FSRA licence, and Binance, Bybit and Gate hold VARA licences.",
     "CN": "Mainland China restricts capital outflows and does not permit crypto trading.",
-    "JP": "Japan's FSA caps retail forex leverage at 1:25, and crypto exchanges register with the FSA. AvaTrade holds a JFSA licence.",
+    "JP": "Japan's FSA caps retail forex leverage at 1:25, and crypto exchanges register with the FSA. AvaTrade holds a JFSA licence, and Gate serves Japan through its FSA-registered Gate Japan.",
+    "MT": "As an EU member state, Malta applies ESMA rules, and its regulator, the MFSA, authorises crypto-asset service providers under MiCA — Gate holds MiCA authorisation in Malta.",
     "HK": "The SFC licenses forex dealers and virtual-asset trading platforms.",
     "FR": "As an EU country, France applies ESMA's 1:30 leverage cap, and crypto platforms need MiCA authorisation. Binance holds an AMF registration, and Bybit and BingX are MiCA-authorised in the EU.",
     "NL": "The AFM supervises brokers and crypto platforms under MiCA.",
-    "ZA": "The FSCA licenses forex brokers — Exness, HFM, Vantage, AvaTrade, Octa and PU Prime all hold FSCA licences for local entities. Crypto assets are financial products, so crypto platforms also need FSCA authorisation.",
+    "ZA": "The FSCA licenses forex brokers — Exness, HFM, Vantage, AvaTrade, Octa, PU Prime and FP Markets all hold FSCA licences for local entities. Crypto assets are financial products, so crypto platforms also need FSCA authorisation.",
     "NG": "Nigeria's Investments and Securities Act 2025 classes digital assets as securities under SEC Nigeria. Nigerian traders widely use internationally regulated brokers and exchanges.",
-    "KE": "The Capital Markets Authority licenses online forex brokers — Exness (licence 162) and HFM (licence 155) hold CMA licences.",
+    "KE": "The Capital Markets Authority licenses online forex brokers — Exness (licence 162), HFM (licence 155) and FP Markets hold CMA licences.",
     "MY": "The Securities Commission Malaysia regulates brokers and registers digital asset exchanges.",
     "ID": "Forex and commodity futures fall under Bappebti and OJK, which also oversee crypto trading.",
     "TR": "Turkey's Capital Markets Board (SPK) regulates brokers, and a 2024 law requires crypto platforms serving Turkish users to be licensed by the SPK.",
@@ -81,11 +82,11 @@ NOTES = {
     "BH": "The Central Bank of Bahrain licenses crypto-asset firms — Binance holds a CBB licence through Binance Bahrain.",
     "KZ": "The Astana International Financial Centre (AIFC) regulates crypto exchanges through the AFSA; Binance and Bybit hold AFSA licences.",
     "IE": "As an EU member state, Ireland applies ESMA rules, including a 1:30 leverage cap on major pairs. AvaTrade's EU business is regulated by the Central Bank of Ireland.",
-    "CY": "Cyprus is home to CySEC, which licenses Exness, IC Markets, HFM, AvaTrade and Octa for their EU business.",
+    "CY": "Cyprus is home to CySEC, which licenses Exness, IC Markets, FP Markets, HFM, AvaTrade and Octa for their EU business.",
     "AT": "As an EU member state, Austria applies ESMA rules. Its regulator, the FMA, has granted MiCA authorisation to Bybit, BingX and KuCoin for their EU entities.",
     "GE": "The National Bank of Georgia licenses virtual asset service providers — Bybit holds an NBG licence.",
 }
-EU_NOTE = "As an EU member state, {name} applies ESMA rules: retail forex leverage is capped at 1:30 on major pairs, and crypto-asset service providers need MiCA authorisation — Bybit, BingX and KuCoin are MiCA-authorised for the EU."
+EU_NOTE = "As an EU member state, {name} applies ESMA rules: retail forex leverage is capped at 1:30 on major pairs, and crypto-asset service providers need MiCA authorisation — Bybit, BingX, KuCoin and Gate are MiCA-authorised for the EU."
 
 TIER_LABEL = {"Top-tier": "Top-tier", "Mid-tier": "National regulator", "Offshore": "International", "Licence": "Licence",
               "Registration": "Registration", "AML registration": "Registration", "Company registration": "Registered company"}
@@ -94,10 +95,10 @@ TIER_LABEL = {"Top-tier": "Top-tier", "Mid-tier": "National regulator", "Offshor
 BEST_FOR = {
     "exness": "Best Forex Broker Overall", "ic-markets": "Best Forex Broker for Scalping & EAs", "hfm": "Best Forex Broker for Copy Trading",
     "vantage": "Best Forex Broker for TradingView", "avatrade": "Best Regulated Forex Broker", "octa": "Best Commission-Free Forex Broker",
-    "pu-prime": "Best Forex Broker for Cent Accounts", "roboforex": "Best Forex Broker for High Leverage", "instaforex": "Best Forex Broker for a $1 Deposit", "eightcap": "Best Forex Broker for Funded Challenges",
+    "pu-prime": "Best Forex Broker for Cent Accounts", "fp-markets": "Best Forex Broker for Raw Spreads & cTrader", "roboforex": "Best Forex Broker for High Leverage", "instaforex": "Best Forex Broker for a $1 Deposit", "eightcap": "Best Forex Broker for Funded Challenges",
     "bitunix": "Best Crypto Exchange Overall", "bybit": "Best Licensed Crypto Exchange", "binance": "Best Crypto Exchange for Beginners",
     "bingx": "Best Crypto Exchange for Copy Trading", "mexc": "Best Crypto Exchange for Altcoins & Low Fees", "blofin": "Best Crypto Exchange for Pro Futures",
-    "kucoin": "Best Crypto Exchange for Trading Bots", "bitbase": "Best Crypto Exchange for USDC Futures",
+    "kucoin": "Best Crypto Exchange for Trading Bots", "weex": "Best Crypto Exchange for High Leverage", "gate": "Best Crypto Exchange for Coin Selection", "bitbase": "Best Crypto Exchange for USDC Futures",
 }
 
 
@@ -697,7 +698,7 @@ def build_home():
 </section>
 <section class="split wrap">
  <a class="split-card fx" href="forex-brokers/"><span class="kicker">FOREX · CFDs · GOLD</span><h2>Forex Brokers</h2><p>MT4 / MT5 brokers licensed by the FCA, ASIC, CySEC, DFSA &amp; FSCA. Minimum deposits from $1.</p><span class="logos">{''.join(logo(b, 'sm') for b in BROKERS)}</span><span class="go">Compare forex brokers →</span></a>
- <a class="split-card cx" href="crypto-exchanges/"><span class="kicker">SPOT · FUTURES · COPY TRADING</span><h2>Crypto Exchanges</h2><p>Bitunix, Bybit, Binance, BingX and more — fees, leverage up to 200x, licences and wallets.</p><span class="logos">{''.join(logo(b, 'sm') for b in EXCHANGES)}</span><span class="go">Compare crypto exchanges →</span></a>
+ <a class="split-card cx" href="crypto-exchanges/"><span class="kicker">SPOT · FUTURES · COPY TRADING</span><h2>Crypto Exchanges</h2><p>Bitunix, WEEX, BloFin, Bybit, Binance, Gate and more — fees, leverage up to 400x, licences and wallets.</p><span class="logos">{''.join(logo(b, 'sm') for b in EXCHANGES)}</span><span class="go">Compare crypto exchanges →</span></a>
 </section>
 {market_blocks()}
 <section class="zone cx-zone">
@@ -732,7 +733,7 @@ def build_home():
  <p>Read our full rankings of the <a href="best-forex-broker/">best forex broker</a> and the <a href="best-crypto-exchange/">best crypto exchange</a> for {YEAR}, or see our <a href="about/">methodology</a>.</p>
 </section>"""
     page("", f"Best Forex Broker & Best Crypto Exchange {YEAR} – Compared by Country | {SITE}", CFG["site_description"], body, d,
-         keywords="best forex broker, best crypto exchange, best forex broker " + str(YEAR) + ", best crypto exchange " + str(YEAR) + ", forex brokers by country, crypto exchanges by country, regulated forex broker, best crypto exchange wallet, free forex signals, free crypto signals, Bitunix, Bybit, Binance, BingX, Exness, IC Markets, HFM, AvaTrade",
+         keywords="best forex broker, best crypto exchange, best forex broker " + str(YEAR) + ", best crypto exchange " + str(YEAR) + ", forex brokers by country, crypto exchanges by country, regulated forex broker, best crypto exchange wallet, free forex signals, free crypto signals, Bitunix, WEEX, BloFin, Bybit, Binance, Gate, BingX, Exness, Vantage, PU Prime, IC Markets, FP Markets, HFM, AvaTrade",
          ld=[ORG_LD, SITE_LD, itemlist_ld("Best crypto exchanges", EXCHANGES), itemlist_ld("Best forex brokers", BROKERS)], priority="1.0", theme="home")
 
 
@@ -760,14 +761,14 @@ def build_hub(kind):
              if fx else
              "Crypto exchanges let you buy Bitcoin, Ethereum and altcoins and trade perpetual futures with leverage. Compare fees, leverage, coin selection, copy trading and licences below.")
     faqs = ([("Which forex broker has the lowest minimum deposit?", "InstaForex lets you start with just $1, and HFM has a $0 minimum on its Cent, Premium and Zero accounts. Exness and RoboForex start from $10, PU Prime from $20 and Octa from $25."),
-             ("Which forex brokers are FCA regulated?", "Exness (FRN 730729), HFM (FRN 801701) and Vantage (OC376560) all have UK entities authorised by the FCA. AvaTrade is regulated by the Central Bank of Ireland, ASIC and Japan's FSA, and IC Markets by ASIC and CySEC."),
-             ("Which forex broker is best for scalping and EAs?", "IC Markets is the favourite of scalpers and Expert Advisor traders thanks to raw spreads from 0.0 pips, deep liquidity and cTrader/MT5 support."),
+             ("Which forex brokers are FCA regulated?", "Exness (FRN 730729), HFM (FRN 801701) and Vantage (OC376560) all have UK entities authorised by the FCA. AvaTrade is regulated by the Central Bank of Ireland, ASIC and Japan's FSA, and IC Markets and FP Markets by ASIC and CySEC."),
+             ("Which forex broker is best for scalping and EAs?", "IC Markets and FP Markets are favourites of scalpers and Expert Advisor traders thanks to raw spreads from 0.0 pips, deep liquidity and cTrader/MT5 support."),
              ("Which forex broker is best for copy trading?", "HFM (HFCOPY), Octa (Octa Copytrading), AvaTrade (AvaSocial, DupliTrade, ZuluTrade), RoboForex (CopyFX) and InstaForex (ForexCopy) all have built-in copy trading.")]
             if fx else
-            [("Which crypto exchange is best for futures trading?", "Bitunix is our top pick for crypto futures, with up to 200x leverage, 0.02%/0.06% fees and built-in copy trading. Bybit and Binance offer the deepest liquidity, and BloFin is a strong professional futures platform."),
-             ("Which crypto exchanges are licensed?", "Bybit holds a VARA licence in Dubai and MiCA authorisation in the EU; Binance holds licences in Dubai, Abu Dhabi, Bahrain and Kazakhstan; BingX and KuCoin are MiCA-authorised in Austria. Bitunix, BingX and KuCoin are registered with AUSTRAC in Australia."),
-             ("Which exchange is best for copy trading?", "BingX is the copy-trading leader, and Bitunix, Bybit, Binance, MEXC, BloFin and KuCoin all offer copy trading too."),
-             ("Which exchange has the most coins?", "MEXC lists 2,700+ cryptocurrencies, followed by Bybit with 1,800+ assets and KuCoin and BingX with 1,000+ each.")])
+            [("Which crypto exchange is best for futures trading?", "Bitunix is our top pick for crypto futures, with up to 200x leverage, 0.02%/0.06% fees and built-in copy trading. WEEX offers up to 400x leverage, BloFin is a strong professional futures platform, and Bybit and Binance offer the deepest liquidity."),
+             ("Which crypto exchanges are licensed?", "Bybit holds a VARA licence in Dubai and MiCA authorisation in the EU; Binance holds licences in Dubai, Abu Dhabi, Bahrain and Kazakhstan; BingX and KuCoin are MiCA-authorised in Austria; Gate holds MiCA authorisation in Malta and a full VARA licence in Dubai. Bitunix, BingX, KuCoin and Gate are registered with AUSTRAC in Australia."),
+             ("Which exchange is best for copy trading?", "BingX is the copy-trading leader, and Bitunix, WEEX, BloFin, Bybit, Binance, Gate, MEXC and KuCoin all offer copy trading too."),
+             ("Which exchange has the most coins?", "Gate lists 3,500+ cryptocurrencies, followed by MEXC with 2,700+, Bybit with 1,800+ assets, and WEEX, KuCoin and BingX with 1,000+ each.")])
     body = f"""
 <section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), (noun, path)], d)}
@@ -807,7 +808,7 @@ def build_hub(kind):
 <section class="wrap section">
  {full_matrix(items, d2)}
  <h2>Head-to-head comparisons</h2>
- <div class="clist">{''.join(f'<a href="{link(vs_path(a, b), d2)}">{esc(a["name"])} vs {esc(b["name"])}</a>' for a, b in itertools.combinations(items, 2))}</div>
+ <div class="clist">{''.join(f'<a href="{link(vs_path(a, b), d2)}">{esc(a["name"])} vs {esc(b["name"])}</a>' for a, b in (vs_pair(*p) for p in itertools.combinations(items, 2)))}</div>
 </section>"""
     page(cpath, f"{noun} Comparison Table {YEAR}: Licences, Fees, Leverage & Deposits | {SITE}",
          f"Side-by-side {noun.lower()} comparison table for {YEAR}: {', '.join(b['name'] for b in items)} — licences, minimum deposit, leverage, {'spreads' if fx else 'fees'}, copy trading and availability.",
@@ -832,10 +833,22 @@ def brand_sidebar(b, d):
  </aside>"""
 
 
+# Fixed order for "A vs B" page addresses, so the URLs never change when rankings change.
+# New providers are added at the end of the list.
+URL_ORDER = ["exness", "vantage", "ic-markets", "hfm", "eightcap", "avatrade", "octa", "pu-prime", "roboforex", "instaforex", "fp-markets",
+             "bitunix", "bybit", "blofin", "binance", "bingx", "mexc", "kucoin", "bitbase", "weex", "gate"]
+
+
+def url_rank(b):
+    return URL_ORDER.index(b["slug"]) if b["slug"] in URL_ORDER else len(URL_ORDER) + [x["slug"] for x in ALL].index(b["slug"])
+
+
+def vs_pair(a, b):
+    return sorted([a, b], key=url_rank)
+
+
 def vs_path(a, b):
-    items = BROKERS if is_fx(a) else EXCHANGES
-    order = [x["slug"] for x in items]
-    x, y = sorted([a, b], key=lambda z: order.index(z["slug"]))
+    x, y = vs_pair(a, b)
     return f"compare/{x['slug']}-vs-{y['slug']}/"
 
 
@@ -1014,7 +1027,7 @@ def build_legit(b):
 # --------------------------------------------------------------------------
 def build_vs(a, b):
     path = vs_path(a, b)
-    a, b = sorted([a, b], key=lambda z: [x["slug"] for x in (BROKERS if is_fx(z) else EXCHANGES)].index(z["slug"]))
+    a, b = vs_pair(a, b)
     d = 2
     fx = is_fx(a)
     winner = a if a["score"] >= b["score"] else b
@@ -1056,7 +1069,7 @@ def build_compare_index():
     d = 1
 
     def links(items):
-        return "".join(f'<a class="card vs-card" href="{link(vs_path(a, b), d)}"><span>{logo(a, "sm")}<b>vs</b>{logo(b, "sm")}</span>{esc(a["name"])} vs {esc(b["name"])}</a>' for a, b in itertools.combinations(items, 2))
+        return "".join(f'<a class="card vs-card" href="{link(vs_path(a, b), d)}"><span>{logo(a, "sm")}<b>vs</b>{logo(b, "sm")}</span>{esc(a["name"])} vs {esc(b["name"])}</a>' for a, b in (vs_pair(*p) for p in itertools.combinations(items, 2)))
     body = f"""<section class="pagehead"><div class="wrap">{crumbs_html([("Home", ""), ("Compare", "compare/")], d)}
 <h1>Compare Forex Brokers &amp; Crypto Exchanges</h1><p class="lead">Full comparison tables and head-to-head matchups.</p>
 <p><a class="btn btn-fx" href="../forex-brokers/compare/">Forex comparison table</a> <a class="btn btn-cx" href="../crypto-exchanges/compare/">Crypto comparison table</a></p></div></section>
@@ -1543,17 +1556,17 @@ def build_pillar(kind):
         faqs = [(f"What is the best forex broker in {YEAR}?", f"Exness is our best forex broker overall for {YEAR}, thanks to its $10 minimum deposit, instant withdrawals and nine licences including the FCA. IC Markets is the best forex broker for scalping, HFM for copy trading and AvaTrade for regulation."),
                 ("What is the best forex broker for beginners?", "Exness, Octa and InstaForex are the best forex broker choices for beginners: low minimum deposits ($1–$25), simple accounts and copy trading."),
                 ("Which is the best forex broker with the lowest minimum deposit?", "InstaForex ($1), HFM ($0 on Cent/Premium/Zero), Exness ($10) and RoboForex ($10)."),
-                ("What is the best regulated forex broker?", "AvaTrade is one of the most regulated brokers in the world (Central Bank of Ireland, ASIC, CySEC, JFSA, FSRA, ISA). Exness, HFM and Vantage hold FCA authorisation."),
+                ("What is the best regulated forex broker?", "AvaTrade is one of the most regulated brokers in the world (Central Bank of Ireland, ASIC, CySEC, JFSA, FSRA, ISA). Exness, HFM and Vantage hold FCA authorisation, and FP Markets and IC Markets are regulated by ASIC and CySEC."),
                 ("What is the best forex broker in my country?", "Use the best forex broker by country list on this page — every country page shows which brokers accept local traders, the local regulator and the best pick for that country."),
                 ("Which is the best forex broker for copy trading?", "HFM with HFCOPY, plus Octa, AvaTrade, RoboForex (CopyFX) and InstaForex (ForexCopy).")]
         title = f"Best Forex Broker {YEAR}: Top {n} Best Forex Brokers in the World (Ranked) | {SITE}"
-        desc = f"The best forex broker for {YEAR}: our ranking of the top {n} best forex brokers — Exness, IC Markets, HFM, Vantage, AvaTrade and more — by licences, minimum deposit, spreads, leverage and country."
+        desc = f"The best forex broker for {YEAR}: our ranking of the top {n} best forex brokers — Exness, Vantage, PU Prime, IC Markets, FP Markets and more — by licences, minimum deposit, spreads, leverage and country."
         keywords = f"best forex broker, best forex broker {YEAR}, best forex brokers, best forex broker in the world, best forex broker for beginners, best regulated forex broker, best FCA regulated forex broker, best forex broker low minimum deposit, best MT5 forex broker, best forex broker for gold, best forex broker by country, top forex brokers"
     else:
         lowfee = sorted(items, key=lambda b: ("0% maker" not in b["fees"], b["fees"]))
         extra = f"""
 <h2 id="best-crypto-exchange-for-futures">Best Crypto Exchange for Futures Trading</h2>
-<p>For leverage and liquidity, the best crypto exchange for futures trading choices are {', '.join(f'{esc(b["name"])} ({esc(b["max_leverage"])})' for b in sorted(items, key=lev_num, reverse=True)[:5])}. Bitunix is our best crypto exchange for futures overall thanks to 0.02%/0.06% fees, copy trading and TradingView charts.</p>
+<p>For leverage and liquidity, the best crypto exchange for futures trading choices are {', '.join(f'{esc(b["name"])} ({esc(b["max_leverage"])})' for b in sorted(items, key=lev_num, reverse=True)[:5])}. Bitunix is our best crypto exchange for futures overall thanks to 0.02%/0.06% fees, copy trading and TradingView charts, and WEEX is the best crypto exchange for high leverage with up to 400x.</p>
 <h2 id="best-crypto-exchange-with-lowest-fees">Best Crypto Exchange with the Lowest Fees</h2>
 <ul>{''.join(f'<li><a href="{link(review_path(b), d)}"><strong>{esc(b["name"])}</strong></a> — {esc(b["fees"])}</li>' for b in lowfee)}</ul>
 <h2 id="best-licensed-crypto-exchange">Best Licensed and Regulated Crypto Exchange</h2>
@@ -1563,7 +1576,7 @@ def build_pillar(kind):
 <ul><li><strong>Binance</strong> — the best crypto exchange wallet for most people: a spot/funding wallet plus the self-custody <em>Binance Web3 Wallet</em> inside the same app.</li>
 <li><strong>Bybit</strong> — a unified trading account plus the <em>Bybit Web3 wallet</em> and the Bybit Card for spending crypto.</li>
 <li><strong>Bitunix</strong> — the best crypto exchange wallet for futures traders: move USDT between spot and futures instantly.</li>
-<li><strong>BingX, MEXC, BloFin and KuCoin</strong> — fast multi-network deposits (TRC20, BEP20, ERC20, Solana and more) for thousands of coins.</li></ul>
+<li><strong>WEEX, BloFin, Gate, BingX, MEXC and KuCoin</strong> — fast multi-network deposits (TRC20, BEP20, ERC20, Solana and more) for thousands of coins.</li></ul>
 <p><strong>Wallet safety tips:</strong> turn on app-based 2FA, set an anti-phishing code and a withdrawal whitelist, and always select the same network when sending crypto. For long-term holdings, many traders also keep a hardware wallet. Read our <a href="../guides/crypto-exchange-safety/">crypto security guide</a>.</p>
 <h2 id="best-crypto-exchange-for-beginners">Best Crypto Exchange for Beginners</h2>
 <p>Binance and Bybit are the best crypto exchange choices for beginners: simple apps, P2P and card purchases, Earn products and copy trading. BingX is the best crypto exchange for beginners who want to copy experienced traders.</p>
@@ -1574,14 +1587,14 @@ def build_pillar(kind):
 <li><strong>Wallet and deposits</strong> — supported networks, P2P and card options in your currency.</li>
 <li><strong>Copy trading and bots</strong> — if you want automated strategies.</li>
 <li><strong>Availability</strong> — check the best crypto exchange by country below.</li></ol>"""
-        faqs = [(f"What is the best crypto exchange in {YEAR}?", f"Bitunix is our best crypto exchange overall for {YEAR}, with up to 200x leverage, low 0.02%/0.06% futures fees and copy trading. Bybit is the best licensed crypto exchange, Binance the best for beginners and BingX the best for copy trading."),
+        faqs = [(f"What is the best crypto exchange in {YEAR}?", f"Bitunix is our best crypto exchange overall for {YEAR}, with up to 200x leverage, low 0.02%/0.06% futures fees and copy trading. WEEX (up to 400x) and BloFin complete our top three; Bybit is the best licensed crypto exchange, Binance the best for beginners and Gate the best for coin selection."),
                 ("What is the best crypto exchange wallet?", "Binance and Bybit offer the best crypto exchange wallet experience — an exchange wallet plus a built-in Web3 wallet in one app. Bitunix is best for moving funds quickly between spot and futures."),
-                ("Which is the best crypto exchange for futures?", "Bitunix (200x), MEXC (200x), BloFin and BitBase (150x), Binance, BingX and KuCoin (125x) and Bybit (100x)."),
-                ("What is the best crypto exchange with low fees?", "MEXC has 0% maker fees on spot and futures. Bitunix, Bybit, Binance, BingX, BloFin and KuCoin all charge 0.02% maker on futures."),
+                ("Which is the best crypto exchange for futures?", "WEEX (400x), Bitunix (200x), MEXC (200x), BloFin and BitBase (150x), Binance, BingX and KuCoin (125x), and Bybit and Gate (100x)."),
+                ("What is the best crypto exchange with low fees?", "MEXC has 0% maker fees on spot and futures. Bitunix, WEEX, BloFin, Bybit, Binance, Gate, BingX and KuCoin all charge 0.02% maker on futures."),
                 ("What is the best crypto exchange in my country?", "Use the best crypto exchange by country list on this page — each country page shows which exchanges accept local users and our top pick."),
-                ("Which is the best regulated crypto exchange?", "Bybit (VARA, MiCA, AFSA), Binance (VARA, FSRA, CBB, AFSA), BingX and KuCoin (MiCA).")]
+                ("Which is the best regulated crypto exchange?", "Bybit (VARA, MiCA, AFSA), Binance (VARA, FSRA, CBB, AFSA), Gate (MiCA, VARA, Japan FSA), BingX and KuCoin (MiCA).")]
         title = f"Best Crypto Exchange {YEAR}: Top {n} Best Crypto Exchanges & Wallets (Ranked) | {SITE}"
-        desc = f"The best crypto exchange for {YEAR}: top {n} best crypto exchanges and exchange wallets — Bitunix, Bybit, Binance, BingX, MEXC and more — ranked by fees, leverage, licences and country."
+        desc = f"The best crypto exchange for {YEAR}: top {n} best crypto exchanges and exchange wallets — Bitunix, WEEX, BloFin, Bybit, Gate and more — ranked by fees, leverage, licences and country."
         keywords = f"best crypto exchange, best crypto exchange {YEAR}, best crypto exchanges, best crypto exchange wallet, best crypto wallet, best crypto exchange for beginners, best crypto exchange for futures, best crypto exchange low fees, best regulated crypto exchange, best crypto exchange by country, top crypto exchanges"
     body = f"""<section class="pagehead {'fx' if fx else 'cx'}-head"><div class="wrap">
  {crumbs_html([("Home", ""), (K, path)], d)}
