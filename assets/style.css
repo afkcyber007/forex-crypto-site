@@ -50,7 +50,7 @@ code{background:var(--surface-2);padding:1px 6px;border-radius:6px;font-size:.88
 body.fx .mainnav a.fx{background:rgba(31,111,235,.18);color:#fff}
 body.cx .mainnav a.cx{background:rgba(14,203,129,.16);color:#fff}
 .menu-btn{display:none;margin-left:auto;background:none;border:1px solid #2a3756;color:#fff;font-size:1.3rem;border-radius:9px;padding:4px 12px;cursor:pointer}
-@media (max-width:980px){
+@media (max-width:1180px){
   .menu-btn{display:block}
   .mainnav{display:none;position:absolute;left:0;right:0;top:100%;background:var(--navy);flex-direction:column;padding:8px 16px 16px;border-bottom:1px solid #1a2643}
   .nav-open .mainnav{display:flex}
@@ -386,3 +386,32 @@ ol.quick li{margin:.45em 0;font-weight:600}
 .art-meta time{font-size:.78rem;color:var(--muted)}
 .md-table{min-width:520px}
 .md-table td,.md-table th{font-size:.9rem}
+
+/* ===== Language menu & native-language pages ===== */
+.langsw{display:flex;align-items:center;gap:4px;margin-left:8px;color:#c7d1e6;font-size:.9rem}
+.langsw select{background:#0f1a33;color:#fff;border:1px solid #2a3756;border-radius:9px;padding:6px 8px;font:inherit;font-size:.85rem;max-width:150px;cursor:pointer}
+@media (max-width:1180px){.langsw{margin-left:auto}.menu-btn{margin-left:8px}}
+@media (max-width:420px){.langsw select{max-width:104px}.brand span{font-size:.95rem}}
+.foot .langs{line-height:2}
+.foot .langs a{display:inline;margin:0}
+.nl-card{display:flex;flex-direction:column;gap:10px}
+.nl-card h3{margin:0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nl-card .facts-table th{width:40%}
+.nl-more{text-align:center;margin-top:22px}
+/* right-to-left languages (Arabic, Urdu) */
+[dir=rtl] body{text-align:right}
+[dir=rtl] .mainnav{margin-left:0;margin-right:auto}
+[dir=rtl] .langsw{margin-left:0;margin-right:8px}
+[dir=rtl] .sec-head,[dir=rtl] .pe-head,[dir=rtl] .bc-cta,[dir=rtl] .cta-line{direction:rtl}
+[dir=rtl] .facts-table th,[dir=rtl] .facts-table td{text-align:right}
+[dir=rtl] .faq summary{padding-right:0}
+[dir=rtl] .tape,[dir=rtl] .mgrid{direction:ltr}
+[lang=ur] body{font-family:"Noto Nastaliq Urdu","Jameel Noori Nastaleeq","Segoe UI",Tahoma,sans-serif;line-height:1.9}
+[lang=ar] body{font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",sans-serif}
+[dir=rtl] .skip{left:auto;right:-999px}[dir=rtl] .skip:focus{right:12px}
+@media (max-width:1180px){[dir=rtl] .langsw{margin-left:0;margin-right:auto}[dir=rtl] .menu-btn{margin-left:0;margin-right:8px}}
+@media (max-width:1180px){.langsw{order:2}.menu-btn{order:3}}
+.langsw select{width:126px}
+@media (max-width:1180px){.langsw>span{display:none}.langsw select{width:82px;padding:6px 4px}}
+@media (max-width:480px){.top .brand span{font-size:.9rem}.top .brand img{width:28px;height:28px}.top-in{gap:10px}}
+@media (max-width:400px){.langsw select{width:76px}.top .brand span{font-size:.78rem}.top-in{gap:8px}}

@@ -66,3 +66,22 @@
     });
   });
 })();
+
+// Language menu: native pages when they exist, otherwise Google Translate of the current page
+(function () {
+  var s = document.getElementById('langsel');
+  if (!s) return;
+  s.addEventListener('change', function () {
+    var o = s.options[s.selectedIndex], h = location.hostname, proxied = /\.translate\.goog$/.test(h);
+    if (proxied) h = h.replace(/\.translate\.goog$/, '').replace(/--/g, '\u0000').replace(/-/g, '.').replace(/\u0000/g, '-');
+    if (o.dataset.href) {
+      var u = new URL(o.dataset.href, location.href);
+      location.href = proxied ? 'https://' + h + u.pathname : u.href;
+      return;
+    }
+    var path = s.dataset.src || '/';
+    if (o.value === 'en') { location.href = 'https://' + h + path; return; }
+    var th = h.replace(/-/g, '--').replace(/\./g, '-');
+    location.href = 'https://' + th + '.translate.goog' + path + '?_x_tr_sl=en&_x_tr_tl=' + o.value + '&_x_tr_hl=' + o.value + '&_x_tr_pto=wapp';
+  });
+})();

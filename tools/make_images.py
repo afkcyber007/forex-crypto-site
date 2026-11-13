@@ -213,6 +213,12 @@ SPECS = {
     "mt4-vs-mt5": ("forex", "platform", "PLATFORMS", "MT4 vs MT5"),
     "crypto-exchange-safety": ("crypto", "shield", "SECURITY", "2FA ON"),
     "what-is-forex-trading": ("forex", "area", "FOREX BASICS", "GBP/USD"),
+    "how-to-deposit-and-withdraw-with-exness-in-pakistan": ("forex", "area", "DEPOSIT & WITHDRAW", "PKR → USD"),
+    "how-to-buy-usdt-in-pakistan": ("crypto", "depth", "BUY USDT", "PKR → USDT"),
+    "how-to-buy-usdt-in-nigeria": ("crypto", "depth", "BUY USDT", "NGN → USDT"),
+    "how-to-buy-usdt-in-india": ("crypto", "candles", "BUY USDT", "INR → USDT"),
+    "how-to-deposit-to-a-forex-broker-with-usdt": ("forex", "candles", "USDT DEPOSIT", "TRC20 / BEP20"),
+    "how-to-sell-usdt-for-local-currency-p2p": ("crypto", "area", "SELL USDT · P2P", "USDT → CASH"),
     "best-forex-broker-ranking": ("forex", "candles", "BEST FOREX BROKER", "RANKED"),
     "best-crypto-exchange-ranking": ("crypto", "depth", "BEST CRYPTO EXCHANGE", "RANKED"),
 }

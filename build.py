@@ -8,6 +8,7 @@ every time you change a file (see .github/workflows/deploy.yml).
 To preview on your own computer:   python build.py   then open  _site/index.html
 Needs only Python 3.8+ (no extra packages).
 """
+import hashlib
 import html
 import itertools
 import json
@@ -19,6 +20,8 @@ import urllib.parse
 from datetime import date, datetime, timezone
 from pathlib import Path
 
+import i18n
+
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / "_site"
 DATA = ROOT / "data"
@@ -26,6 +29,7 @@ DATA = ROOT / "data"
 CFG = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
 # GitHub Actions passes the real address of your site in SITE_URL.
 SITE_URL = (os.environ.get("SITE_URL") or CFG["site_url"]).rstrip("/")
+BASE_PATH = urllib.parse.urlparse(SITE_URL).path.rstrip("/")  # "" on a custom domain
 SITE = CFG["site_name"]
 YEAR = date.today().year
 TODAY = date.today().isoformat()
@@ -217,6 +221,12 @@ def itemlist_ld(name, items):
                                 for i, b in enumerate(items)]}
 
 
+# Native-language versions (hreflang groups). English URLs never change.
+LANG_PAGES = ["", "best-forex-broker/", "best-crypto-exchange/"]
+ALT_GROUPS = [{"en": p, **{l: f"{l}/{p}" for l in i18n.NATIVE}} for p in LANG_PAGES]
+ALT_INDEX = {path: g for g in ALT_GROUPS for path in g.values()}
+
+
 # --------------------------------------------------------------------------
 # Page shell
 # --------------------------------------------------------------------------
@@ -335,8 +345,23 @@ def short_desc(text, limit=155):
 
 
 def page(path, title, description, body, depth, keywords="", ld=None, priority="0.6", og_type="website", canonical=None, in_sitemap=True,
-         noindex=False, theme="", image=None):
+         noindex=False, theme="", image=None, lang="en"):
     url = f"{SITE_URL}/{path}"
+    T = i18n.NATIVE.get(lang, i18n.EN)
+    group = ALT_INDEX.get(path)
+    hreflang = ""
+    if group and not noindex:
+        hreflang = "".join(f'<link rel="alternate" hreflang="{l}" href="{SITE_URL}/{p}">' for l, p in group.items())
+        hreflang += f'<link rel="alternate" hreflang="x-default" href="{SITE_URL}/{group["en"]}">'
+    en_path = group["en"] if group else path
+    opts = []
+    for code in i18n.MENU:
+        native = group.get(code) if group else (path if code == "en" else None)
+        href = f' data-href="{link(native, depth)}"' if native is not None else ""
+        opts.append(f'<option value="{code}"{href}{" selected" if code == lang else ""}>{esc(i18n.NAMES[code])}</option>')
+    lang_menu = (f'<label class="langsw" title="{esc(T["lang"])}"><span aria-hidden="true">🌐</span>'
+                 f'<select id="langsel" aria-label="{esc(T["lang"])}" data-src="{esc(BASE_PATH + "/" + en_path)}">{"".join(opts)}</select></label>')
+    lang_links = " · ".join(f'<a href="{link(l + "/", depth)}" hreflang="{l}" lang="{l}">{esc(v["name"])}</a>' for l, v in i18n.NATIVE.items())
     ld_html = "".join(jsonld(x) for x in (ld or []))
     ga = ""
     if CFG.get("google_analytics_id"):
@@ -346,10 +371,10 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
     verify = f'<meta name="google-site-verification" content="{esc(CFG["google_site_verification"])}">' if CFG.get("google_site_verification") else ""
     r = rel(depth)
     og_img = f"{SITE_URL}/{image}" if image else f"{SITE_URL}/assets/og-image.png"
-    nav_html = "".join(f'<a class="{c}" href="{link(p, depth)}">{n}</a>' for n, p, c in NAV)
+    nav_html = "".join(f'<a class="{c}" href="{link(p, depth)}">{esc(T["nav"][i])}</a>' for i, (n, p, c) in enumerate(NAV))
     pop = ["AE", "BR", "DE", "EG", "ID", "IN", "KE", "MX", "NG", "PH", "PK", "TR", "VN", "ZA"]
     doc = f"""<!doctype html>
-<html lang="en">
+<html lang="{lang}" dir="{T['dir']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -357,9 +382,10 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 <meta name="description" content="{esc(short_desc(description))}">
 {f'<meta name="keywords" content="{esc(keywords)}">' if keywords else ''}
 <meta name="robots" content="{'noindex, follow' if noindex else 'index, follow, max-image-preview:large'}">
-<link rel="canonical" href="{esc(f"{SITE_URL}/{canonical}" if canonical is not None else url)}">
+<link rel="canonical" href="{esc(f"{SITE_URL}/{canonical}" if canonical is not None else url)}">{hreflang}
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{esc(SITE)}">
+<meta property="og:locale" content="{T.get('locale', 'en_US')}">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(short_desc(description, 200))}">
 <meta property="og:url" content="{esc(url)}">
@@ -373,12 +399,13 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 </head>
 <body class="{theme}">
 <a class="skip" href="#main">Skip to content</a>
-<div class="riskbar">Trading forex, CFDs and crypto with leverage carries a high risk of losing money. <a href="{link('risk-disclaimer/', depth)}">Risk warning</a></div>
+<div class="riskbar">{esc(T['risk'])} <a href="{link('risk-disclaimer/', depth)}">{esc(T['risk_link'])}</a></div>
 <header class="top">
  <div class="wrap top-in">
   <a class="brand" href="{link('', depth)}"><img src="{r}assets/favicon.svg" alt="" width="32" height="32"> <span>{esc(SITE)}</span></a>
   <button class="menu-btn" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',document.body.classList.toggle('nav-open'))">☰</button>
   <nav class="mainnav" aria-label="Main">{nav_html}</nav>
+  {lang_menu}
  </div>
 </header>
 {ticker_tape()}
@@ -395,6 +422,7 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
   <div><h3>Company</h3><a href="{link('about/', depth)}">About & methodology</a><a href="{link('licences/', depth)}">Licences & regulation</a><a href="{link('contact/', depth)}">Contact</a><a href="{link('risk-disclaimer/', depth)}">Risk disclaimer</a><a href="{link('privacy-policy/', depth)}">Privacy policy</a><a href="{link('terms/', depth)}">Terms of use</a></div>
  </div>
  <div class="wrap legal"><p><strong>Risk warning:</strong> CFDs, forex and crypto derivatives are complex instruments with a high risk of losing money rapidly due to leverage. Most retail accounts lose money. Nothing on this site is financial advice. Information is checked as of {esc(LAST_REVIEWED)} but can change — always confirm terms, regulation and country availability on the provider's official website. Company names and logos belong to their owners and are used only to identify them.</p>
+ <p class="langs"><span aria-hidden="true">🌐</span> <a href="{link('', depth)}" hreflang="en" lang="en">English</a> · {lang_links}</p>
  <p>© <span class="yr">{YEAR}</span> {esc(SITE)}. All rights reserved.</p></div>
 </footer>
 <script src="{r}assets/main.js" defer></script>
@@ -1590,6 +1618,131 @@ def build_pillar(kind):
          priority="0.95", og_type="article", theme="fx" if fx else "cx", image=img if (ROOT / img).exists() else None)
 
 
+
+# --------------------------------------------------------------------------
+# Native-language pages: /ar/  /ur/  /hi/ … (home, best forex broker, best crypto exchange)
+# --------------------------------------------------------------------------
+def tr(T, key):
+    tops_fx = [b["name"] for b in sorted(BROKERS, key=lambda b: not b.get("top_pick"))]
+    tops_cx = [b["name"] for b in sorted(EXCHANGES, key=lambda b: not b.get("top_pick"))]
+    v = T[key]
+    for k, val in {"{Y}": str(YEAR), "{FX1}": tops_fx[0], "{FX2}": tops_fx[1], "{FX3}": tops_fx[2],
+                   "{CX1}": tops_cx[0], "{CX2}": tops_cx[1], "{CX3}": tops_cx[2]}.items():
+        v = v.replace(k, val)
+    return v
+
+
+def lev_short(v):
+    m = re.search(r"(1:\w+|\d+x)", v)
+    return m.group(1) if m else v
+
+
+def native_card(b, rank, T, depth):
+    fx = is_fx(b)
+    md = T["no_min"] if b["min_deposit"].lower().startswith("no minimum") else b["min_deposit"]
+    facts = [(T["min_dep"], md), (T["lev"], lev_short(b["max_leverage"]))]
+    facts.append((T["platforms"], b["platforms"]) if fx else (T["fees"], b["fees"]))
+    facts.append((T["reg"], reg_summary(b, 3)))
+    cls = "btn " + ("btn-fx" if fx else "btn-cx")
+    btns = "".join(
+        f'<a class="{cls}" href="{esc(l["url"])}" target="_blank" rel="sponsored nofollow noopener">{esc(T["visit"])}'
+        f'{esc(" · " + l["label"].split("·", 1)[1].strip()) if "·" in l["label"] else ""} <span aria-hidden="true">↗</span></a>'
+        for l in b["links"])
+    badge = f'<span class="pill ok">★ {esc(T["top_pick"])}</span>' if b.get("top_pick") else ""
+    rows = "".join(f"<tr><th>{esc(k)}</th><td dir=\"ltr\">{esc(v)}</td></tr>" for k, v in facts)
+    return f"""<article class="card nl-card {'fx' if fx else 'cx'}">
+ <div class="pe-head"><span class="rank-big">#{rank}</span>{logo(b)}<div><h3>{esc(b['name'])} {badge}</h3><p class="muted">{esc(T['score'])} <b dir="ltr">{b['score']:.1f}/10</b></p></div></div>
+ <div class="table-wrap"><table class="facts-table">{rows}</table></div>
+ <div class="bc-cta">{btns}<a class="btn btn-ghost" href="{link(review_path(b), depth)}" hreflang="en">{esc(T['review'])}</a></div>
+</article>"""
+
+
+def native_extras(T, depth, faqs):
+    sig = f"""<section class="band"><div class="wrap grid g2">
+ <div class="card signal-card fx"><h2>{esc(T['signals_h'])}</h2><p>{esc(T['signals_p'])}</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('forex')['channel'])}" target="_blank" rel="noopener">✈ {esc(T['join_fx'])}</a></div></div>
+ <div class="card signal-card cx"><h2>{esc(T['signals_h'])}</h2><p>{esc(T['signals_p'])}</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('crypto')['channel'])}" target="_blank" rel="noopener">✈ {esc(T['join_cx'])}</a></div></div>
+</div></section>"""
+    return sig + f"""<section class="wrap section prose"><h2>{esc(T['how_h'])}</h2><p>{esc(T['how_p'])}</p>
+<p class="muted">🌐 {esc(T['en_note'])}</p>
+{faq_html([(q, esc(a)) for q, a in faqs], esc(T['faq_h']))}</section>"""
+
+
+def native_ld(T, lang, path, title, items, crumbs):
+    page_ld = {"@context": "https://schema.org", "@type": "WebPage", "name": title, "url": f"{SITE_URL}/{path}", "inLanguage": lang,
+               "isPartOf": {"@type": "WebSite", "name": SITE, "url": SITE_URL + "/"}}
+    lst = {"@context": "https://schema.org", "@type": "ItemList", "name": title,
+           "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": b["name"], "url": f"{SITE_URL}/{review_path(b)}"} for i, b in enumerate(items)]}
+    return [page_ld, lst, breadcrumb_ld(crumbs)]
+
+
+def build_native(lang):
+    T = i18n.NATIVE[lang]
+    faqs_all = [(tr(T, "q1"), tr(T, "a1")), (tr(T, "q2"), tr(T, "a2")), (tr(T, "q3"), tr(T, "a3"))]
+    # Home
+    d = 1
+    title = tr(T, "home_title")
+    body = f"""
+<section class="hero">
+ <div class="hero-bg" aria-hidden="true"></div>
+ <div class="wrap hero-in">
+  <p class="eyebrow"><span class="dot"></span> {esc(T['updated'])} <span dir="ltr">{esc(LAST_REVIEWED)}</span> · {len(COUNTRIES)} 🌍</p>
+  <h1>{esc(T['home_h1'])}</h1>
+  <p class="lead">{esc(T['home_lead'])}</p>
+  <div class="pillar-links"><a class="btn btn-fx" href="best-forex-broker/">{esc(tr(T, 'best_fx_btn'))}</a><a class="btn btn-cx" href="best-crypto-exchange/">{esc(tr(T, 'best_cx_btn'))}</a></div>
+ </div>
+</section>
+<section class="zone cx-zone"><div class="wrap section">
+ <div class="sec-head"><div><span class="kicker cx">CRYPTO</span><h2>{esc(T['top_cx'])} {YEAR}</h2></div><a href="best-crypto-exchange/">{esc(tr(T, 'best_cx_btn'))}</a></div>
+ <div class="grid g2">{''.join(native_card(b, i, T, d) for i, b in enumerate(EXCHANGES, 1))}</div>
+</div></section>
+<section class="zone fx-zone"><div class="wrap section">
+ <div class="sec-head"><div><span class="kicker fx">FOREX</span><h2>{esc(T['top_fx'])} {YEAR}</h2></div><a href="best-forex-broker/">{esc(tr(T, 'best_fx_btn'))}</a></div>
+ <div class="grid g2">{''.join(native_card(b, i, T, d) for i, b in enumerate(BROKERS, 1))}</div>
+</div></section>
+{native_extras(T, d, faqs_all)}"""
+    crumbs = [(T["home"], f"{lang}/")]
+    page(f"{lang}/", title, tr(T, "home_desc"), body, d, lang=lang, priority="0.8", theme="home",
+         ld=[ORG_LD, faq_ld(faqs_all)] + native_ld(T, lang, f"{lang}/", title, EXCHANGES + BROKERS, crumbs)[:2])
+    # Pillars
+    for kind in ("forex", "crypto"):
+        k = "fx" if kind == "forex" else "cx"
+        items = BROKERS if kind == "forex" else EXCHANGES
+        en_path = "best-forex-broker/" if kind == "forex" else "best-crypto-exchange/"
+        path = f"{lang}/{en_path}"
+        d = 2
+        title = tr(T, f"{k}_title")
+        faqs = [faqs_all[0] if k == "fx" else faqs_all[1], faqs_all[2]]
+        crumbs = [(T["home"], f"{lang}/"), (tr(T, f"{k}_h1"), path)]
+        body = f"""
+<section class="pagehead {k}-head"><div class="wrap">
+ {crumbs_html(crumbs, d)}
+ <h1>{esc(tr(T, f'{k}_h1'))}</h1>
+ <p class="lead">{esc(T[f'{k}_lead'])}</p>
+ <p class="muted">{esc(T['updated'])} <span dir="ltr">{esc(LAST_REVIEWED)}</span></p>
+</div></section>
+<section class="wrap section">
+ <div class="grid g2">{''.join(native_card(b, i, T, d) for i, b in enumerate(items, 1))}</div>
+ <p class="nl-more"><a class="btn btn-ghost" href="{link(en_path, d)}" hreflang="en">{esc(T['see_full'])} →</a></p>
+</section>
+{native_extras(T, d, faqs)}"""
+        page(path, title, tr(T, f"{k}_desc"), body, d, lang=lang, priority="0.8", theme=k,
+             image=f"assets/img/best-{kind}-{'broker' if kind == 'forex' else 'exchange'}-ranking.jpg",
+             ld=[faq_ld(faqs)] + native_ld(T, lang, path, title, items, crumbs))
+
+
+def indexnow_key():
+    """IndexNow key: config.json "indexnow_key", or a fixed key made from the site address."""
+    k = str(CFG.get("indexnow_key") or "").strip()
+    if not re.fullmatch(r"[A-Za-z0-9-]{8,128}", k):
+        k = hashlib.sha256(("indexnow:" + urllib.parse.urlparse(SITE_URL).netloc).encode()).hexdigest()[:32]
+    return k
+
+
+def build_indexnow_key():
+    k = indexnow_key()
+    (OUT / f"{k}.txt").write_text(k, encoding="utf-8")
+
+
 def main():
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -1620,7 +1773,10 @@ def main():
     build_signals("crypto")
     build_signals_hub()
     build_guides()
+    for lang in i18n.NATIVE:
+        build_native(lang)
     build_static_pages()
+    build_indexnow_key()
     build_sitemap_robots()
     print(f"Built {len(PAGES)} pages into {OUT} for {SITE_URL}")
 
