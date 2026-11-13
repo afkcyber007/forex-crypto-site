@@ -307,6 +307,21 @@ def market_blocks(title=None, depth=0):
     return f'<section class="markets"><div class="wrap section">{head}<div class="mgrid">{"".join(blocks)}</div><p class="tiny mnote">Gold, Bitcoin, US30, NAS100 and the world\'s top markets — real-time quotes powered by TradingView.</p></div></section>'
 
 
+def short_title(title, limit=65):
+    """Search engines show about 60-70 characters. Keep the keyword-rich start, add the brand only if it fits."""
+    core = re.sub(r"\s*\|\s*" + re.escape(SITE) + r"\s*$", "", title).strip()
+    if len(core) > limit:
+        for sep in (" – ", ": ", " - "):
+            head = core.split(sep)[0].strip()
+            if 20 <= len(head) <= limit and head != core:
+                core = head
+                break
+    if len(core) > limit:
+        core = core[:limit].rsplit(" ", 1)[0].rstrip(" ,:–-&")
+    full = f"{core} | {SITE}"
+    return full if len(full) <= limit else core
+
+
 def page(path, title, description, body, depth, keywords="", ld=None, priority="0.6", og_type="website", canonical=None, in_sitemap=True,
          noindex=False, theme="", image=None):
     url = f"{SITE_URL}/{path}"
@@ -326,7 +341,7 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(title)}</title>
+<title>{esc(short_title(title))}</title>
 <meta name="description" content="{esc(description)}">
 {f'<meta name="keywords" content="{esc(keywords)}">' if keywords else ''}
 <meta name="robots" content="{'noindex, follow' if noindex else 'index, follow, max-image-preview:large'}">
@@ -1132,7 +1147,7 @@ def build_country(c, kind):
 </div></section>
 <section class="wrap section">
  {note_html}{lic_html}
- <h2>Top {len(shown)} {noun.lower()} in {esc(name)}</h2>
+ <h2>{f"Top {len(shown)} {noun.lower()} in {esc(name)}" if shown else f"{noun} for traders in {esc(name)}"}</h2>
  {listing}
 </section>
 <section class="wrap section prose">
@@ -1143,11 +1158,11 @@ def build_country(c, kind):
 <section class="wrap section"><h2>Best {sing} in other {esc(c['region'])} countries</h2><div class="clist">{region_links}<a href="{link(base, d)}#countries"><strong>All countries →</strong></a></div></section>"""
     top_names = ", ".join(b["name"] for b in avail[:4])
     if fx:
-        title = f"Best Forex Broker in {name} {YEAR} – Top {len(shown)} Regulated Forex Brokers | {SITE}"
+        title = f"Best Forex Broker in {name} {YEAR}" + (f" – Top {len(shown)} Regulated Brokers" if shown else "") + f" | {SITE}"
         desc = f"Best forex broker in {name} for {YEAR}: {top_names or 'top regulated brokers'} compared — licences, minimum deposit, leverage and MT4/MT5 for traders in {name}."
         kw = f"best forex broker in {title_name}, best forex broker {title_name}, best forex broker in {title_name} {YEAR}, forex brokers {title_name}, forex trading {title_name}, regulated forex broker {title_name}, low minimum deposit forex broker {title_name}, MT5 broker {title_name}, gold trading {title_name}, forex signals {title_name}"
     else:
-        title = f"Best Crypto Exchange in {name} {YEAR} – Top {len(shown)} Exchanges & Wallets | {SITE}"
+        title = f"Best Crypto Exchange in {name} {YEAR}" + (f" – Top {len(shown)} Exchanges & Wallets" if shown else "") + f" | {SITE}"
         desc = f"Best crypto exchange in {name} for {YEAR}: {top_names or 'top exchanges'} compared — fees, futures leverage, wallets and licences for users in {name}."
         kw = f"best crypto exchange in {title_name}, best crypto exchange {title_name}, best crypto exchange in {title_name} {YEAR}, best crypto wallet {title_name}, buy bitcoin {title_name}, buy USDT {title_name}, crypto trading {title_name}, crypto futures {title_name}, crypto signals {title_name}"
     page(path, title, desc, body, d, keywords=kw,
