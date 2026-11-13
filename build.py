@@ -322,6 +322,18 @@ def short_title(title, limit=65):
     return full if len(full) <= limit else core
 
 
+def short_desc(text, limit=155):
+    """Search engines show about 150-160 characters of the description."""
+    d = re.sub(r"\s+", " ", text).strip()
+    if len(d) <= limit:
+        return d
+    cut = d[:limit]
+    end = max(cut.rfind(". "), cut.rfind("! "), cut.rfind("? "))
+    if end >= 70:
+        return cut[:end + 1]
+    return cut.rsplit(" ", 1)[0].rstrip(" ,:;–-&(") + "…"
+
+
 def page(path, title, description, body, depth, keywords="", ld=None, priority="0.6", og_type="website", canonical=None, in_sitemap=True,
          noindex=False, theme="", image=None):
     url = f"{SITE_URL}/{path}"
@@ -342,14 +354,14 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(short_title(title))}</title>
-<meta name="description" content="{esc(description)}">
+<meta name="description" content="{esc(short_desc(description))}">
 {f'<meta name="keywords" content="{esc(keywords)}">' if keywords else ''}
 <meta name="robots" content="{'noindex, follow' if noindex else 'index, follow, max-image-preview:large'}">
 <link rel="canonical" href="{esc(f"{SITE_URL}/{canonical}" if canonical is not None else url)}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:site_name" content="{esc(SITE)}">
 <meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(description)}">
+<meta property="og:description" content="{esc(short_desc(description, 200))}">
 <meta property="og:url" content="{esc(url)}">
 <meta property="og:image" content="{og_img}">
 <meta name="twitter:card" content="summary_large_image">
