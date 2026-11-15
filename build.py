@@ -872,8 +872,6 @@ def build_review(b):
     else:
         rows += [("Trading fees", b["fees"]), ("Markets", b["coins"]), ("Products", b["features"]), ("Verification", b["kyc"])]
     rows += [("Copy trading", b["copy_trading"]), ("Regulation", b["regulation"]), ("Best for", b["best_for"])]
-    if b.get("ref_code"):
-        rows.append(("Referral / invite code", b["ref_code"]))
     table = "".join(f"<tr><th>{esc(k)}</th><td>{esc(v)}</td></tr>" for k, v in rows)
     avail = available_count(b)
     n = b["name"]
@@ -895,7 +893,7 @@ def build_review(b):
   <h2 id="availability">{esc(n)} country availability</h2>
   <p>{esc(n)} welcomes traders from about <strong>{avail}</strong> countries and territories worldwide. Check your country in our <a href="{link('countries/', d)}">country guides</a>.</p>
   <h2>Related {esc(n)} guides</h2>
-  <div class="grid g2"><a class="card mini-link" href="sign-up/"><b>{esc(n)} sign up</b><span>Step-by-step registration{(' with code ' + esc(b['ref_code'])) if b.get('ref_code') else ''}</span></a><a class="card mini-link" href="real-or-fake/"><b>Is {esc(n)} real or fake?</b><span>Licences and how to spot fake copies</span></a></div>
+  <div class="grid g2"><a class="card mini-link" href="sign-up/"><b>{esc(n)} sign up</b><span>Step-by-step registration, verification and first deposit</span></a><a class="card mini-link" href="real-or-fake/"><b>Is {esc(n)} real or fake?</b><span>Licences and how to spot fake copies</span></a></div>
   {faq_html(faqs)}
  </div>
  {brand_sidebar(b, d)}
@@ -918,10 +916,6 @@ def build_signup(b):
     d = 3
     n = b["name"]
     hub = ("Forex Brokers", "forex-brokers/") if fx else ("Crypto Exchanges", "crypto-exchanges/")
-    code = b.get("ref_code")
-    code_box = (f'<div class="codebox"><span>Referral / invite code</span><code id="refcode">{esc(code)}</code>'
-                f'<button class="btn btn-ghost btn-sm" type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(\'{esc(code)}\');this.textContent=\'Copied ✓\'">Copy</button>'
-                f'<small>Already filled in when you use our Visit Site link.</small></div>') if code else ""
     if fx:
         steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} registration page ({esc(b['domain'])})."
                   + (" Traders in Asia can use the Asia server link; everyone else uses Worldwide." if len(b["links"]) > 1 else "")),
@@ -933,7 +927,7 @@ def build_signup(b):
                  ("Download the platform", f"Install {esc(b['platforms'])}, log in with the server and account number from your personal area, and start on a demo account if you are new.")]
     else:
         steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} sign-up page ({esc(b['domain'])}). Bookmark it for next time."),
-                 ("Create your account", "Register with email or phone and a strong, unique password." + (f" The invite code <strong>{esc(code)}</strong> is filled in automatically." if code else "")),
+                 ("Create your account", "Register with email or phone and a strong, unique password."),
                  ("Turn on security", "Enable app-based 2FA (Google Authenticator), set an anti-phishing code and add a withdrawal whitelist."),
                  ("Verify your identity", esc(b["kyc"])),
                  ("Deposit crypto", "Deposit USDT or another supported coin from a wallet, or buy crypto with P2P or a card partner. Always pick the same network (e.g. TRC20, BEP20) on both sides."),
@@ -944,12 +938,9 @@ def build_signup(b):
             (f"What documents do I need for {n}?", "A valid passport, national ID card or driving licence" + (", plus proof of address." if fx else ". Some regions also ask for proof of address or a selfie check.")),
             (f"Can I open {n} from my country?", f"{n} welcomes traders from about {available_count(b)} countries. Check your country in our <a href=\"{link('countries/', d)}\">country guides</a>."),
             (f"What is the {n} minimum deposit?", f"{b['min_deposit']}. {b['min_deposit_note']}")]
-    if code:
-        faqs.insert(1, (f"What is the {n} referral code?", f"Our {n} referral / invite code is <strong>{esc(code)}</strong>. It is applied automatically when you register through our Visit Site link."))
-    body = brand_head(b, d, [("Home", ""), hub, (n, rp), ("Sign up", path)], f"{esc(n)} Sign Up {YEAR}: How to Open an Account", f"Step-by-step {esc(n)} registration{(' with invite code ' + esc(code)) if code else ''} — verification, deposit and first trade.") + f"""
+    body = brand_head(b, d, [("Home", ""), hub, (n, rp), ("Sign up", path)], f"{esc(n)} Sign Up {YEAR}: How to Open an Account", f"Step-by-step {esc(n)} registration — verification, deposit and first trade.") + f"""
 <section class="wrap section two-col">
  <div class="prose">
-  {code_box}
   <h2>How to sign up for {esc(n)} (step by step)</h2>
   <ol class="steps">{steps_html}</ol>
   <div class="callout"><strong>Official domain:</strong> {esc(b['domain'])}. {esc(n)} staff will never ask for your password or 2FA code.</div>
@@ -960,9 +951,9 @@ def build_signup(b):
  </div>
  {brand_sidebar(b, d)}
 </section>"""
-    kw = f"{n} sign up, {n} register, {n} registration, {n} create account, {n} open account, {n} account opening, {n} login, {n} app download" + (f", {n} referral code, {n} invite code, {n} code {code}" if code else "")
-    page(path, f"{n} Sign Up {YEAR}: Register & Open an Account{(' (Code ' + code + ')') if code else ''} | {SITE}",
-         f"How to sign up for {n} in {YEAR}: step-by-step registration{(', invite code ' + code) if code else ''}, verification documents, minimum deposit {b['min_deposit']} and first trade.",
+    kw = f"{n} sign up, {n} register, {n} registration, {n} create account, {n} open account, {n} account opening, {n} login, {n} app download"
+    page(path, f"{n} Sign Up {YEAR}: Register & Open an Account | {SITE}",
+         f"How to sign up for {n} in {YEAR}: step-by-step registration, verification documents, minimum deposit {b['min_deposit']} and first trade.",
          body, d, keywords=kw, ld=[breadcrumb_ld([("Home", ""), hub, (n, rp), ("Sign up", path)]), faq_ld(faqs),
                                     {"@context": "https://schema.org", "@type": "HowTo", "name": f"How to sign up for {n}",
                                      "step": [{"@type": "HowToStep", "name": t, "text": re.sub("<[^>]+>", "", c)} for t, c in steps]}],
