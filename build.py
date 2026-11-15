@@ -876,7 +876,7 @@ def build_review(b):
     avail = available_count(b)
     n = b["name"]
     kind = "forex broker" if fx else "crypto exchange"
-    faqs = [(f"Is {n} real or fake?", f"{n} is a real, established {kind} operating since {b['founded']}. {esc(b['regulation'])} Always use the official website ({esc(b['domain'])}) to avoid fake copies."),
+    faqs = [(f"Is {n} real or fake?", f"{n} is a real, established {kind} operating since {b['founded']}. {esc(b['regulation'])} To be sure you land on the genuine {n} website, open it through our Visit Site button."),
             (f"What is the {n} minimum deposit?", f"{b['min_deposit']}. {b['min_deposit_note']}"),
             (f"Is {n} regulated?", b["regulation"]),
             (f"What is the maximum leverage at {n}?", b["max_leverage"] + ". Choose leverage that matches your risk plan."),
@@ -917,7 +917,7 @@ def build_signup(b):
     n = b["name"]
     hub = ("Forex Brokers", "forex-brokers/") if fx else ("Crypto Exchanges", "crypto-exchanges/")
     if fx:
-        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} registration page ({esc(b['domain'])})."
+        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} registration page."
                   + (" Traders in Asia can use the Asia server link; everyone else uses Worldwide." if len(b["links"]) > 1 else "")),
                  ("Register", "Enter your country of residence, email and a strong password."),
                  ("Verify email and phone", "Confirm the code sent to your email and/or phone number."),
@@ -926,7 +926,7 @@ def build_signup(b):
                  ("Deposit", "Fund with a local bank transfer, card, e-wallet or USDT, depending on your country."),
                  ("Download the platform", f"Install {esc(b['platforms'])}, log in with the server and account number from your personal area, and start on a demo account if you are new.")]
     else:
-        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} sign-up page ({esc(b['domain'])}). Bookmark it for next time."),
+        steps = [("Open the official website", f"Click <strong>Visit Site</strong> to open the official {esc(n)} sign-up page."),
                  ("Create your account", "Register with email or phone and a strong, unique password."),
                  ("Turn on security", "Enable app-based 2FA (Google Authenticator), set an anti-phishing code and add a withdrawal whitelist."),
                  ("Verify your identity", esc(b["kyc"])),
@@ -943,7 +943,7 @@ def build_signup(b):
  <div class="prose">
   <h2>How to sign up for {esc(n)} (step by step)</h2>
   <ol class="steps">{steps_html}</ol>
-  <div class="callout"><strong>Official domain:</strong> {esc(b['domain'])}. {esc(n)} staff will never ask for your password or 2FA code.</div>
+  <div class="callout"><strong>Stay safe:</strong> {esc(n)} staff will never ask for your password or 2FA code.</div>
   <h2>{esc(n)} account at a glance</h2>
   <div class="table-wrap"><table class="facts-table"><tr><th>Minimum deposit</th><td>{esc(b['min_deposit'])}</td></tr><tr><th>Max leverage</th><td>{esc(b['max_leverage'])}</td></tr><tr><th>{'Spreads' if fx else 'Fees'}</th><td>{esc(b['spreads'] if fx else b['fees'])}</td></tr><tr><th>Regulation</th><td>{esc(b['regulation'])}</td></tr></table></div>
   <p class="cta-line">{visit_buttons(b)}</p>
@@ -978,12 +978,12 @@ def build_legit(b):
               (f"Operating since {b['founded']}", True),
               ("Negative balance protection for retail clients" if fx else "Identity verification protects withdrawals", True),
               ("Copy trading / social features", b["copy_trading"].startswith("Yes")),
-              ("Official website: " + b["domain"], True)]
+              ("Genuine sign-up page through our Visit Site button", True)]
     checks_html = "".join(f'<li class="ok"><span>✓</span>{esc(k)}</li>' for k, v in checks if v)
     fca = next((l for l in b["licences"] if "Financial Conduct Authority" in l["regulator"]), None)
     faqs = [(f"Is {n} legit?", re.sub("<[^>]+>", "", verdict)),
-            (f"Is {n} safe to use?", f"{b['regulation']} Protect your account with 2FA and use only the official website, {b['domain']}."),
-            (f"How do I spot a fake {n} website?", f"The official domain is {b['domain']}. Fake sites use look-alike spellings, extra words or different endings. Never log in from links sent in Telegram, WhatsApp or ads — use our Visit Site button or type the address yourself."),
+            (f"Is {n} safe to use?", f"{b['regulation']} Protect your account with 2FA and open {n} through our Visit Site button to be sure you are on the genuine website."),
+            (f"How do I spot a fake {n} website?", f"Fake sites use look-alike spellings, extra words or different endings. Never log in from links sent in Telegram, WhatsApp or ads — use our Visit Site button or type the address yourself."),
             (f"Can I withdraw money from {n}?", f"Yes. Withdrawals are processed to your verified payment methods {'(usually the same method you deposited with)' if fx else 'or crypto addresses'} after identity verification.")]
     if fca:
         faqs.insert(2, (f"Is {n} regulated by the FCA?", f"Yes — {n} has a UK entity, {fca['entity']}, authorised by the FCA ({fca['number']})."))
@@ -996,9 +996,9 @@ def build_legit(b):
   <h2>{esc(n)} licences and licence numbers</h2>
   {licences_table(b, d)}
   <h2>How to verify {esc(n)} yourself</h2>
-  <ol><li>Copy a licence number from the table above.</li><li>Search it on the regulator's official register (for example the FCA register, ASIC Connect or the FSCA FSP search).</li><li>Check the company name and website listed on the register match {esc(b['domain'])}.</li></ol>
+  <ol><li>Copy a licence number from the table above.</li><li>Search it on the regulator's official register (for example the FCA register, ASIC Connect or the FSCA FSP search).</li><li>Check that the company name on the register matches the {esc(n)} entity shown in the licence table.</li></ol>
   <h2>How to avoid fake "{esc(n)}" copies</h2>
-  <ul class="ticks"><li>Only register through the official domain {esc(b['domain'])} or our Visit Site button</li><li>Real {esc(n)} support never asks for your password or 2FA code</li><li>Deposit only into your own {esc(n)} account — never to a personal wallet or bank account</li><li>Ignore "account managers" who message you first on social media</li></ul>
+  <ul class="ticks"><li>Only register through our Visit Site button</li><li>Real {esc(n)} support never asks for your password or 2FA code</li><li>Deposit only into your own {esc(n)} account — never to a personal wallet or bank account</li><li>Ignore "account managers" who message you first on social media</li></ul>
   <h2>Why traders trust {esc(n)}</h2>
   <ul class="ticks">{''.join(f'<li>{esc(p)}</li>' for p in b['pros'])}</ul>
   <p class="cta-line">{visit_buttons(b)} <a class="btn btn-ghost" href="../">Read full review</a></p>

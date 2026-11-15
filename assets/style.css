@@ -415,3 +415,4 @@ ol.quick li{margin:.45em 0;font-weight:600}
 @media (max-width:1180px){.langsw>span{display:none}.langsw select{width:82px;padding:6px 4px}}
 @media (max-width:480px){.top .brand span{font-size:.9rem}.top .brand img{width:28px;height:28px}.top-in{gap:10px}}
 @media (max-width:400px){.langsw select{width:76px}.top .brand span{font-size:.78rem}.top-in{gap:8px}}
+.side-cta.sticky{position:static}
