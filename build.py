@@ -943,7 +943,6 @@ def build_signup(b):
  <div class="prose">
   <h2>How to sign up for {esc(n)} (step by step)</h2>
   <ol class="steps">{steps_html}</ol>
-  <div class="callout"><strong>Stay safe:</strong> {esc(n)} staff will never ask for your password or 2FA code.</div>
   <h2>{esc(n)} account at a glance</h2>
   <div class="table-wrap"><table class="facts-table"><tr><th>Minimum deposit</th><td>{esc(b['min_deposit'])}</td></tr><tr><th>Max leverage</th><td>{esc(b['max_leverage'])}</td></tr><tr><th>{'Spreads' if fx else 'Fees'}</th><td>{esc(b['spreads'] if fx else b['fees'])}</td></tr><tr><th>Regulation</th><td>{esc(b['regulation'])}</td></tr></table></div>
   <p class="cta-line">{visit_buttons(b)}</p>
