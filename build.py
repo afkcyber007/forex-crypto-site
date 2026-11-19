@@ -719,8 +719,8 @@ def build_home():
 </section>
 <section class="band">
  <div class="wrap grid g2">
-  <div class="card signal-card fx"><span class="kicker fx">FREE</span><h2>Free Forex Signals</h2><p>XAUUSD gold, US30, NAS100, EURUSD, GBPUSD and more — entry, stop loss and take profit, shared on Telegram with risk-management tips.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('forex')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a><a class="btn btn-fx" href="free-forex-signals/">Learn more</a></div><p class="sig-note">Already trading with a partner broker? <a href="{esc(admin_link('forex', BROKERS[0]['name']))}" target="_blank" rel="noopener">Message our admin</a> to get the signals free.</p></div>
-  <div class="card signal-card cx"><span class="kicker cx">FREE</span><h2>Free Crypto Signals</h2><p>Bitcoin, Ethereum and altcoin futures setups with clear invalidation levels. Learn position sizing before copying any trade.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('crypto')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a><a class="btn btn-cx" href="free-crypto-signals/">Learn more</a></div><p class="sig-note">Already trading with a partner exchange? <a href="{esc(admin_link('crypto', EXCHANGES[0]['name']))}" target="_blank" rel="noopener">Message our admin</a> to get the signals free.</p></div>
+  <div class="card signal-card fx"><span class="kicker fx">FREE</span><h2>Free Forex Signals</h2><p>XAUUSD gold, US30, NAS100, EURUSD, GBPUSD and more — entry, stop loss and take profit, shared on Telegram with risk-management tips.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('forex')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a><a class="btn btn-fx" href="free-forex-signals/">Learn more</a></div></div>
+  <div class="card signal-card cx"><span class="kicker cx">FREE</span><h2>Free Crypto Signals</h2><p>Bitcoin, Ethereum and altcoin futures setups with clear invalidation levels. Learn position sizing before copying any trade.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(sig_cfg('crypto')['channel'])}" target="_blank" rel="noopener">✈ Join free channel</a><a class="btn btn-cx" href="free-crypto-signals/">Learn more</a></div></div>
  </div>
 </section>
 <section class="wrap section">
@@ -826,8 +826,6 @@ def brand_sidebar(b, d):
     return f"""<aside class="side">
   <div class="card sticky side-cta {'fx' if is_fx(b) else 'cx'}">{logo(b, 'lg')}<h3>{esc(b['name'])}</h3><p class="muted">{esc(b['tagline'])}</p>
   <p><strong>Min deposit:</strong> {esc(b['min_deposit'])}<br><strong>Score:</strong> {b['score']:.1f}/10</p>{visit_buttons(b)}
-  <div class="side-sig"><b>Already using {esc(b['name'])}?</b><span>Get our {kind} signals free.</span>
-  <a class="btn btn-tg btn-sm" href="{esc(admin_link(kind, b['name']))}" target="_blank" rel="noopener">✈ Message admin</a></div>
   <nav class="brand-nav"><a href="{link(rp, d)}">{esc(b['name'])} review</a><a href="{link(rp + 'sign-up/', d)}">{esc(b['name'])} sign up</a><a href="{link(rp + 'real-or-fake/', d)}">Is {esc(b['name'])} real or fake?</a></nav></div>
   <div class="card"><h3>Compare {esc(b['name'])}</h3><ul class="plain">{''.join(f'<li><a href="{link(vs_path(b, o), d)}">{esc(b["name"])} vs {esc(o["name"])}</a></li>' for o in others)}</ul></div>
  </aside>"""
@@ -1291,8 +1289,7 @@ def build_signals(kind):
         partners = EXCHANGES
         ex = ("LONG BTCUSDT (example)", "Entry: 64,800 – 64,500", "Stop loss: 63,900", "TP1: 65,700 · TP2: 66,600 · Leverage: max 5x")
     word = "broker" if fx else "exchange"
-    faqs = [("Are the signals really free?", f"Yes. Join our public Telegram channel for free signals. If you trade with one of our partner {word}s, message our admin @{sc['admin']} to get our signals free."),
-            (f"I already use one of your partner {word}s — how do I get the signals?", f"Choose your {word} in the box on this page and tap the button. Telegram opens a chat with @{sc['admin']} with your message already written — just press send."),
+    faqs = [("Are the signals really free?", "Yes. Join our public Telegram channel to receive our signals free."),
             ("How much should I risk per signal?", "Many professional traders risk 1–2% of their account per trade. Always use the stop loss."),
             ("Which " + word + " should I use?", f"Our top picks are {', '.join(p['name'] for p in partners if p.get('top_pick'))}. Any of our partner {word}s works with the signals.")]
     body = f"""
@@ -1305,7 +1302,6 @@ def build_signals(kind):
 {market_blocks("Markets we trade", d)}
 <section class="wrap section two-col">
  <div class="prose">
-  {admin_box(kind)}
   <h2>What a signal looks like</h2>
   <div class="signal-demo {'fx' if fx else 'cx'}"><b>{esc(ex[0])}</b><span>{esc(ex[1])}</span><span>{esc(ex[2])}</span><span>{esc(ex[3])}</span><small>Illustration only — not a live trade recommendation.</small></div>
   <h2>How to use trading signals safely</h2>
@@ -1333,8 +1329,7 @@ def build_signals_hub():
 <section class="wrap section grid g2">
  <div class="card signal-card fx"><span class="kicker fx">FOREX</span><h2>Free Forex Signals</h2><p>Gold (XAUUSD), US30, NAS100, EURUSD, GBPUSD and more.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(fxc['channel'])}" target="_blank" rel="noopener">✈ Join channel</a><a class="btn btn-fx" href="../free-forex-signals/">Details →</a></div></div>
  <div class="card signal-card cx"><span class="kicker cx">CRYPTO</span><h2>Free Crypto Signals</h2><p>BTC, ETH and altcoin perpetual futures setups.</p><div class="cta-line"><a class="btn btn-tg" href="{esc(cxc['channel'])}" target="_blank" rel="noopener">✈ Join channel</a><a class="btn btn-cx" href="../free-crypto-signals/">Details →</a></div></div>
-</section>
-<section class="wrap section grid g2">{admin_box("forex")}{admin_box("crypto")}</section>"""
+</section>"""
     page("free-signals/", f"Free Forex & Crypto Signals ({YEAR}) – Telegram | {SITE}", "Free forex and crypto trading signals on Telegram: gold, US30, NAS100, forex pairs, Bitcoin and altcoin futures with entry, stop loss and take profit.",
          body, d, keywords="free trading signals, free forex signals, free crypto signals, telegram signals", ld=[breadcrumb_ld([("Home", ""), ("Free Signals", "free-signals/")])], priority="0.8")
 
