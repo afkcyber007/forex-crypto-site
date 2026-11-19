@@ -400,7 +400,6 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
 </head>
 <body class="{theme}">
 <a class="skip" href="#main">Skip to content</a>
-<div class="riskbar">{esc(T['risk'])} <a href="{link('risk-disclaimer/', depth)}">{esc(T['risk_link'])}</a></div>
 <header class="top">
  <div class="wrap top-in">
   <a class="brand" href="{link('', depth)}"><img src="{r}assets/favicon.svg" alt="" width="32" height="32"> <span>{esc(SITE)}</span></a>
@@ -422,7 +421,7 @@ def page(path, title, description, body, depth, keywords="", ld=None, priority="
   <div><h3>By country</h3>{''.join(f'<a href="{link("countries/" + BY_CODE[c]["slug"] + "/", depth)}">{esc(BY_CODE[c]["name"])}</a>' for c in pop[:10])}<a href="{link('countries/', depth)}"><strong>All {len(COUNTRIES)} countries →</strong></a></div>
   <div><h3>Company</h3><a href="{link('about/', depth)}">About & methodology</a><a href="{link('licences/', depth)}">Licences & regulation</a><a href="{link('contact/', depth)}">Contact</a><a href="{link('risk-disclaimer/', depth)}">Risk disclaimer</a><a href="{link('privacy-policy/', depth)}">Privacy policy</a><a href="{link('terms/', depth)}">Terms of use</a></div>
  </div>
- <div class="wrap legal"><p><strong>Risk warning:</strong> CFDs, forex and crypto derivatives are complex instruments with a high risk of losing money rapidly due to leverage. Most retail accounts lose money. Nothing on this site is financial advice. Information is checked as of {esc(LAST_REVIEWED)} but can change — always confirm terms, regulation and country availability on the provider's official website. Company names and logos belong to their owners and are used only to identify them.</p>
+ <div class="wrap legal"><p>Company names and logos belong to their owners and are used only to identify them.</p>
  <p class="langs"><span aria-hidden="true">🌐</span> <a href="{link('', depth)}" hreflang="en" lang="en">English</a> · {lang_links}</p>
  <p>© <span class="yr">{YEAR}</span> {esc(SITE)}. All rights reserved.</p></div>
 </footer>
@@ -1423,7 +1422,11 @@ def build_static_pages():
 <h2>Corrections</h2><p>Spotted outdated information? Email <a href="mailto:{email}">{email}</a>.</p>"""),
         "contact/": ("Contact Us", f"""<p>Questions, corrections or partnership enquiries:</p>
 <ul><li>Email: <a href="mailto:{email}">{email}</a></li><li>Telegram: <a href="{esc(CFG['telegram_url'])}" target="_blank" rel="noopener">{esc(CFG['telegram_url'])}</a></li></ul>
-<p>We cannot help with account problems at a broker or exchange — please contact that provider's support team directly through its official website.</p>"""),
+<p>We cannot help with account problems at a broker or exchange — please contact that provider's support team directly through its official website.</p>
+<h2>Important risk information</h2>
+<div class="callout"><p><strong>Risk warning:</strong> CFDs, forex and crypto derivatives are complex instruments with a high risk of losing money rapidly due to leverage. Most retail accounts lose money. Only trade with money you can afford to lose.</p>
+<p>Nothing on this website is financial, investment or tax advice. Information is checked as of {esc(LAST_REVIEWED)} but can change — always confirm terms, regulation and country availability with the provider before opening an account.</p>
+<p>Read our full <a href="../risk-disclaimer/">risk disclaimer</a>.</p></div>"""),
         "risk-disclaimer/": ("Risk Disclaimer", """<p>Trading foreign exchange (forex), contracts for difference (CFDs), cryptocurrencies and crypto derivatives on margin carries a high level of risk and may not be suitable for everyone. Leverage can work against you as well as for you. Most retail investor accounts lose money when trading CFDs.</p>
 <p>Before trading, consider your objectives, experience and risk appetite. Never invest money you cannot afford to lose. Seek advice from an independent, licensed financial adviser if you have any doubts.</p>
 <p>Signals, analysis and opinions on this website are general information and education only — not personal financial advice. Past performance is not a reliable indicator of future results.</p>
